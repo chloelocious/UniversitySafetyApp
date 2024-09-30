@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import messagebox, ttk
 import pandas as pd
 import os
+import threading
 
 def load_csv(file_path):
     """Load data from a CSV file."""
@@ -27,8 +28,21 @@ class Display:
     def setup_ui(self):
         self.setup_menu()
         self.setup_main_frame()
-        self.setup_data_frame()
+        self.setup_survey_information()
+        self.setup_uptodate_crime()
+        
+        for frame in self.frames.values():
+            frame.pack(expand=True, fill="both")
+            
         self.show_frame("main")
+    
+    def thread_it(self, func, *args):
+        # 创建
+        t = threading.Thread(target=func, args=args)
+        # 守护 !!!
+        t.setDaemon(True)
+        # 启动
+        t.start
         
     def setup_menu(self):
         # Set up the menu bar
@@ -41,7 +55,8 @@ class Display:
 
         # Raw Data menu
         self.rawdata_menu = tk.Menu(self.menubar, tearoff=0)
-        self.rawdata_menu.add_command(label="Display Raw Data", command=lambda: self.show_frame("data"))
+        self.rawdata_menu.add_command(label="Display Survey Information", command=lambda: self.show_frame("survey"))
+        self.rawdata_menu.add_command(label="Display UptoDate Crime", command=lambda: self.show_frame("uptodate"))
         self.menubar.add_cascade(label="Menu", menu=self.rawdata_menu)
 
         # Configure the menu
@@ -61,8 +76,8 @@ class Display:
         self.buttonframe.rowconfigure(1, weight=1)
         self.buttonframe.rowconfigure(2, weight=1)
 
-        btn1 = tk.Button(self.buttonframe, text="Display Raw Data", font=("Arial", 16),command=lambda: self.show_frame("data"))
-        btn2 = tk.Button(self.buttonframe, text="Display Crime Data", font=("Arial", 16))
+        btn1 = tk.Button(self.buttonframe, text="Display Survey Information", font=("Arial", 16),command=lambda: self.show_frame("survey"))
+        btn2 = tk.Button(self.buttonframe, text="Display Up-to-Date Crime Data", font=("Arial", 16),command=lambda: self.show_frame("uptodate"))
         btn3 = tk.Button(self.buttonframe, text="To be done", font=("Arial", 16))
 
         btn1.grid(row=0, column=0, padx=10, pady=10)
@@ -71,9 +86,9 @@ class Display:
 
         self.buttonframe.pack(padx=10, pady=10)
 
-    def setup_data_frame(self):
+    def setup_survey_information(self):
         data_frame = tk.Frame(self.root)
-        self.frames["data"] = data_frame
+        self.frames["survey"] = data_frame
 
         # Add Back button to return to the main frame
         back_button = tk.Button(data_frame, text="Back", command=lambda: self.show_frame("main"))
@@ -85,10 +100,34 @@ class Display:
 
         # Populate Listbox with CSV files in the directory
         folder_path = './Crime2023EXCEL'
-        self.load_csv_files(folder_path)
+        self.thread_it(self.load_csv_files(folder_path))
 
         # Add Select button to load the selected file
-        select_button = tk.Button(data_frame, text="Select", command=self.load_selected_file)
+        select_button = tk.Button(data_frame, text="Select", command=lambda: self.load_selected_file(folder_path))
+        select_button.pack(padx=10, pady=10)
+
+        # Treeview to display selected CSV data
+        self.tree = ttk.Treeview(data_frame)
+        self.tree.pack(expand=True, fill='both', padx=10, pady=10)
+    
+    def setup_uptodate_crime(self):
+        data_frame = tk.Frame(self.root)
+        self.frames["uptodate"] = data_frame
+
+        # Add Back button to return to the main frame
+        back_button = tk.Button(data_frame, text="Back", command=lambda: self.show_frame("main"))
+        back_button.pack(padx=10, pady=10)
+
+        # Add Listbox to select CSV file
+        self.file_listbox = tk.Listbox(data_frame, selectmode="single", height=10, width=50)
+        self.file_listbox.pack(padx=10, pady=10)
+
+        # Populate Listbox with CSV files in the directory
+        folder_path = './Crime_uptodate'
+        self.thread_it(self.load_csv_files(folder_path))
+
+        # Add Select button to load the selected file
+        select_button = tk.Button(data_frame, text="Select", command=lambda: self.load_selected_file(folder_path))
         select_button.pack(padx=10, pady=10)
 
         # Treeview to display selected CSV data
@@ -105,7 +144,7 @@ class Display:
         except Exception as e:
             tk.messagebox.showerror("Error", f"Failed to load files: {e}")
     
-    def load_selected_file(self):
+    def load_selected_file(self, folder_path):
         # Get the selected file from the Listbox
         selected_index = self.file_listbox.curselection()
         if not selected_index:
@@ -113,7 +152,6 @@ class Display:
             return
 
         selected_file = self.file_listbox.get(selected_index)
-        folder_path = './Crime2023EXCEL'
         file_path = os.path.join(folder_path, selected_file)
 
         try:
