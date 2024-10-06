@@ -9,8 +9,8 @@ from selenium.webdriver.common.by import By
 import time
 import csv
 
-filtered_data_path = './Crime_uptodate/filtered_data.csv'
-output_data_path = './Crime_uptodate/crime_info.csv'
+filtered_data_path = './Crime_uptodate/filtered_data_top.csv'
+output_data_path = './Crime_uptodate/crime_info_top.csv'
 
 with open(output_data_path, 'w') as f:
     writer = csv.writer(f)
@@ -21,6 +21,7 @@ df = pd.read_csv(filtered_data_path)
 
 
 latlong_list = df[['Latitude', 'Longitude']].drop_duplicates().values
+
 
 driver = webdriver.Chrome() 
 
