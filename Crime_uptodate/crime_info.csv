@@ -1,4 +1,5 @@
 Type,Date,Description,Address,Latitude,Longitude
+Vandalism,06/22/2024 12:10 AM,Property Damage ,"200 BLOCK OF CO RD 5, Worthington, MN",43.3971588,-94.81718028378953
 Theft,10/01/2024 11:20 AM,LARCENY FROM A M.V. - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"300 BLOCK OF EAST 2ND STREET, Maryville, MO",40.739141,-95.02719573469388
 Other,09/30/2024 3:04 PM,MISSING PERSON - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"100 BLOCK OF NORTH VINE, Maryville, MO",40.739141,-95.02719573469388
 Other,09/29/2024 2:32 PM,DOMESTIC DISTURBANCE - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"1700 BLOCK OF EAST 1ST STREET, Maryville, MO",40.739141,-95.02719573469388
@@ -39,10 +40,13 @@ Theft,08/25/2024 4:32 PM,LARCENY - THIS IS FROM THE MARYVILLE POLICE CALLS FOR S
 Arrest,08/25/2024 12:09 PM,DWI - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"100 BLOCK OF NORTH VINE, Maryville, MO",40.739141,-95.02719573469388
 Assault,08/25/2024 8:39 AM,SEXUAL ASSAULT - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"500 BLOCK OF EAST JENKINS, Maryville, MO",40.739141,-95.02719573469388
 Arrest,08/25/2024 3:06 AM,DWI - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"500 BLOCK OF WEST 4TH STREET, Maryville, MO",40.739141,-95.02719573469388
+Arrest,08/25/2024 12:38 AM,DWI - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"400 BLOCK OF EAST 1ST STREET, Maryville, MO",40.739141,-95.02719573469388
+Arrest,08/24/2024 1:56 AM,DWI - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"100 BLOCK OF WEST 4TH STREET, Maryville, MO",40.739141,-95.02719573469388
+Theft,08/23/2024 3:17 PM,LOST/STOLEN LICENSE PLATE - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"200 BLOCK OF EAST 3RD STREET, Maryville, MO",40.739141,-95.02719573469388
+Theft,08/18/2024 2:42 PM,LARCENY - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"600 BLOCK OF SOUTH MAIN, Maryville, MO",40.739141,-95.02719573469388
+Assault,08/18/2024 12:43 AM,ASSAULT - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"300 BLOCK OF EAST COOPER, Maryville, MO",40.739141,-95.02719573469388
 Theft,08/14/2024 10:58 PM,LARCENY - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"1600 BLOCK OF SOUTH MAIN, Maryville, MO",40.739141,-95.02719573469388
 Assault,08/12/2024 11:31 AM,HARASSMENT - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"1100 BLOCK OF NORTH COLLEGE AVENUE, Maryville, MO",40.739141,-95.02719573469388
-Arrest,08/10/2024 1:34 AM,DWI - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"23000 BLOCK OF NORTH U.S. BUSINESS HWY 71, Maryville, MO",40.739141,-95.02719573469388
-Assault,08/08/2024 11:43 AM,ASSAULT - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"2000 BLOCK OF SOUTH MAIN, Maryville, MO",40.739141,-95.02719573469388
 Assault,08/05/2024 10:03 AM,DOMESTIC ASSAULT - THIS IS FROM THE MARYVILLE POLICE CALLS FOR SERVICE. INFORMATION IS SUBJECT TO CHANGE.,"200 BLOCK OF VOLUNTEER AVENUE, Maryville, MO",40.739141,-95.02719573469388
 Shooting,04/14/2024 12:00 AM,A Report Of A Shooting.,"11000 BLOCK OF EAST 11TH STREET, Atlantic, IA",41.4038492244898,-95.01173408163264
 Other,10/04/2024 10:05 PM,ALL OTHER. Event #,"200 BLOCK OF COURT AVE, Des Moines, IA",41.58588195,-93.6330320492719
@@ -80,58 +84,18 @@ Other,10/01/2024 11:59 PM,Trespass of Real Property. Event #,"1200 BLOCK OF 6TH 
 Other,10/01/2024 11:45 PM,ALL OTHER. Event #,"900 BLOCK OF UNIVERSITY CT, Des Moines, IA",41.58588195,-93.6330320492719
 Arrest,10/01/2024 10:35 PM,Drug/Narcotic Violations. Event #,"1200 BLOCK OF 6TH AVE, Des Moines, IA",41.58588195,-93.6330320492719
 Other,10/01/2024 10:33 PM,ALL OTHER. Event #,"900 BLOCK OF UNIVERSITY CT, Des Moines, IA",41.58588195,-93.6330320492719
+Other,10/01/2024 8:10 PM,Drunkeness. Event #,"1200 BLOCK OF 6TH AVE, Des Moines, IA",41.58588195,-93.6330320492719
+Theft,10/01/2024 7:00 PM,Larceny All Other. Event #,"00 BLOCK OF GRAYS LAKE TRL, Des Moines, IA",41.58588195,-93.6330320492719
 Other,10/01/2024 4:50 PM,ALL OTHER. Event #,"1100 BLOCK OF 14TH ST, Des Moines, IA",41.58588195,-93.6330320492719
+Other,10/01/2024 3:51 PM,Drunkeness. Event #,"200 BLOCK OF 7TH ST, Des Moines, IA",41.58588195,-93.6330320492719
+Other,10/01/2024 3:08 PM,ALL OTHER. Event #,"1100 BLOCK OF GRAYS PKWY, Des Moines, IA",41.58588195,-93.6330320492719
 Theft,10/01/2024 2:21 PM,Larceny All Other. Event #,"400 BLOCK OF 14TH ST, Des Moines, IA",41.58588195,-93.6330320492719
 Other,10/01/2024 12:52 PM,ALL OTHER. Event #,"2100 BLOCK OF GRAND AVE, Des Moines, IA",41.58588195,-93.6330320492719
+Other,10/01/2024 10:10 AM,ALL OTHER. Event #,"100 BLOCK OF SE 1ST ST, Des Moines, IA",41.58588195,-93.6330320492719
 Other,10/01/2024 8:44 AM,ALL OTHER. Event #,"200 BLOCK OF SW 11TH ST, Des Moines, IA",41.58588195,-93.6330320492719
+Vandalism,10/01/2024 12:01 AM,Destruction/Damage/Vandalism of Property. Event #,"900 BLOCK OF SCHOOL ST, Des Moines, IA",41.58588195,-93.6330320492719
 Assault,09/30/2024 11:23 PM,Aggravated Assault. Event #,"1200 BLOCK OF 6TH AVE, Des Moines, IA",41.58588195,-93.6330320492719
+Assault,09/30/2024 8:07 PM,Simple Assault. Event #,"1000 BLOCK OF WALNUT ST, Des Moines, IA",41.58588195,-93.6330320492719
 Other,09/30/2024 7:45 PM,ALL OTHER. Event #,"1100 BLOCK OF 21ST ST, Des Moines, IA",41.58588195,-93.6330320492719
+Other,09/30/2024 4:56 PM,ALL OTHER. Event #,"1100 BLOCK OF 14TH ST, Des Moines, IA",41.58588195,-93.6330320492719
 Theft,09/30/2024 4:51 PM,Larceny All Other. Event #,"900 BLOCK OF SCHOOL ST, Des Moines, IA",41.58588195,-93.6330320492719
-Other,10/05/2024 3:15 AM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","6600 BLOCK OF COLLEGE PARK CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,10/05/2024 2:08 AM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Theft,10/04/2024 8:44 PM,"THEFT. This is from the Cedar Rapids police calls for service, information is subject to change.","200 BLOCK OF KIRKWOOD CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,10/03/2024 7:53 PM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF KIRKWOOD CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Assault,10/03/2024 7:08 PM,"INDECENC. This is from the Cedar Rapids police calls for service, information is subject to change.","6600 BLOCK OF KIRKWOOD BLVD SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Assault,10/03/2024 4:44 PM,"HARASSME. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,10/03/2024 1:47 PM,"TRESPASS. This is from the Cedar Rapids police calls for service, information is subject to change.","600 BLOCK OF MILLER AVENUE DR SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Arrest,10/03/2024 11:28 AM,"DRUGS. This is from the Cedar Rapids police calls for service, information is subject to change.","300 BLOCK OF 66TH AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,10/02/2024 4:31 PM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","6700 BLOCK OF COLLEGE PARK CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Burglary,10/02/2024 8:40 AM,"BURGLARY. This is from the Cedar Rapids police calls for service, information is subject to change.","6700 BLOCK OF J ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,10/02/2024 3:15 AM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","6800 BLOCK OF COLLEGE PARK CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/30/2024 11:08 PM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","300 BLOCK OF KIRKWOOD CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/30/2024 8:39 PM,"DOMESTIC. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/30/2024 8:09 PM,"TRESPASS. This is from the Cedar Rapids police calls for service, information is subject to change.","600 BLOCK OF KIRKWOOD PKWY SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Assault,09/30/2024 6:03 PM,"HARASSME. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/30/2024 2:11 PM,"DOMESTIC. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/30/2024 11:04 AM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","200 BLOCK OF MONMOUTH ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/30/2024 8:21 AM,"DOMESTIC. This is from the Cedar Rapids police calls for service, information is subject to change.","100 BLOCK OF KOHAWK ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/28/2024 11:38 PM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","6500 BLOCK OF OHIO ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/28/2024 11:07 PM,"MISSINGF. This is from the Cedar Rapids police calls for service, information is subject to change.","5400 BLOCK OF KIRKWOOD BLVD SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/28/2024 11:00 PM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Assault,09/28/2024 6:58 PM,"HARASSME. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF FLORIDA CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/27/2024 8:25 PM,"DOMESTIC. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Assault,09/27/2024 6:39 PM,"ASSAULT REPORT. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF FLORIDA CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Theft,09/27/2024 3:51 PM,"THEFT. This is from the Cedar Rapids police calls for service, information is subject to change.","100 BLOCK OF KIRKWOOD CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/27/2024 3:40 PM,"SUSPICIO. This is from the Cedar Rapids police calls for service, information is subject to change.","5300 BLOCK OF J ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Theft,09/27/2024 12:45 PM,"THEFT. This is from the Cedar Rapids police calls for service, information is subject to change.","5400 BLOCK OF KIRKWOOD BLVD SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/27/2024 10:54 AM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","5300 BLOCK OF KIRKWOOD BLVD SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Assault,09/26/2024 7:24 PM,"HARASSME. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/26/2024 6:36 PM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","6600 BLOCK OF COLLEGE PARK CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/26/2024 6:15 PM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","100 BLOCK OF PRAIRIE HAWK CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/26/2024 3:12 AM,"TRESPASS. This is from the Cedar Rapids police calls for service, information is subject to change.","6600 BLOCK OF KIRKWOOD BLVD SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/26/2024 12:12 AM,"SUSPICIO. This is from the Cedar Rapids police calls for service, information is subject to change.","5900 BLOCK OF 4TH ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Arrest,09/25/2024 5:07 PM,"WEAPONSF. This is from the Cedar Rapids police calls for service, information is subject to change.","100 BLOCK OF KOHAWK ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/25/2024 4:50 PM,"OTHER. This is from the Cedar Rapids police calls for service, information is subject to change.","TRANSAMERICA, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/25/2024 12:38 AM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","6600 BLOCK OF COLLEGE PARK CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/25/2024 12:06 AM,"SUSPICIO. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/24/2024 6:17 PM,"DOMESTIC. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF SIMPSON ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Theft,09/24/2024 2:13 PM,"THEFT. This is from the Cedar Rapids police calls for service, information is subject to change.","6700 BLOCK OF LINN VIEW PKWY SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/24/2024 1:30 AM,"TRESPASS. This is from the Cedar Rapids police calls for service, information is subject to change.","4400 BLOCK OF BOWLING ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Assault,09/23/2024 9:56 PM,"HARASSME. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Assault,09/23/2024 12:37 PM,"HARASSME. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF MILLER AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/23/2024 8:21 AM,"SUSPICIO. This is from the Cedar Rapids police calls for service, information is subject to change.","100 BLOCK OF FLORIDA AVE SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Theft,09/23/2024 12:56 AM,"THEFT. This is from the Cedar Rapids police calls for service, information is subject to change.","00 BLOCK OF KIRKWOOD CT SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/22/2024 4:21 PM,"DISTURBN. This is from the Cedar Rapids police calls for service, information is subject to change.","300 BLOCK OF ST OLAF ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/21/2024 10:54 PM,"DOMESTIC. This is from the Cedar Rapids police calls for service, information is subject to change.","5600 BLOCK OF VERMONT ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/21/2024 9:50 PM,"SUSPICIO. This is from the Cedar Rapids police calls for service, information is subject to change.","300 BLOCK OF ST OLAF ST SW, Cedar Rapids, IA",41.917456092587486,-91.656552
-Other,09/21/2024 9:15 PM,"TRESPASS. This is from the Cedar Rapids police calls for service, information is subject to change.","5500 BLOCK OF KIRKWOOD BLVD SW, Cedar Rapids, IA",41.917456092587486,-91.656552
