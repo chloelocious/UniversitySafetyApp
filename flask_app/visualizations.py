@@ -3,6 +3,7 @@ import pandas as pd
 import folium
 import plotly.express as px
 from folium.plugins import HeatMap
+import plotly.graph_objs as go
 
 # Ensure the static directory exists
 static_dir = 'flask_app/static'
@@ -175,6 +176,142 @@ def trend_analysis_over_time(df):
         height=500,
         width=800
     )
+    return fig.to_html(full_html=False)
+
+def clean_coordinates(df, column_name):
+    """
+    Removes non-numeric characters (e.g., degree symbols) from latitude and longitude columns.
+    """
+    df[column_name] = df[column_name].apply(lambda x: re.sub(r'[^\d.-]', '', str(x)))
+    df[column_name] = df[column_name].astype(float)
+    return df
+
+def plot_top_universities_crime_info():
+    """
+    Generates an interactive map with crime data for top universities using crime_info_top.csv.
+    """
+    crime_file_path = './Crime_uptodate/crime_info_top.csv'  # Path to crime data
+    university_file_path = './Crime_uptodate/filtered_data_top.csv'  # Path to university info
+    
+    # Load the CSV files
+    crime_df = pd.read_csv(crime_file_path)
+    university_df = pd.read_csv(university_file_path)
+
+    # Clean Latitude and Longitude columns
+    crime_df = clean_coordinates(crime_df, 'Latitude')
+    crime_df = clean_coordinates(crime_df, 'Longitude')
+    university_df = clean_coordinates(university_df, 'Latitude')
+    university_df = clean_coordinates(university_df, 'Longitude')
+
+    # Merge crime data with university data based on Latitude and Longitude
+    merged_df = pd.merge(crime_df, university_df, on=['Latitude', 'Longitude'], how='left')
+
+    # Initialize the map at a default location
+    crime_map = folium.Map(location=[39.8283, -98.5795], zoom_start=4)  # USA center
+    
+    # Add crime markers for top universities
+    for _, row in merged_df.iterrows():
+        university_name = row['INSTNM'] if pd.notna(row['INSTNM']) else 'Unknown University'
+        folium.Marker(
+            location=[row['Latitude'], row['Longitude']],
+            popup=(
+                f"<b>University:</b> {university_name}<br>"
+                f"<b>Crime Type:</b> {row['Type']}<br>"
+                f"<b>Description:</b> {row['Description']}"
+            ),
+            icon=folium.Icon(color='blue')
+        ).add_to(crime_map)
+
+    # Save the map
+    map_path = os.path.join(static_dir, 'crime_info_top_map.html')
+    crime_map.save(map_path)
+    return map_path
+
+def plot_trend_analysis_top():
+    """
+    Generates a bar chart showing the total number of crimes for top universities.
+    """
+    # Load the dataset
+    file_path = './Crime_uptodate/crime_info_top.csv'
+    df = pd.read_csv(file_path)
+
+    # Group by crime type and count occurrences
+    crime_counts = df['Type'].value_counts().reset_index()
+    crime_counts.columns = ['Crime Type', 'Number of Crimes']
+
+    # Create a bar chart
+    fig = px.bar(crime_counts, x='Crime Type', y='Number of Crimes', title='Crime Trend Analysis for Top Universities')
+    fig.update_layout(
+        xaxis_title='Crime Type',
+        yaxis_title='Number of Crimes',
+        height=500,
+        width=800
+    )
+
+    return fig.to_html(full_html=False)
+
+def plot_crime_distribution_top():
+    """
+    Generates a pie chart showing the distribution of crime categories for top universities.
+    """
+    # Load the dataset
+    file_path = './Crime_uptodate/crime_info_top.csv'
+    df = pd.read_csv(file_path)
+
+    # Group by crime type and count occurrences
+    crime_distribution = df['Type'].value_counts().reset_index()
+    crime_distribution.columns = ['Crime Type', 'Number of Crimes']
+
+    # Create a pie chart
+    fig = px.pie(crime_distribution, names='Crime Type', values='Number of Crimes', title='Crime Category Distribution for Top Universities')
+    fig.update_traces(textposition='inside', textinfo='percent+label')
+
+    return fig.to_html(full_html=False)
+
+def plot_crime_by_top_university():
+    """
+    Generates a bar chart showing the total number of crimes for each university,
+    with a slider to select a university.
+    """
+    # Load the datasets
+    crime_file_path = './Crime_uptodate/crime_info_top.csv'
+    university_file_path = './Crime_uptodate/filtered_data_top.csv'
+    
+    crime_df = pd.read_csv(crime_file_path)
+    university_df = pd.read_csv(university_file_path)
+    
+    # Clean Latitude and Longitude columns for both dataframes
+    crime_df = clean_coordinates(crime_df, 'Latitude')
+    crime_df = clean_coordinates(crime_df, 'Longitude')
+    university_df = clean_coordinates(university_df, 'Latitude')
+    university_df = clean_coordinates(university_df, 'Longitude')
+
+    # Merge the crime data with university data on Latitude and Longitude
+    merged_df = pd.merge(crime_df, university_df, on=['Latitude', 'Longitude'], how='left')
+
+    # Group data by university and crime type
+    crime_by_university = merged_df.groupby(['INSTNM', 'Type']).size().reset_index(name='Number of Crimes')
+
+    # Create the bar chart with a slider to filter by university
+    fig = px.bar(
+        crime_by_university,
+        x='Type', 
+        y='Number of Crimes', 
+        color='INSTNM',
+        title='Crimes by Top University (Slider)',
+        animation_frame='INSTNM',  # Slider changes based on selected university
+        height=500,
+        width=800
+    )
+    
+    # Adjust layout to avoid overlapping elements and remove dropdown
+    fig.update_layout(
+        xaxis_title='Crime Type',
+        yaxis_title='Number of Crimes',
+        margin=dict(l=50, r=50, t=100, b=50),  # Adjust margins to prevent overlap
+        height=600,  # Adjust height for better view
+    )
+    
     return fig.to_html(full_html=False)
 
 # Example usage in a Flask app:

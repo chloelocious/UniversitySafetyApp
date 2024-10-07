@@ -1,18 +1,23 @@
 from flask import Flask, render_template, send_from_directory
 import os
+import threading
 import pandas as pd
-from visualizations import plot_layered_crime_map, plot_crime_heatmap, plot_trend_analysis, plot_crime_distribution, trend_analysis_over_time
+from visualizations import plot_layered_crime_map, plot_crime_heatmap, plot_trend_analysis, plot_crime_distribution, trend_analysis_over_time, plot_top_universities_crime_info, plot_crime_distribution_top, plot_crime_by_top_university, clean_coordinates
+from crime_scrap import scrape_spotcrime
+from threading import Event
 
 app = Flask(__name__)
+scrape_thread = None
+stop_scraping_event = Event()
 
 # Define paths to your datasets
 file_paths = [
-    '/Users/chloelocious/Documents/GitHub/DataPython9588/UniversitySafetyApp/Crime2023EXCEL/filtered_geocoded_Oncampusarrest202122.csv',
-    '/Users/chloelocious/Documents/GitHub/DataPython9588/UniversitySafetyApp/Crime2023EXCEL/filtered_geocoded_Noncampuscrime202122.csv',
-    '/Users/chloelocious/Documents/GitHub/DataPython9588/UniversitySafetyApp/Crime2023EXCEL/filtered_geocoded_Publicpropertycrime202122.csv',
+    '/Crime2023EXCEL/filtered_geocoded_Oncampusarrest202122.csv',
+    '/Crime2023EXCEL/filtered_geocoded_Noncampuscrime202122.csv',
+    '/Crime2023EXCEL/filtered_geocoded_Publicpropertycrime202122.csv',
 ]
 
-crime_info_path = '/Users/chloelocious/Documents/GitHub/DataPython9588/UniversitySafetyApp/Crime_uptodate/crime_info.csv'
+crime_info_path = '/Crime_uptodate/crime_info.csv'
 
 
 static_dir = 'static'
@@ -54,6 +59,103 @@ def crime_distribution():
     distribution_html = plot_crime_distribution(df)
     return render_template('visualization.html', chart_html=distribution_html, title="Crime Category Distribution")
 
+@app.route('/crime_map_top')
+def crime_map_top():
+    crime_map_path = plot_top_universities_crime_info()  # Correct function for top universities map
+    return render_template('map.html', map_file=os.path.basename(crime_map_path))
+
+# Route for Crime by University with Dropdown
+@app.route('/trend_analysis_top')
+def trend_analysis_top():
+    trend_analysis_html = plot_crime_by_top_university()
+    return render_template('visualization.html', chart_html=trend_analysis_html, title="Crimes by Top Universities")
+
+@app.route('/crime_distribution_top')
+def crime_distribution_top():
+    crime_distribution_html = plot_crime_distribution_top()
+    return render_template('visualization.html', chart_html=crime_distribution_html, title="Crime Category Distribution of Top Universities")
+
+
+@app.route('/raw_data')
+def display_raw_data_all():
+    """
+    Displays raw data for all universities in a table format.
+    """
+    # Load the dataset for all universities
+    all_universities_file = './Crime_uptodate/crime_info.csv'
+    df = pd.read_csv(all_universities_file)
+
+    # Convert the DataFrame to HTML table
+    table_html = df.to_html(index=False, classes='table table-striped')
+
+    # Render the raw data in a template
+    return render_template('raw_data.html', table=table_html, title="Raw Data: All Universities")
+
+@app.route('/raw_data_top')
+def display_raw_data_top():
+    """
+    Displays raw data for top universities in a table format, including university names.
+    """
+    # Load the datasets
+    crime_file = './Crime_uptodate/crime_info_top.csv'
+    university_file = './Crime_uptodate/filtered_data_top.csv'
+    print(os.path.exists(crime_file))  # Should return True if the file exists
+
+    crime_df = pd.read_csv(crime_file)
+    university_df = pd.read_csv(university_file)
+    print(crime_df.head())  # Ensure the data is loaded correctly
+
+    # Clean the Latitude and Longitude columns in both datasets
+    crime_df = clean_coordinates(crime_df, 'Latitude')
+    crime_df = clean_coordinates(crime_df, 'Longitude')
+    university_df = clean_coordinates(university_df, 'Latitude')
+    university_df = clean_coordinates(university_df, 'Longitude')
+    
+    print(crime_df.head())
+    print(university_df.head())
+    print("Crime Data Shape:", crime_df.shape)
+    print("University Data Shape:", university_df.shape)
+
+    # Merge on Latitude and Longitude to include university names
+    merged_df = pd.merge(crime_df, university_df, on=['Latitude', 'Longitude'], how='left')
+
+    # Debugging: print the first few rows to see if the merge worked
+    print(merged_df.head())
+
+    # Check if merged_df is empty
+    if merged_df.empty:
+        print("The merged DataFrame is empty!")
+
+    # Convert the merged DataFrame to an HTML table
+    table_html = merged_df.to_html(index=False, classes='table table-striped')
+
+    # Render the raw data in a template
+    return render_template('raw_data.html', table=table_html, title="Raw Data: Top Universities")
+
+@app.route('/scrape_spotcrime')
+def scrape_spotcrime_route():
+    global scrape_thread, stop_scraping_event
+
+    # Reset the stop event in case it was set before
+    stop_scraping_event.clear()
+
+    # Start the scraping in a background thread
+    scrape_thread = threading.Thread(target=scrape_spotcrime)
+    scrape_thread.start()
+
+    # Inform the user that scraping has started
+    return render_template('scrape_status.html', message="SpotCrime data scraping has started.")
+
+@app.route('/stop_scraping')
+def stop_scraping():
+    global stop_scraping_event
+
+    # Set the stop flag to signal the thread to stop
+    stop_scraping_event.set()
+
+    # Inform the user that scraping will stop
+    return render_template('scrape_status.html', message="SpotCrime data scraping is stopping...")
+    
 # Route to serve static files (like crime_map.html, heatmap.html)
 @app.route('/static/<path:filename>')
 def serve_static(filename):

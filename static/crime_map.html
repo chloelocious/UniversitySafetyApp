@@ -1,0 +1,4230 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_b6347e817ad4fb33cb10997d2c466591 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_b6347e817ad4fb33cb10997d2c466591" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_b6347e817ad4fb33cb10997d2c466591 = L.map(
+                "map_b6347e817ad4fb33cb10997d2c466591",
+                {
+                    center: [36.50230672820781, -97.08009942161229],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_ed02f9c75e2d88f05f200808f4606f80 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_ed02f9c75e2d88f05f200808f4606f80.addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var marker_4d31a608b1bb46cfc6868ebbb82be93b = L.marker(
+                [34.719816, -86.582288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_6b66e7a525248876b5177d2e2a7049ec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4d31a608b1bb46cfc6868ebbb82be93b.setIcon(icon_6b66e7a525248876b5177d2e2a7049ec);
+        
+    
+        var popup_28fc41d5246cf0fb0cf4bddc98fc1598 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_95e69ba4af4eb065c3b91f3b94c41b5f = $(`<div id="html_95e69ba4af4eb065c3b91f3b94c41b5f" style="width: 100.0%; height: 100.0%;">University of Alabama at Birmingham - Crime Type: 1</div>`)[0];
+                popup_28fc41d5246cf0fb0cf4bddc98fc1598.setContent(html_95e69ba4af4eb065c3b91f3b94c41b5f);
+            
+        
+
+        marker_4d31a608b1bb46cfc6868ebbb82be93b.bindPopup(popup_28fc41d5246cf0fb0cf4bddc98fc1598)
+        ;
+
+        
+    
+    
+            var marker_2eb131f67b5a1aa1842e00e4196397d7 = L.marker(
+                [34.7189363, -86.6374919],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_e80204ecd37bb650fe52ffd2c8b83206 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2eb131f67b5a1aa1842e00e4196397d7.setIcon(icon_e80204ecd37bb650fe52ffd2c8b83206);
+        
+    
+        var popup_61658fca29e0b77fce41789819c62fc1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_052386929ce3e5b3d60817b38e940114 = $(`<div id="html_052386929ce3e5b3d60817b38e940114" style="width: 100.0%; height: 100.0%;">University of Alabama in Huntsville - Crime Type: 1</div>`)[0];
+                popup_61658fca29e0b77fce41789819c62fc1.setContent(html_052386929ce3e5b3d60817b38e940114);
+            
+        
+
+        marker_2eb131f67b5a1aa1842e00e4196397d7.bindPopup(popup_61658fca29e0b77fce41789819c62fc1)
+        ;
+
+        
+    
+    
+            var marker_3001a181fc4e84d15150cfb55adfb1f4 = L.marker(
+                [32.92499278830759, -85.94800050868906],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_3a50dda3e73fec3807509af14553c7bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3001a181fc4e84d15150cfb55adfb1f4.setIcon(icon_3a50dda3e73fec3807509af14553c7bf);
+        
+    
+        var popup_980680453ed20e8ef8750f090002df5e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ae5013c1f68a9e0232699c6f49a53c8f = $(`<div id="html_ae5013c1f68a9e0232699c6f49a53c8f" style="width: 100.0%; height: 100.0%;">Central Alabama Community College - Crime Type: 1</div>`)[0];
+                popup_980680453ed20e8ef8750f090002df5e.setContent(html_ae5013c1f68a9e0232699c6f49a53c8f);
+            
+        
+
+        marker_3001a181fc4e84d15150cfb55adfb1f4.bindPopup(popup_980680453ed20e8ef8750f090002df5e)
+        ;
+
+        
+    
+    
+            var marker_42fd18903df8c30ca23fa6884fcadb28 = L.marker(
+                [33.43526, -86.086606],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_3649450e02521fe049e988bf7a8e22ab = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_42fd18903df8c30ca23fa6884fcadb28.setIcon(icon_3649450e02521fe049e988bf7a8e22ab);
+        
+    
+        var popup_2e7ea87a76f32c448846fd836c203472 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_739527077acefc737e1d59b89d63308a = $(`<div id="html_739527077acefc737e1d59b89d63308a" style="width: 100.0%; height: 100.0%;">Central Alabama Community College - Crime Type: 1</div>`)[0];
+                popup_2e7ea87a76f32c448846fd836c203472.setContent(html_739527077acefc737e1d59b89d63308a);
+            
+        
+
+        marker_42fd18903df8c30ca23fa6884fcadb28.bindPopup(popup_2e7ea87a76f32c448846fd836c203472)
+        ;
+
+        
+    
+    
+            var marker_960c0440f43f930779998f9e6a12eb01 = L.marker(
+                [32.503367519277106, -86.42768109953543],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_2aff5bb9338323f10e3add10bb5192d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_960c0440f43f930779998f9e6a12eb01.setIcon(icon_2aff5bb9338323f10e3add10bb5192d8);
+        
+    
+        var popup_b1d018c2cc83e83376ef165f19dc93bb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a44f5643d380f629ab4b9cb3f48bd398 = $(`<div id="html_a44f5643d380f629ab4b9cb3f48bd398" style="width: 100.0%; height: 100.0%;">Central Alabama Community College - Crime Type: 1</div>`)[0];
+                popup_b1d018c2cc83e83376ef165f19dc93bb.setContent(html_a44f5643d380f629ab4b9cb3f48bd398);
+            
+        
+
+        marker_960c0440f43f930779998f9e6a12eb01.bindPopup(popup_b1d018c2cc83e83376ef165f19dc93bb)
+        ;
+
+        
+    
+    
+            var marker_27a8b5bfb2af19bcecac093c0cdc8b65 = L.marker(
+                [34.8060684, -86.9651364291035],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_419b32377770ef3706603d87df857420 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_27a8b5bfb2af19bcecac093c0cdc8b65.setIcon(icon_419b32377770ef3706603d87df857420);
+        
+    
+        var popup_15131f6f8b94c89804f2f1eaca8596b0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3abc3d690d3b6da5b0da7c0bb4c46b76 = $(`<div id="html_3abc3d690d3b6da5b0da7c0bb4c46b76" style="width: 100.0%; height: 100.0%;">Athens State University - Crime Type: 1</div>`)[0];
+                popup_15131f6f8b94c89804f2f1eaca8596b0.setContent(html_3abc3d690d3b6da5b0da7c0bb4c46b76);
+            
+        
+
+        marker_27a8b5bfb2af19bcecac093c0cdc8b65.bindPopup(popup_15131f6f8b94c89804f2f1eaca8596b0)
+        ;
+
+        
+    
+    
+            var marker_2ef586bdcfa1a4ddf239ea29d3957e1c = L.marker(
+                [32.60471105, -85.48279062089341],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0b95e247c4783b5108db4728f7c6c82d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2ef586bdcfa1a4ddf239ea29d3957e1c.setIcon(icon_0b95e247c4783b5108db4728f7c6c82d);
+        
+    
+        var popup_5752d8467043d3e3b1b69b87113d64f7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c8657b5d7699511a07890419d7f1197c = $(`<div id="html_c8657b5d7699511a07890419d7f1197c" style="width: 100.0%; height: 100.0%;">Auburn University - Crime Type: 1</div>`)[0];
+                popup_5752d8467043d3e3b1b69b87113d64f7.setContent(html_c8657b5d7699511a07890419d7f1197c);
+            
+        
+
+        marker_2ef586bdcfa1a4ddf239ea29d3957e1c.bindPopup(popup_5752d8467043d3e3b1b69b87113d64f7)
+        ;
+
+        
+    
+    
+            var marker_533248923553239d67c06614e7a49170 = L.marker(
+                [46.3144754, 11.0480288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_80adbc90786a4f47e58da6312e7332c9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_533248923553239d67c06614e7a49170.setIcon(icon_80adbc90786a4f47e58da6312e7332c9);
+        
+    
+        var popup_528c6989d050022810cd2865bd4c9342 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8f69e6a555fab2da2a013be4476bdc14 = $(`<div id="html_8f69e6a555fab2da2a013be4476bdc14" style="width: 100.0%; height: 100.0%;">Auburn University - Crime Type: 1</div>`)[0];
+                popup_528c6989d050022810cd2865bd4c9342.setContent(html_8f69e6a555fab2da2a013be4476bdc14);
+            
+        
+
+        marker_533248923553239d67c06614e7a49170.bindPopup(popup_528c6989d050022810cd2865bd4c9342)
+        ;
+
+        
+    
+    
+            var marker_f0538a048ad5b23768e53e486ca686ef = L.marker(
+                [33.51647889795918, -86.81774108163265],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_25c6c42bcec129b9ab1f3f068b5510d4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f0538a048ad5b23768e53e486ca686ef.setIcon(icon_25c6c42bcec129b9ab1f3f068b5510d4);
+        
+    
+        var popup_fff0f87f83cf80db3ad8aef68bd821d3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_daebd78e52e95901d79a6037f36d8cf0 = $(`<div id="html_daebd78e52e95901d79a6037f36d8cf0" style="width: 100.0%; height: 100.0%;">Auburn University - Crime Type: 1</div>`)[0];
+                popup_fff0f87f83cf80db3ad8aef68bd821d3.setContent(html_daebd78e52e95901d79a6037f36d8cf0);
+            
+        
+
+        marker_f0538a048ad5b23768e53e486ca686ef.bindPopup(popup_fff0f87f83cf80db3ad8aef68bd821d3)
+        ;
+
+        
+    
+    
+            var marker_a48ebe20e1de46205b7f8dc9549c3a90 = L.marker(
+                [32.6118107, -85.43694166226194],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_dc8bffa97bcf9e01562fe4d0fac71a85 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a48ebe20e1de46205b7f8dc9549c3a90.setIcon(icon_dc8bffa97bcf9e01562fe4d0fac71a85);
+        
+    
+        var popup_49f44363fab166f655e148d7c6c8f262 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f0882f4c8dfdfc3ebf0e830b1e966a2c = $(`<div id="html_f0882f4c8dfdfc3ebf0e830b1e966a2c" style="width: 100.0%; height: 100.0%;">Auburn University - Crime Type: 1</div>`)[0];
+                popup_49f44363fab166f655e148d7c6c8f262.setContent(html_f0882f4c8dfdfc3ebf0e830b1e966a2c);
+            
+        
+
+        marker_a48ebe20e1de46205b7f8dc9549c3a90.bindPopup(popup_49f44363fab166f655e148d7c6c8f262)
+        ;
+
+        
+    
+    
+            var marker_945abc3cbe0844bbe8b645f9c436ba04 = L.marker(
+                [32.6074533, -85.4817293],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_56b182d22586d7924827c91a9a25ce98 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_945abc3cbe0844bbe8b645f9c436ba04.setIcon(icon_56b182d22586d7924827c91a9a25ce98);
+        
+    
+        var popup_27bc202c3dabf03007342f09c2dd5671 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6f99059753623758cf285f74a13e9eb9 = $(`<div id="html_6f99059753623758cf285f74a13e9eb9" style="width: 100.0%; height: 100.0%;">Auburn University - Crime Type: 1</div>`)[0];
+                popup_27bc202c3dabf03007342f09c2dd5671.setContent(html_6f99059753623758cf285f74a13e9eb9);
+            
+        
+
+        marker_945abc3cbe0844bbe8b645f9c436ba04.bindPopup(popup_27bc202c3dabf03007342f09c2dd5671)
+        ;
+
+        
+    
+    
+            var marker_b1bb8dd81624178b3d78b6822c145e84 = L.marker(
+                [32.68249, -85.508237],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_ee0f10392547bf916c916d3f06d2ccaf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b1bb8dd81624178b3d78b6822c145e84.setIcon(icon_ee0f10392547bf916c916d3f06d2ccaf);
+        
+    
+        var popup_da99e5d8d9b6067761d95f6eda4053f9 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_19ba52c2a3b276d99d6f056f1b3c8474 = $(`<div id="html_19ba52c2a3b276d99d6f056f1b3c8474" style="width: 100.0%; height: 100.0%;">Auburn University - Crime Type: 1</div>`)[0];
+                popup_da99e5d8d9b6067761d95f6eda4053f9.setContent(html_19ba52c2a3b276d99d6f056f1b3c8474);
+            
+        
+
+        marker_b1bb8dd81624178b3d78b6822c145e84.bindPopup(popup_da99e5d8d9b6067761d95f6eda4053f9)
+        ;
+
+        
+    
+    
+            var marker_7b40c545b5eb4df997e6899b66f01b24 = L.marker(
+                [32.37701195446968, -86.29956028153293],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_ca432cb160a2d71ab52f627ea4580fb0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7b40c545b5eb4df997e6899b66f01b24.setIcon(icon_ca432cb160a2d71ab52f627ea4580fb0);
+        
+    
+        var popup_ee6626fa62fb8911dc7c180e133a99a4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e98fefdfce70887d29f7294f65cb763 = $(`<div id="html_8e98fefdfce70887d29f7294f65cb763" style="width: 100.0%; height: 100.0%;">Auburn University - Crime Type: 1</div>`)[0];
+                popup_ee6626fa62fb8911dc7c180e133a99a4.setContent(html_8e98fefdfce70887d29f7294f65cb763);
+            
+        
+
+        marker_7b40c545b5eb4df997e6899b66f01b24.bindPopup(popup_ee6626fa62fb8911dc7c180e133a99a4)
+        ;
+
+        
+    
+    
+            var marker_51845aac0ff7e972adcaadfdbb90b64f = L.marker(
+                [33.51559418367347, -86.80628208163265],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f4a183bdf419af99adb3e0674b464d1a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_51845aac0ff7e972adcaadfdbb90b64f.setIcon(icon_f4a183bdf419af99adb3e0674b464d1a);
+        
+    
+        var popup_f262859831711cf6cbb19612b7cbe956 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a591319ae8c8f1dd0b8dedb6171c8505 = $(`<div id="html_a591319ae8c8f1dd0b8dedb6171c8505" style="width: 100.0%; height: 100.0%;">Auburn University - Crime Type: 1</div>`)[0];
+                popup_f262859831711cf6cbb19612b7cbe956.setContent(html_a591319ae8c8f1dd0b8dedb6171c8505);
+            
+        
+
+        marker_51845aac0ff7e972adcaadfdbb90b64f.bindPopup(popup_f262859831711cf6cbb19612b7cbe956)
+        ;
+
+        
+    
+    
+            var marker_1ff89b4448686694a739fdad97c3a028 = L.marker(
+                [30.689823, -88.045395],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_02a1700a98b799e3d1292dbe2810e549 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1ff89b4448686694a739fdad97c3a028.setIcon(icon_02a1700a98b799e3d1292dbe2810e549);
+        
+    
+        var popup_70214657c832c52a4c5fcfa730a2dd3d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_05ad066665b59441bd5a270225c7b4e3 = $(`<div id="html_05ad066665b59441bd5a270225c7b4e3" style="width: 100.0%; height: 100.0%;">Auburn University - Crime Type: 1</div>`)[0];
+                popup_70214657c832c52a4c5fcfa730a2dd3d.setContent(html_05ad066665b59441bd5a270225c7b4e3);
+            
+        
+
+        marker_1ff89b4448686694a739fdad97c3a028.bindPopup(popup_70214657c832c52a4c5fcfa730a2dd3d)
+        ;
+
+        
+    
+    
+            var marker_2ebef8483ffc4662d42a039dbfcfb126 = L.marker(
+                [33.51316, -86.849416],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_cf9360f5be97c5e52e5ab7fb950a1be0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2ebef8483ffc4662d42a039dbfcfb126.setIcon(icon_cf9360f5be97c5e52e5ab7fb950a1be0);
+        
+    
+        var popup_b5713c79520dfe8ef5aabbee1ca24ea4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_149032c5ea7794e648a79198f762831c = $(`<div id="html_149032c5ea7794e648a79198f762831c" style="width: 100.0%; height: 100.0%;">Birmingham-Southern College - Crime Type: 1</div>`)[0];
+                popup_b5713c79520dfe8ef5aabbee1ca24ea4.setContent(html_149032c5ea7794e648a79198f762831c);
+            
+        
+
+        marker_2ebef8483ffc4662d42a039dbfcfb126.bindPopup(popup_b5713c79520dfe8ef5aabbee1ca24ea4)
+        ;
+
+        
+    
+    
+            var marker_b6d7fa5606bd2c45c8d0d865818c8f65 = L.marker(
+                [32.42909295818755, -85.0294945283175],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_c519a67ab4eca46a80c3ebe4a562902d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b6d7fa5606bd2c45c8d0d865818c8f65.setIcon(icon_c519a67ab4eca46a80c3ebe4a562902d);
+        
+    
+        var popup_276342bea19e3fd3a26da4d26800319b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9a721b741b7262e2f3fccd93b5acd0f9 = $(`<div id="html_9a721b741b7262e2f3fccd93b5acd0f9" style="width: 100.0%; height: 100.0%;">Chattahoochee Valley Community College - Crime Type: 1</div>`)[0];
+                popup_276342bea19e3fd3a26da4d26800319b.setContent(html_9a721b741b7262e2f3fccd93b5acd0f9);
+            
+        
+
+        marker_b6d7fa5606bd2c45c8d0d865818c8f65.bindPopup(popup_276342bea19e3fd3a26da4d26800319b)
+        ;
+
+        
+    
+    
+            var marker_3005fe206ec5928d4daec7ab8767c947 = L.marker(
+                [30.52295481632653, -87.90253659183674],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_4aff0b7d304476e450e06a83356363ac = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3005fe206ec5928d4daec7ab8767c947.setIcon(icon_4aff0b7d304476e450e06a83356363ac);
+        
+    
+        var popup_f7a6fbe33382d5f139c2a37f6b498b96 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7e54366b6816242e5ad40c3074d64634 = $(`<div id="html_7e54366b6816242e5ad40c3074d64634" style="width: 100.0%; height: 100.0%;">Coastal Alabama Community College - Crime Type: 1</div>`)[0];
+                popup_f7a6fbe33382d5f139c2a37f6b498b96.setContent(html_7e54366b6816242e5ad40c3074d64634);
+            
+        
+
+        marker_3005fe206ec5928d4daec7ab8767c947.bindPopup(popup_f7a6fbe33382d5f139c2a37f6b498b96)
+        ;
+
+        
+    
+    
+            var marker_752b6441f4fba4bc2616f6b5b24daf47 = L.marker(
+                [30.298169, -87.683249],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_a6f14122c8f1cca2539ddd8da6b41507 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_752b6441f4fba4bc2616f6b5b24daf47.setIcon(icon_a6f14122c8f1cca2539ddd8da6b41507);
+        
+    
+        var popup_2949ab083c0bacc0db0d89737ff7cf03 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9f4c1031714c71264913298e6792771 = $(`<div id="html_b9f4c1031714c71264913298e6792771" style="width: 100.0%; height: 100.0%;">Coastal Alabama Community College - Crime Type: 1</div>`)[0];
+                popup_2949ab083c0bacc0db0d89737ff7cf03.setContent(html_b9f4c1031714c71264913298e6792771);
+            
+        
+
+        marker_752b6441f4fba4bc2616f6b5b24daf47.bindPopup(popup_2949ab083c0bacc0db0d89737ff7cf03)
+        ;
+
+        
+    
+    
+            var marker_1695ba06854d06ff38b8f7f34a4cde44 = L.marker(
+                [31.1022138, -87.0862756],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f6d11dbe65ea7b4bb8a1fa5a37954c8c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1695ba06854d06ff38b8f7f34a4cde44.setIcon(icon_f6d11dbe65ea7b4bb8a1fa5a37954c8c);
+        
+    
+        var popup_8c964b7caf2ef8cd94463bd35acc1a7e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d25a399cf959fa16bc01e0da889cce28 = $(`<div id="html_d25a399cf959fa16bc01e0da889cce28" style="width: 100.0%; height: 100.0%;">Coastal Alabama Community College - Crime Type: 1</div>`)[0];
+                popup_8c964b7caf2ef8cd94463bd35acc1a7e.setContent(html_d25a399cf959fa16bc01e0da889cce28);
+            
+        
+
+        marker_1695ba06854d06ff38b8f7f34a4cde44.bindPopup(popup_8c964b7caf2ef8cd94463bd35acc1a7e)
+        ;
+
+        
+    
+    
+            var marker_a6f779e40d6f2d27743f061c46b55c18 = L.marker(
+                [31.871155783434947, -88.31555331214356],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_39b69e1ee9503f693f024e202e952a20 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a6f779e40d6f2d27743f061c46b55c18.setIcon(icon_39b69e1ee9503f693f024e202e952a20);
+        
+    
+        var popup_9038608425a4828f7aa2728d297278dd = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_14932751951aa79db95da5260b1bd126 = $(`<div id="html_14932751951aa79db95da5260b1bd126" style="width: 100.0%; height: 100.0%;">Coastal Alabama Community College - Crime Type: 1</div>`)[0];
+                popup_9038608425a4828f7aa2728d297278dd.setContent(html_14932751951aa79db95da5260b1bd126);
+            
+        
+
+        marker_a6f779e40d6f2d27743f061c46b55c18.bindPopup(popup_9038608425a4828f7aa2728d297278dd)
+        ;
+
+        
+    
+    
+            var marker_14987de3e37bb8f3d5eafad01ae97988 = L.marker(
+                [31.51269939177683, -87.89395789138472],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_4e573ca2964a7fe49d828363c74503d4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_14987de3e37bb8f3d5eafad01ae97988.setIcon(icon_4e573ca2964a7fe49d828363c74503d4);
+        
+    
+        var popup_79a51b36d05e0adde952ae3994f6dff8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9f8f87f344737e01b86b9d07b9399b63 = $(`<div id="html_9f8f87f344737e01b86b9d07b9399b63" style="width: 100.0%; height: 100.0%;">Coastal Alabama Community College - Crime Type: 1</div>`)[0];
+                popup_79a51b36d05e0adde952ae3994f6dff8.setContent(html_9f8f87f344737e01b86b9d07b9399b63);
+            
+        
+
+        marker_14987de3e37bb8f3d5eafad01ae97988.bindPopup(popup_79a51b36d05e0adde952ae3994f6dff8)
+        ;
+
+        
+    
+    
+            var marker_9319b99aa8a454c31ca49a4b955a09db = L.marker(
+                [34.277689385322724, -86.19718984818755],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_763377edd4cdf2400bcb7a17f1e8d2c6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9319b99aa8a454c31ca49a4b955a09db.setIcon(icon_763377edd4cdf2400bcb7a17f1e8d2c6);
+        
+    
+        var popup_5af687e43d4bcd8573ad4ebfff5ecbfc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ea67f97d8bd6cee63424004d8f2717a2 = $(`<div id="html_ea67f97d8bd6cee63424004d8f2717a2" style="width: 100.0%; height: 100.0%;">New Beginning College of Cosmetology - Crime Type: 1</div>`)[0];
+                popup_5af687e43d4bcd8573ad4ebfff5ecbfc.setContent(html_ea67f97d8bd6cee63424004d8f2717a2);
+            
+        
+
+        marker_9319b99aa8a454c31ca49a4b955a09db.bindPopup(popup_5af687e43d4bcd8573ad4ebfff5ecbfc)
+        ;
+
+        
+    
+    
+            var marker_08c2817a487be8773ef29e4a1512dbc0 = L.marker(
+                [31.836367648380993, -85.16581350219484],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_104a091c7f33cdc33e1ae66511db9503 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_08c2817a487be8773ef29e4a1512dbc0.setIcon(icon_104a091c7f33cdc33e1ae66511db9503);
+        
+    
+        var popup_2bc85785e594fd596e865ecb5e783491 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_22d0b8ce340c59b9821cff01a78d9754 = $(`<div id="html_22d0b8ce340c59b9821cff01a78d9754" style="width: 100.0%; height: 100.0%;">George C Wallace Community College-Dothan - Crime Type: 1</div>`)[0];
+                popup_2bc85785e594fd596e865ecb5e783491.setContent(html_22d0b8ce340c59b9821cff01a78d9754);
+            
+        
+
+        marker_08c2817a487be8773ef29e4a1512dbc0.bindPopup(popup_2bc85785e594fd596e865ecb5e783491)
+        ;
+
+        
+    
+    
+            var marker_6e70ec9aac7e04c080d05368229223d7 = L.marker(
+                [33.470972, -86.824393],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_9f1f86cb65817777f37e1f845442d807 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6e70ec9aac7e04c080d05368229223d7.setIcon(icon_9f1f86cb65817777f37e1f845442d807);
+        
+    
+        var popup_4d8bfd1ab656de8f87dfaee8eece54ac = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_538ec4bc92eca6b4c7f1bcf18ff3cf61 = $(`<div id="html_538ec4bc92eca6b4c7f1bcf18ff3cf61" style="width: 100.0%; height: 100.0%;">Herzing University-Birmingham - Crime Type: 1</div>`)[0];
+                popup_4d8bfd1ab656de8f87dfaee8eece54ac.setContent(html_538ec4bc92eca6b4c7f1bcf18ff3cf61);
+            
+        
+
+        marker_6e70ec9aac7e04c080d05368229223d7.bindPopup(popup_4d8bfd1ab656de8f87dfaee8eece54ac)
+        ;
+
+        
+    
+    
+            var marker_754032bbe18ac3e44aed68f7bc443e86 = L.marker(
+                [32.58234417810123, -86.39108807967892],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_bee9d30fe60ecdc290f38ff5dbede1c5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_754032bbe18ac3e44aed68f7bc443e86.setIcon(icon_bee9d30fe60ecdc290f38ff5dbede1c5);
+        
+    
+        var popup_8df1de1390a7316e19f96e36896db41a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b0640e94574d1c7b0b04e0b1ca56df4c = $(`<div id="html_b0640e94574d1c7b0b04e0b1ca56df4c" style="width: 100.0%; height: 100.0%;">J F Ingram State Technical College - Crime Type: 1</div>`)[0];
+                popup_8df1de1390a7316e19f96e36896db41a.setContent(html_b0640e94574d1c7b0b04e0b1ca56df4c);
+            
+        
+
+        marker_754032bbe18ac3e44aed68f7bc443e86.bindPopup(popup_8df1de1390a7316e19f96e36896db41a)
+        ;
+
+        
+    
+    
+            var marker_1c938862c62ad568c2c3606ce459cdd5 = L.marker(
+                [33.8249359, -85.76410953844884],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_c498a0e46eec79eb6e91d61a52f971d9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1c938862c62ad568c2c3606ce459cdd5.setIcon(icon_c498a0e46eec79eb6e91d61a52f971d9);
+        
+    
+        var popup_f61d5e4fc90a54e26cb7473bdfbcee97 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_738de7933afebfa07f95419e657c562c = $(`<div id="html_738de7933afebfa07f95419e657c562c" style="width: 100.0%; height: 100.0%;">Jacksonville State University - Crime Type: 1</div>`)[0];
+                popup_f61d5e4fc90a54e26cb7473bdfbcee97.setContent(html_738de7933afebfa07f95419e657c562c);
+            
+        
+
+        marker_1c938862c62ad568c2c3606ce459cdd5.bindPopup(popup_f61d5e4fc90a54e26cb7473bdfbcee97)
+        ;
+
+        
+    
+    
+            var marker_44a37d259bbbddc8807a90b638d446c3 = L.marker(
+                [34.74228919127517, -86.65280794966442],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_813c62c1de45e22a9573a3345f6994c0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_44a37d259bbbddc8807a90b638d446c3.setIcon(icon_813c62c1de45e22a9573a3345f6994c0);
+        
+    
+        var popup_9086aa66c656156ff4f1a90bb78054d6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3d46763c4c996d7d27d9b92cc6836dc5 = $(`<div id="html_3d46763c4c996d7d27d9b92cc6836dc5" style="width: 100.0%; height: 100.0%;">John C Calhoun State Community College - Crime Type: 1</div>`)[0];
+                popup_9086aa66c656156ff4f1a90bb78054d6.setContent(html_3d46763c4c996d7d27d9b92cc6836dc5);
+            
+        
+
+        marker_44a37d259bbbddc8807a90b638d446c3.bindPopup(popup_9086aa66c656156ff4f1a90bb78054d6)
+        ;
+
+        
+    
+    
+            var marker_9e4c2f517a2790b09b82219b8d530983 = L.marker(
+                [34.605282849999995, -86.98576441887928],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_018795d45b272f1649c6c1d521fb9802 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9e4c2f517a2790b09b82219b8d530983.setIcon(icon_018795d45b272f1649c6c1d521fb9802);
+        
+    
+        var popup_1322faaec65b399a4f1c912142e6cd69 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1f6a2d919c5dd0df2fd3057b059d4c55 = $(`<div id="html_1f6a2d919c5dd0df2fd3057b059d4c55" style="width: 100.0%; height: 100.0%;">John C Calhoun State Community College - Crime Type: 1</div>`)[0];
+                popup_1322faaec65b399a4f1c912142e6cd69.setContent(html_1f6a2d919c5dd0df2fd3057b059d4c55);
+            
+        
+
+        marker_9e4c2f517a2790b09b82219b8d530983.bindPopup(popup_1322faaec65b399a4f1c912142e6cd69)
+        ;
+
+        
+    
+    
+            var marker_a8df57e34df562a360173fa5b61cb942 = L.marker(
+                [31.305505424573397, -86.25512649244057],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0164b63585243496f23c284cb59b628f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a8df57e34df562a360173fa5b61cb942.setIcon(icon_0164b63585243496f23c284cb59b628f);
+        
+    
+        var popup_53ce166a66eb4bb1f7152cea0d9b6289 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ef133150cf1190c995ef921f472301e8 = $(`<div id="html_ef133150cf1190c995ef921f472301e8" style="width: 100.0%; height: 100.0%;">Lurleen B Wallace Community College - Crime Type: 1</div>`)[0];
+                popup_53ce166a66eb4bb1f7152cea0d9b6289.setContent(html_ef133150cf1190c995ef921f472301e8);
+            
+        
+
+        marker_a8df57e34df562a360173fa5b61cb942.bindPopup(popup_53ce166a66eb4bb1f7152cea0d9b6289)
+        ;
+
+        
+    
+    
+            var marker_a31b91df6363bc630f267848827d5cc3 = L.marker(
+                [31.84753844897959, -86.62682687755103],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_9d08634b8b3be5fc03be6bd759c4dfb0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a31b91df6363bc630f267848827d5cc3.setIcon(icon_9d08634b8b3be5fc03be6bd759c4dfb0);
+        
+    
+        var popup_5bdeaff80341e75037d8b343ede81c12 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a0aa7c71314c820697f0b4e5a567bf47 = $(`<div id="html_a0aa7c71314c820697f0b4e5a567bf47" style="width: 100.0%; height: 100.0%;">Lurleen B Wallace Community College - Crime Type: 1</div>`)[0];
+                popup_5bdeaff80341e75037d8b343ede81c12.setContent(html_a0aa7c71314c820697f0b4e5a567bf47);
+            
+        
+
+        marker_a31b91df6363bc630f267848827d5cc3.bindPopup(popup_5bdeaff80341e75037d8b343ede81c12)
+        ;
+
+        
+    
+    
+            var marker_ab5f8a1f6990a83d4f748e39cf76a2d6 = L.marker(
+                [32.624483048686194, -87.31833324165258],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f9ca3b6f472d8c1a90b31cb61d23dba1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ab5f8a1f6990a83d4f748e39cf76a2d6.setIcon(icon_f9ca3b6f472d8c1a90b31cb61d23dba1);
+        
+    
+        var popup_f78b11e957515049297fa6eac56e4b1b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b80791127187bcdca11486a68f9f4cc5 = $(`<div id="html_b80791127187bcdca11486a68f9f4cc5" style="width: 100.0%; height: 100.0%;">Marion Military Institute - Crime Type: 1</div>`)[0];
+                popup_f78b11e957515049297fa6eac56e4b1b.setContent(html_b80791127187bcdca11486a68f9f4cc5);
+            
+        
+
+        marker_ab5f8a1f6990a83d4f748e39cf76a2d6.bindPopup(popup_f78b11e957515049297fa6eac56e4b1b)
+        ;
+
+        
+    
+    
+            var marker_862ac3bed3965dc146a98d19d9ce5cfc = L.marker(
+                [33.48109865, -86.90911015439585],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_fb3e0dbe0ee72755720733910eba462e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_862ac3bed3965dc146a98d19d9ce5cfc.setIcon(icon_fb3e0dbe0ee72755720733910eba462e);
+        
+    
+        var popup_6eb15335cf748842043097135432b9ff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_59f4269f4c9f0adaa6e99bc29a393dcb = $(`<div id="html_59f4269f4c9f0adaa6e99bc29a393dcb" style="width: 100.0%; height: 100.0%;">Miles College - Crime Type: 1</div>`)[0];
+                popup_6eb15335cf748842043097135432b9ff.setContent(html_59f4269f4c9f0adaa6e99bc29a393dcb);
+            
+        
+
+        marker_862ac3bed3965dc146a98d19d9ce5cfc.bindPopup(popup_6eb15335cf748842043097135432b9ff)
+        ;
+
+        
+    
+    
+            var marker_301ee76352b87406a47eaa4a5c2563fc = L.marker(
+                [34.740338, -87.6775438],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_1414d2308e5822deb6698794b4b1b6de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_301ee76352b87406a47eaa4a5c2563fc.setIcon(icon_1414d2308e5822deb6698794b4b1b6de);
+        
+    
+        var popup_89b459f7681b358dabc3d743f45bf38a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1021b7a426cdd6db1a005901ff057b9b = $(`<div id="html_1021b7a426cdd6db1a005901ff057b9b" style="width: 100.0%; height: 100.0%;">Northwest-Shoals Community College - Crime Type: 1</div>`)[0];
+                popup_89b459f7681b358dabc3d743f45bf38a.setContent(html_1021b7a426cdd6db1a005901ff057b9b);
+            
+        
+
+        marker_301ee76352b87406a47eaa4a5c2563fc.bindPopup(popup_89b459f7681b358dabc3d743f45bf38a)
+        ;
+
+        
+    
+    
+            var marker_a263dcd720c6c706805ac6744dbdd4e4 = L.marker(
+                [34.343733400000005, -87.7309114205456],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_abd796bb67849acaa682aaf8ddfb1c0b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a263dcd720c6c706805ac6744dbdd4e4.setIcon(icon_abd796bb67849acaa682aaf8ddfb1c0b);
+        
+    
+        var popup_1f41caee7f5049777296c03781d67eee = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_929fd2b7829830ce01da27de8ac3056c = $(`<div id="html_929fd2b7829830ce01da27de8ac3056c" style="width: 100.0%; height: 100.0%;">Northwest-Shoals Community College - Crime Type: 1</div>`)[0];
+                popup_1f41caee7f5049777296c03781d67eee.setContent(html_929fd2b7829830ce01da27de8ac3056c);
+            
+        
+
+        marker_a263dcd720c6c706805ac6744dbdd4e4.bindPopup(popup_1f41caee7f5049777296c03781d67eee)
+        ;
+
+        
+    
+    
+            var marker_f6fcabc71b9f6d7def96c17277f85313 = L.marker(
+                [34.821231049999994, -87.65919046495817],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_94dd9670b96319f23fe48bc3d7fc4e6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f6fcabc71b9f6d7def96c17277f85313.setIcon(icon_94dd9670b96319f23fe48bc3d7fc4e6e);
+        
+    
+        var popup_c873ba6ba8f41480e3273d33c0afca74 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c6d9aae419a6b3265c3fd3ae99e1e5b2 = $(`<div id="html_c6d9aae419a6b3265c3fd3ae99e1e5b2" style="width: 100.0%; height: 100.0%;">University of North Alabama - Crime Type: 1</div>`)[0];
+                popup_c873ba6ba8f41480e3273d33c0afca74.setContent(html_c6d9aae419a6b3265c3fd3ae99e1e5b2);
+            
+        
+
+        marker_f6fcabc71b9f6d7def96c17277f85313.bindPopup(popup_c873ba6ba8f41480e3273d33c0afca74)
+        ;
+
+        
+    
+    
+            var marker_a5771e419aa53b9f81e25f553530aae0 = L.marker(
+                [30.7009136, -88.09299702012882],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_615c67899a5c93a5e5b866f1557128ec = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a5771e419aa53b9f81e25f553530aae0.setIcon(icon_615c67899a5c93a5e5b866f1557128ec);
+        
+    
+        var popup_0a0eded2092164ee89569c708525703e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7f3c114edc1450f3dc7eb25f65042390 = $(`<div id="html_7f3c114edc1450f3dc7eb25f65042390" style="width: 100.0%; height: 100.0%;">Bishop State Community College - Crime Type: 1</div>`)[0];
+                popup_0a0eded2092164ee89569c708525703e.setContent(html_7f3c114edc1450f3dc7eb25f65042390);
+            
+        
+
+        marker_a5771e419aa53b9f81e25f553530aae0.bindPopup(popup_0a0eded2092164ee89569c708525703e)
+        ;
+
+        
+    
+    
+            var marker_f0ffa59694cf2b673f91a1e8d327e450 = L.marker(
+                [30.66194864, -88.08836808],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_8b2eda16d007cd677185e6bb81dee59a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f0ffa59694cf2b673f91a1e8d327e450.setIcon(icon_8b2eda16d007cd677185e6bb81dee59a);
+        
+    
+        var popup_50334e26509e7af3e974b1ab0145d847 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_202fae29d53e82fa1a53833289ce1a16 = $(`<div id="html_202fae29d53e82fa1a53833289ce1a16" style="width: 100.0%; height: 100.0%;">Bishop State Community College - Crime Type: 1</div>`)[0];
+                popup_50334e26509e7af3e974b1ab0145d847.setContent(html_202fae29d53e82fa1a53833289ce1a16);
+            
+        
+
+        marker_f0ffa59694cf2b673f91a1e8d327e450.bindPopup(popup_50334e26509e7af3e974b1ab0145d847)
+        ;
+
+        
+    
+    
+            var marker_2c76990f03be4210b236117fa6ed1335 = L.marker(
+                [46.3144754, 11.0480288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_8f27a8404f5139a81246e75662003af1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2c76990f03be4210b236117fa6ed1335.setIcon(icon_8f27a8404f5139a81246e75662003af1);
+        
+    
+        var popup_ff37f228e35eba3325fd84a36929fb43 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d37d9e1b0bf36e9670494d1ffc7e9435 = $(`<div id="html_d37d9e1b0bf36e9670494d1ffc7e9435" style="width: 100.0%; height: 100.0%;">Samford University - Crime Type: 1</div>`)[0];
+                popup_ff37f228e35eba3325fd84a36929fb43.setContent(html_d37d9e1b0bf36e9670494d1ffc7e9435);
+            
+        
+
+        marker_2c76990f03be4210b236117fa6ed1335.bindPopup(popup_ff37f228e35eba3325fd84a36929fb43)
+        ;
+
+        
+    
+    
+            var marker_68f13c76875b5c258ad7fcb42e3ca922 = L.marker(
+                [33.069772, -87.564326],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_1bcdccd0a1c720d832b3f040b32c37b8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_68f13c76875b5c258ad7fcb42e3ca922.setIcon(icon_1bcdccd0a1c720d832b3f040b32c37b8);
+        
+    
+        var popup_40a44baa9c38c0c25fcf9b34a096f964 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e1e658a354bbe2491d8b101a87d92d9 = $(`<div id="html_8e1e658a354bbe2491d8b101a87d92d9" style="width: 100.0%; height: 100.0%;">Shelton State Community College - Crime Type: 1</div>`)[0];
+                popup_40a44baa9c38c0c25fcf9b34a096f964.setContent(html_8e1e658a354bbe2491d8b101a87d92d9);
+            
+        
+
+        marker_68f13c76875b5c258ad7fcb42e3ca922.bindPopup(popup_40a44baa9c38c0c25fcf9b34a096f964)
+        ;
+
+        
+    
+    
+            var marker_a03880650c6bf57395add17284e80ebe = L.marker(
+                [33.200947, -87.58328633873036],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_d8a193d7e9b85f8f76df2e767b8c8464 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a03880650c6bf57395add17284e80ebe.setIcon(icon_d8a193d7e9b85f8f76df2e767b8c8464);
+        
+    
+        var popup_4c9c336798fc5975d234c9e33a75e759 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_88a816116d58a7196e19643972d1db5c = $(`<div id="html_88a816116d58a7196e19643972d1db5c" style="width: 100.0%; height: 100.0%;">Stillman College - Crime Type: 1</div>`)[0];
+                popup_4c9c336798fc5975d234c9e33a75e759.setContent(html_88a816116d58a7196e19643972d1db5c);
+            
+        
+
+        marker_a03880650c6bf57395add17284e80ebe.bindPopup(popup_4c9c336798fc5975d234c9e33a75e759)
+        ;
+
+        
+    
+    
+            var marker_d42d73e128db17128b4219d07128e71f = L.marker(
+                [32.423549, -85.029837],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_42d031074b8f797c69d35253e5e1df45 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d42d73e128db17128b4219d07128e71f.setIcon(icon_42d031074b8f797c69d35253e5e1df45);
+        
+    
+        var popup_b1366eb2854063fcf965d1b22be798c3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d949c76c6c1df7db8b0337bfc658bda3 = $(`<div id="html_d949c76c6c1df7db8b0337bfc658bda3" style="width: 100.0%; height: 100.0%;">Troy University - Crime Type: 1</div>`)[0];
+                popup_b1366eb2854063fcf965d1b22be798c3.setContent(html_d949c76c6c1df7db8b0337bfc658bda3);
+            
+        
+
+        marker_d42d73e128db17128b4219d07128e71f.bindPopup(popup_b1366eb2854063fcf965d1b22be798c3)
+        ;
+
+        
+    
+    
+            var marker_ce5bc8ad26530901800c6d9b909924d2 = L.marker(
+                [33.483719592124665, -82.08583673874499],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_d4ad4ac224b3026bee43faa9624e3bdd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ce5bc8ad26530901800c6d9b909924d2.setIcon(icon_d4ad4ac224b3026bee43faa9624e3bdd);
+        
+    
+        var popup_d4d686c33ba344c5525d2cb467fff97d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b57f2d94abeda9008071588cbc735f35 = $(`<div id="html_b57f2d94abeda9008071588cbc735f35" style="width: 100.0%; height: 100.0%;">Troy University - Crime Type: 1</div>`)[0];
+                popup_d4d686c33ba344c5525d2cb467fff97d.setContent(html_b57f2d94abeda9008071588cbc735f35);
+            
+        
+
+        marker_ce5bc8ad26530901800c6d9b909924d2.bindPopup(popup_d4d686c33ba344c5525d2cb467fff97d)
+        ;
+
+        
+    
+    
+            var marker_b7a3bb29eae69b44f24879999f323fc0 = L.marker(
+                [33.483719592124665, -82.08583673874499],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_abe483a5a51cc46c40bf60126a7496b2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b7a3bb29eae69b44f24879999f323fc0.setIcon(icon_abe483a5a51cc46c40bf60126a7496b2);
+        
+    
+        var popup_25e7c53b1a6d7d48aedb316bb96354d1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_355e052f7698397a3e7f8e85fea29334 = $(`<div id="html_355e052f7698397a3e7f8e85fea29334" style="width: 100.0%; height: 100.0%;">Troy University - Crime Type: 1</div>`)[0];
+                popup_25e7c53b1a6d7d48aedb316bb96354d1.setContent(html_355e052f7698397a3e7f8e85fea29334);
+            
+        
+
+        marker_b7a3bb29eae69b44f24879999f323fc0.bindPopup(popup_25e7c53b1a6d7d48aedb316bb96354d1)
+        ;
+
+        
+    
+    
+            var marker_445e08b9c8444d75afcd31b0dc02ce5f = L.marker(
+                [33.837373618700575, -87.26492467508099],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0a96bf6b0efc203fb6f203c96969cae4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_445e08b9c8444d75afcd31b0dc02ce5f.setIcon(icon_0a96bf6b0efc203fb6f203c96969cae4);
+        
+    
+        var popup_f94a981d3a3fe7e05340b11b162fb586 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_489649f9f8eb99f44bb922412081b238 = $(`<div id="html_489649f9f8eb99f44bb922412081b238" style="width: 100.0%; height: 100.0%;">Bevill State Community College - Crime Type: 1</div>`)[0];
+                popup_f94a981d3a3fe7e05340b11b162fb586.setContent(html_489649f9f8eb99f44bb922412081b238);
+            
+        
+
+        marker_445e08b9c8444d75afcd31b0dc02ce5f.bindPopup(popup_f94a981d3a3fe7e05340b11b162fb586)
+        ;
+
+        
+    
+    
+            var marker_36c39ddcf753057c72a85ceaf8b755a0 = L.marker(
+                [33.750576, -87.049616],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_7273695fc89e8dce1d1ba2162eb7f4bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_36c39ddcf753057c72a85ceaf8b755a0.setIcon(icon_7273695fc89e8dce1d1ba2162eb7f4bb);
+        
+    
+        var popup_c57ac2a58dd2a35207bc24465cfe4b0c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e7134ddb5841c191f8394908af55f6dc = $(`<div id="html_e7134ddb5841c191f8394908af55f6dc" style="width: 100.0%; height: 100.0%;">Bevill State Community College - Crime Type: 1</div>`)[0];
+                popup_c57ac2a58dd2a35207bc24465cfe4b0c.setContent(html_e7134ddb5841c191f8394908af55f6dc);
+            
+        
+
+        marker_36c39ddcf753057c72a85ceaf8b755a0.bindPopup(popup_c57ac2a58dd2a35207bc24465cfe4b0c)
+        ;
+
+        
+    
+    
+            var marker_8b7cde9287ebf0985c934e6049555fc3 = L.marker(
+                [33.72584195, -87.81840246008414],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_9978dff8b5c057a52c6c290227cb2979 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8b7cde9287ebf0985c934e6049555fc3.setIcon(icon_9978dff8b5c057a52c6c290227cb2979);
+        
+    
+        var popup_b49975d22a088320863670c0ca8c2a17 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_30404bee05e057371217c3edf4e0fb7f = $(`<div id="html_30404bee05e057371217c3edf4e0fb7f" style="width: 100.0%; height: 100.0%;">Bevill State Community College - Crime Type: 1</div>`)[0];
+                popup_b49975d22a088320863670c0ca8c2a17.setContent(html_30404bee05e057371217c3edf4e0fb7f);
+            
+        
+
+        marker_8b7cde9287ebf0985c934e6049555fc3.bindPopup(popup_b49975d22a088320863670c0ca8c2a17)
+        ;
+
+        
+    
+    
+            var marker_d70323747183b23f3e74677715503e5d = L.marker(
+                [34.124918040816326, -87.98984287755103],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0ea7c950b39fc2c1928cd0bd088a9c40 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d70323747183b23f3e74677715503e5d.setIcon(icon_0ea7c950b39fc2c1928cd0bd088a9c40);
+        
+    
+        var popup_6a8ab6ca705d3b19204ce3be840b9a54 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b2bc8f94b29dd61c504df3c59bd6ca7e = $(`<div id="html_b2bc8f94b29dd61c504df3c59bd6ca7e" style="width: 100.0%; height: 100.0%;">Bevill State Community College - Crime Type: 1</div>`)[0];
+                popup_6a8ab6ca705d3b19204ce3be840b9a54.setContent(html_b2bc8f94b29dd61c504df3c59bd6ca7e);
+            
+        
+
+        marker_d70323747183b23f3e74677715503e5d.bindPopup(popup_6a8ab6ca705d3b19204ce3be840b9a54)
+        ;
+
+        
+    
+    
+            var marker_bb43536ee2da62f0248205745216d6fa = L.marker(
+                [61.1886082, -149.8379308],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_5313a6ad75e6e10805c541e9b6d93bc3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_bb43536ee2da62f0248205745216d6fa.setIcon(icon_5313a6ad75e6e10805c541e9b6d93bc3);
+        
+    
+        var popup_2349583d7d8c6a6a477733ecef6804b3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e3f529c8bcf576d4c67d04091941d56b = $(`<div id="html_e3f529c8bcf576d4c67d04091941d56b" style="width: 100.0%; height: 100.0%;">University of Alaska Anchorage - Crime Type: 1</div>`)[0];
+                popup_2349583d7d8c6a6a477733ecef6804b3.setContent(html_e3f529c8bcf576d4c67d04091941d56b);
+            
+        
+
+        marker_bb43536ee2da62f0248205745216d6fa.bindPopup(popup_2349583d7d8c6a6a477733ecef6804b3)
+        ;
+
+        
+    
+    
+            var marker_15c6b81e1808ee72dd5c1f40520332b3 = L.marker(
+                [60.4877764, -151.1306665],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_ecc8467b08a2e84ab21ad53c840abe02 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_15c6b81e1808ee72dd5c1f40520332b3.setIcon(icon_ecc8467b08a2e84ab21ad53c840abe02);
+        
+    
+        var popup_7c0d56ba79047ca56dbf0608a10218af = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a4bfe751b252eb1a80ace776eb6e39da = $(`<div id="html_a4bfe751b252eb1a80ace776eb6e39da" style="width: 100.0%; height: 100.0%;">University of Alaska Anchorage - Crime Type: 1</div>`)[0];
+                popup_7c0d56ba79047ca56dbf0608a10218af.setContent(html_a4bfe751b252eb1a80ace776eb6e39da);
+            
+        
+
+        marker_15c6b81e1808ee72dd5c1f40520332b3.bindPopup(popup_7c0d56ba79047ca56dbf0608a10218af)
+        ;
+
+        
+    
+    
+            var marker_7169e461046798e52b9bde6dd52a2a41 = L.marker(
+                [57.80763565274534, -152.36767328260467],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f78aa6bb8f8426850ef92bfbb7b7ef7b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7169e461046798e52b9bde6dd52a2a41.setIcon(icon_f78aa6bb8f8426850ef92bfbb7b7ef7b);
+        
+    
+        var popup_51cf6eca7e820e622a3bf5a7ed47eed5 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_12186946aed726eb5396289ab30b8c0a = $(`<div id="html_12186946aed726eb5396289ab30b8c0a" style="width: 100.0%; height: 100.0%;">University of Alaska Anchorage - Crime Type: 1</div>`)[0];
+                popup_51cf6eca7e820e622a3bf5a7ed47eed5.setContent(html_12186946aed726eb5396289ab30b8c0a);
+            
+        
+
+        marker_7169e461046798e52b9bde6dd52a2a41.bindPopup(popup_51cf6eca7e820e622a3bf5a7ed47eed5)
+        ;
+
+        
+    
+    
+            var marker_c0ce50c0506a9fcdc08b066667603399 = L.marker(
+                [61.134274, -146.3554715],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_add34ec3f3e7e78f1d952d4137c1d710 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c0ce50c0506a9fcdc08b066667603399.setIcon(icon_add34ec3f3e7e78f1d952d4137c1d710);
+        
+    
+        var popup_a69be12d5280923307124a469af49ffa = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1d05b71ddbec0ec82a8e21724a95c243 = $(`<div id="html_1d05b71ddbec0ec82a8e21724a95c243" style="width: 100.0%; height: 100.0%;">University of Alaska Anchorage - Crime Type: 1</div>`)[0];
+                popup_a69be12d5280923307124a469af49ffa.setContent(html_1d05b71ddbec0ec82a8e21724a95c243);
+            
+        
+
+        marker_c0ce50c0506a9fcdc08b066667603399.bindPopup(popup_a69be12d5280923307124a469af49ffa)
+        ;
+
+        
+    
+    
+            var marker_df2e7a77ffbb641e8cdcabfde4b3c1db = L.marker(
+                [61.2146716, -149.82978793698513],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_79fe761e8de9d9890d71f2226891cbbc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_df2e7a77ffbb641e8cdcabfde4b3c1db.setIcon(icon_79fe761e8de9d9890d71f2226891cbbc);
+        
+    
+        var popup_7226b29c4e8967efc3479a09a12d0c82 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1b4636e11ee15dd324d1e809ee7467b3 = $(`<div id="html_1b4636e11ee15dd324d1e809ee7467b3" style="width: 100.0%; height: 100.0%;">University of Alaska Anchorage - Crime Type: 1</div>`)[0];
+                popup_7226b29c4e8967efc3479a09a12d0c82.setContent(html_1b4636e11ee15dd324d1e809ee7467b3);
+            
+        
+
+        marker_df2e7a77ffbb641e8cdcabfde4b3c1db.bindPopup(popup_7226b29c4e8967efc3479a09a12d0c82)
+        ;
+
+        
+    
+    
+            var marker_5064b34ead11b09849d523042ac2a3a9 = L.marker(
+                [61.5984652, -149.1116399896245],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_7e1bd01a41b6fc93551fa1b0440cdd5e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5064b34ead11b09849d523042ac2a3a9.setIcon(icon_7e1bd01a41b6fc93551fa1b0440cdd5e);
+        
+    
+        var popup_e0e5de891b0fde1c641b40d57d0acf76 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4c13b5e692ca2a1464719b2526497164 = $(`<div id="html_4c13b5e692ca2a1464719b2526497164" style="width: 100.0%; height: 100.0%;">Alaska Bible College - Crime Type: 1</div>`)[0];
+                popup_e0e5de891b0fde1c641b40d57d0acf76.setContent(html_4c13b5e692ca2a1464719b2526497164);
+            
+        
+
+        marker_5064b34ead11b09849d523042ac2a3a9.bindPopup(popup_e0e5de891b0fde1c641b40d57d0acf76)
+        ;
+
+        
+    
+    
+            var marker_8686fca4cbfa38abe002ccd5c54b0986 = L.marker(
+                [64.841012, -147.72648485515396],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_90435747e25f9c46c8a49da2fd34e57f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8686fca4cbfa38abe002ccd5c54b0986.setIcon(icon_90435747e25f9c46c8a49da2fd34e57f);
+        
+    
+        var popup_6010e504e4229040870cb71677641df2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7a10438fc918a805f2ddb5e33d1161b6 = $(`<div id="html_7a10438fc918a805f2ddb5e33d1161b6" style="width: 100.0%; height: 100.0%;">University of Alaska Fairbanks - Crime Type: 1</div>`)[0];
+                popup_6010e504e4229040870cb71677641df2.setContent(html_7a10438fc918a805f2ddb5e33d1161b6);
+            
+        
+
+        marker_8686fca4cbfa38abe002ccd5c54b0986.bindPopup(popup_6010e504e4229040870cb71677641df2)
+        ;
+
+        
+    
+    
+            var marker_c796dbcf656cf1fb858d611ac8e1fbcf = L.marker(
+                [58.39233645, -134.64781229447976],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_5acfee89a4a01dd3fa33a4dcd366ec6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c796dbcf656cf1fb858d611ac8e1fbcf.setIcon(icon_5acfee89a4a01dd3fa33a4dcd366ec6e);
+        
+    
+        var popup_6edf846c775680ec8a95e4c26bc66d38 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_259cf29d6dea27edec6ea341c63fd565 = $(`<div id="html_259cf29d6dea27edec6ea341c63fd565" style="width: 100.0%; height: 100.0%;">University of Alaska Southeast - Crime Type: 1</div>`)[0];
+                popup_6edf846c775680ec8a95e4c26bc66d38.setContent(html_259cf29d6dea27edec6ea341c63fd565);
+            
+        
+
+        marker_c796dbcf656cf1fb858d611ac8e1fbcf.bindPopup(popup_6edf846c775680ec8a95e4c26bc66d38)
+        ;
+
+        
+    
+    
+            var marker_92ad53cec0648511d2893f03ceef5051 = L.marker(
+                [55.355043, -131.67732],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f740f7b23d426b9bfdfb95640a85b517 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_92ad53cec0648511d2893f03ceef5051.setIcon(icon_f740f7b23d426b9bfdfb95640a85b517);
+        
+    
+        var popup_5f6344a697156db36a91b0494b3ac77c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7fb78137991627380b28cc7fc4a2a2eb = $(`<div id="html_7fb78137991627380b28cc7fc4a2a2eb" style="width: 100.0%; height: 100.0%;">University of Alaska Southeast - Crime Type: 1</div>`)[0];
+                popup_5f6344a697156db36a91b0494b3ac77c.setContent(html_7fb78137991627380b28cc7fc4a2a2eb);
+            
+        
+
+        marker_92ad53cec0648511d2893f03ceef5051.bindPopup(popup_5f6344a697156db36a91b0494b3ac77c)
+        ;
+
+        
+    
+    
+            var marker_2be3bbbf9860ba259b28562638e97f18 = L.marker(
+                [57.0518743, -135.35182773935085],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_181c4bf44933b821c5f1204da68033df = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2be3bbbf9860ba259b28562638e97f18.setIcon(icon_181c4bf44933b821c5f1204da68033df);
+        
+    
+        var popup_863b89616525c1e7883235b06c1ec4cf = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_801ada4633c50583d32d09ee69ef7787 = $(`<div id="html_801ada4633c50583d32d09ee69ef7787" style="width: 100.0%; height: 100.0%;">University of Alaska Southeast - Crime Type: 1</div>`)[0];
+                popup_863b89616525c1e7883235b06c1ec4cf.setContent(html_801ada4633c50583d32d09ee69ef7787);
+            
+        
+
+        marker_2be3bbbf9860ba259b28562638e97f18.bindPopup(popup_863b89616525c1e7883235b06c1ec4cf)
+        ;
+
+        
+    
+    
+            var marker_9d980f3f34c18be708aa7f68656a5b8a = L.marker(
+                [61.1888471, -149.8098437],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_762acbd59a4644b024304026e46a0490 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9d980f3f34c18be708aa7f68656a5b8a.setIcon(icon_762acbd59a4644b024304026e46a0490);
+        
+    
+        var popup_23817b4160551cb22a6a830dce082327 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5ead346dc241bc70ea5005fabf5fc2b1 = $(`<div id="html_5ead346dc241bc70ea5005fabf5fc2b1" style="width: 100.0%; height: 100.0%;">Alaska Pacific University - Crime Type: 1</div>`)[0];
+                popup_23817b4160551cb22a6a830dce082327.setContent(html_5ead346dc241bc70ea5005fabf5fc2b1);
+            
+        
+
+        marker_9d980f3f34c18be708aa7f68656a5b8a.bindPopup(popup_23817b4160551cb22a6a830dce082327)
+        ;
+
+        
+    
+    
+            var marker_ca8765fc3d0116fe1971562b4569824f = L.marker(
+                [61.58160406963239, -149.46973556181135],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_13a468d9ccbaf8ddafa408884c97bcfc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ca8765fc3d0116fe1971562b4569824f.setIcon(icon_13a468d9ccbaf8ddafa408884c97bcfc);
+        
+    
+        var popup_354d4486ed47a202f3de20e5f3ce1303 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_18cf91b9a0a1c41f55eba1aafa9522b7 = $(`<div id="html_18cf91b9a0a1c41f55eba1aafa9522b7" style="width: 100.0%; height: 100.0%;">Charter College - Crime Type: 1</div>`)[0];
+                popup_354d4486ed47a202f3de20e5f3ce1303.setContent(html_18cf91b9a0a1c41f55eba1aafa9522b7);
+            
+        
+
+        marker_ca8765fc3d0116fe1971562b4569824f.bindPopup(popup_354d4486ed47a202f3de20e5f3ce1303)
+        ;
+
+        
+    
+    
+            var marker_b070101c111515b3f40dd71abe00b060 = L.marker(
+                [34.41562770499582, -118.46837538626562],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_b427690b9d2a960cb65ed974414920c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b070101c111515b3f40dd71abe00b060.setIcon(icon_b427690b9d2a960cb65ed974414920c1);
+        
+    
+        var popup_dcaab7792c552a7723d4f16756451613 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_18dde70df798c50bf2c0a31a19db495d = $(`<div id="html_18dde70df798c50bf2c0a31a19db495d" style="width: 100.0%; height: 100.0%;">Charter College - Crime Type: 1</div>`)[0];
+                popup_dcaab7792c552a7723d4f16756451613.setContent(html_18dde70df798c50bf2c0a31a19db495d);
+            
+        
+
+        marker_b070101c111515b3f40dd71abe00b060.bindPopup(popup_dcaab7792c552a7723d4f16756451613)
+        ;
+
+        
+    
+    
+            var marker_efbe7522dfc0d24dfd4b2785e912502b = L.marker(
+                [46.8481798, -114.0188489],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_5de00c1612be03d93f583b0985a255ea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_efbe7522dfc0d24dfd4b2785e912502b.setIcon(icon_5de00c1612be03d93f583b0985a255ea);
+        
+    
+        var popup_2833ed59707f29919f6e46a09f7461c8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4192e708a092180b9f376b8e11352968 = $(`<div id="html_4192e708a092180b9f376b8e11352968" style="width: 100.0%; height: 100.0%;">Charter College - Crime Type: 1</div>`)[0];
+                popup_2833ed59707f29919f6e46a09f7461c8.setContent(html_4192e708a092180b9f376b8e11352968);
+            
+        
+
+        marker_efbe7522dfc0d24dfd4b2785e912502b.bindPopup(popup_2833ed59707f29919f6e46a09f7461c8)
+        ;
+
+        
+    
+    
+            var marker_6d4f9ab0c0e66c40af528f0e3abf265f = L.marker(
+                [36.74819232601845, -108.1655325506016],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_6c5dc582f530df22997968a882c4f304 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6d4f9ab0c0e66c40af528f0e3abf265f.setIcon(icon_6c5dc582f530df22997968a882c4f304);
+        
+    
+        var popup_e46cb6360949e9114c45bdaf7aeabb1b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_403e3e62d26231402353e70bf3f03b2e = $(`<div id="html_403e3e62d26231402353e70bf3f03b2e" style="width: 100.0%; height: 100.0%;">Charter College - Crime Type: 1</div>`)[0];
+                popup_e46cb6360949e9114c45bdaf7aeabb1b.setContent(html_403e3e62d26231402353e70bf3f03b2e);
+            
+        
+
+        marker_6d4f9ab0c0e66c40af528f0e3abf265f.bindPopup(popup_e46cb6360949e9114c45bdaf7aeabb1b)
+        ;
+
+        
+    
+    
+            var marker_c79667b99d0b1ce55e10e2e87e965712 = L.marker(
+                [32.23592846938776, -110.9276684489796],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_c23d3eb56521c9c173ed62437cdd1af8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c79667b99d0b1ce55e10e2e87e965712.setIcon(icon_c23d3eb56521c9c173ed62437cdd1af8);
+        
+    
+        var popup_8fc9dce5cdb6383e590bcf63a0b7b0e7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_99906278f4fbb2258ead6e13bac8b34a = $(`<div id="html_99906278f4fbb2258ead6e13bac8b34a" style="width: 100.0%; height: 100.0%;">Empire Beauty School-Tucson - Crime Type: 1</div>`)[0];
+                popup_8fc9dce5cdb6383e590bcf63a0b7b0e7.setContent(html_99906278f4fbb2258ead6e13bac8b34a);
+            
+        
+
+        marker_c79667b99d0b1ce55e10e2e87e965712.bindPopup(popup_8fc9dce5cdb6383e590bcf63a0b7b0e7)
+        ;
+
+        
+    
+    
+            var marker_9b08eb317c1a2087d2e47068274267a2 = L.marker(
+                [33.5659811, -112.10427322655894],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_b0a40169f0fafc105c8b12905d1e3849 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_9b08eb317c1a2087d2e47068274267a2.setIcon(icon_b0a40169f0fafc105c8b12905d1e3849);
+        
+    
+        var popup_cfe71564d32559dae2d699419a95abff = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a2a4d82fc14a9a5581014ca56e673249 = $(`<div id="html_a2a4d82fc14a9a5581014ca56e673249" style="width: 100.0%; height: 100.0%;">Carrington College-Phoenix North - Crime Type: 1</div>`)[0];
+                popup_cfe71564d32559dae2d699419a95abff.setContent(html_a2a4d82fc14a9a5581014ca56e673249);
+            
+        
+
+        marker_9b08eb317c1a2087d2e47068274267a2.bindPopup(popup_cfe71564d32559dae2d699419a95abff)
+        ;
+
+        
+    
+    
+            var marker_5ee1e103c5cc9d258549dc2e66d2ff61 = L.marker(
+                [32.23626157282233, -110.87240090282232],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_feb75dd95e0568fc2236dd345e9ecd17 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5ee1e103c5cc9d258549dc2e66d2ff61.setIcon(icon_feb75dd95e0568fc2236dd345e9ecd17);
+        
+    
+        var popup_30145965229f70708649081fc8144763 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b4bdfa520904d49df0b63b4a6b8aad4 = $(`<div id="html_7b4bdfa520904d49df0b63b4a6b8aad4" style="width: 100.0%; height: 100.0%;">Arizona Academy of Beauty - Crime Type: 1</div>`)[0];
+                popup_30145965229f70708649081fc8144763.setContent(html_7b4bdfa520904d49df0b63b4a6b8aad4);
+            
+        
+
+        marker_5ee1e103c5cc9d258549dc2e66d2ff61.bindPopup(popup_30145965229f70708649081fc8144763)
+        ;
+
+        
+    
+    
+            var marker_72eb68080e3686495dc95bab71910883 = L.marker(
+                [32.70314295, -114.61103978274394],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_81e7225b78908029b0c3e893dbb8e6d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_72eb68080e3686495dc95bab71910883.setIcon(icon_81e7225b78908029b0c3e893dbb8e6d5);
+        
+    
+        var popup_a4b16dcf94f9cd29b7c96bdad22456f4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3e51602d81a94b78ae2d1ace0bc648d5 = $(`<div id="html_3e51602d81a94b78ae2d1ace0bc648d5" style="width: 100.0%; height: 100.0%;">Arizona Western College - Crime Type: 1</div>`)[0];
+                popup_a4b16dcf94f9cd29b7c96bdad22456f4.setContent(html_3e51602d81a94b78ae2d1ace0bc648d5);
+            
+        
+
+        marker_72eb68080e3686495dc95bab71910883.bindPopup(popup_a4b16dcf94f9cd29b7c96bdad22456f4)
+        ;
+
+        
+    
+    
+            var marker_6a0b508871960e7a76586ed0cd5ea489 = L.marker(
+                [32.603935428571425, -114.71004266666668],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f88b538d59421a4205b63e55aa56876a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6a0b508871960e7a76586ed0cd5ea489.setIcon(icon_f88b538d59421a4205b63e55aa56876a);
+        
+    
+        var popup_9f1cd44be207e65890aba3e5d4dacf60 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2f8215c622d8c4c58afc1b1577982ef8 = $(`<div id="html_2f8215c622d8c4c58afc1b1577982ef8" style="width: 100.0%; height: 100.0%;">Arizona Western College - Crime Type: 1</div>`)[0];
+                popup_9f1cd44be207e65890aba3e5d4dacf60.setContent(html_2f8215c622d8c4c58afc1b1577982ef8);
+            
+        
+
+        marker_6a0b508871960e7a76586ed0cd5ea489.bindPopup(popup_9f1cd44be207e65890aba3e5d4dacf60)
+        ;
+
+        
+    
+    
+            var marker_fc0f908ad09690fa306f4ebbea8a4622 = L.marker(
+                [34.15039710204082, -114.28567220408162],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_51eb306f2adba2b3f6f6f69028026df5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fc0f908ad09690fa306f4ebbea8a4622.setIcon(icon_51eb306f2adba2b3f6f6f69028026df5);
+        
+    
+        var popup_d078b9ac4602b5e489164e921f01078a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2e21c39dd39cc38afe6e7c9f8ba8f44c = $(`<div id="html_2e21c39dd39cc38afe6e7c9f8ba8f44c" style="width: 100.0%; height: 100.0%;">Arizona Western College - Crime Type: 1</div>`)[0];
+                popup_d078b9ac4602b5e489164e921f01078a.setContent(html_2e21c39dd39cc38afe6e7c9f8ba8f44c);
+            
+        
+
+        marker_fc0f908ad09690fa306f4ebbea8a4622.bindPopup(popup_d078b9ac4602b5e489164e921f01078a)
+        ;
+
+        
+    
+    
+            var marker_bfc642de84e8f9c0a7078fef4d33ab2f = L.marker(
+                [31.562609645161288, -110.24747787096774],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_4313a01838e2d48b9a3d8726a609685b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_bfc642de84e8f9c0a7078fef4d33ab2f.setIcon(icon_4313a01838e2d48b9a3d8726a609685b);
+        
+    
+        var popup_91e0f852f89e074bb6abd0828c930586 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7ba2264b687dc507a9115ddc5c651526 = $(`<div id="html_7ba2264b687dc507a9115ddc5c651526" style="width: 100.0%; height: 100.0%;">University of Arizona - Crime Type: 1</div>`)[0];
+                popup_91e0f852f89e074bb6abd0828c930586.setContent(html_7ba2264b687dc507a9115ddc5c651526);
+            
+        
+
+        marker_bfc642de84e8f9c0a7078fef4d33ab2f.bindPopup(popup_91e0f852f89e074bb6abd0828c930586)
+        ;
+
+        
+    
+    
+            var marker_e2f6e5d1c7cf412f7ed7ed343e1f7e5f = L.marker(
+                [32.8487462, -110.7028107],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_45c703256e29128486e95a25b49f71bb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e2f6e5d1c7cf412f7ed7ed343e1f7e5f.setIcon(icon_45c703256e29128486e95a25b49f71bb);
+        
+    
+        var popup_0a0f23fb398ef40549338fbe0a148eec = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f1a92d7bae237720bf3c5527522313be = $(`<div id="html_f1a92d7bae237720bf3c5527522313be" style="width: 100.0%; height: 100.0%;">Central Arizona College - Crime Type: 1</div>`)[0];
+                popup_0a0f23fb398ef40549338fbe0a148eec.setContent(html_f1a92d7bae237720bf3c5527522313be);
+            
+        
+
+        marker_e2f6e5d1c7cf412f7ed7ed343e1f7e5f.bindPopup(popup_0a0f23fb398ef40549338fbe0a148eec)
+        ;
+
+        
+    
+    
+            var marker_c29a69d6f2e3c073ec62b5542dd594ba = L.marker(
+                [32.87947342857142, -111.74193257142856],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_776d61bdd4a3d2bfc284707f01b7d5fd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c29a69d6f2e3c073ec62b5542dd594ba.setIcon(icon_776d61bdd4a3d2bfc284707f01b7d5fd);
+        
+    
+        var popup_1c6dc630e179dc4b0b887e311c408aeb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3a7dbf0292aec6d4fa214d489eb7045c = $(`<div id="html_3a7dbf0292aec6d4fa214d489eb7045c" style="width: 100.0%; height: 100.0%;">Central Arizona College - Crime Type: 1</div>`)[0];
+                popup_1c6dc630e179dc4b0b887e311c408aeb.setContent(html_3a7dbf0292aec6d4fa214d489eb7045c);
+            
+        
+
+        marker_c29a69d6f2e3c073ec62b5542dd594ba.bindPopup(popup_1c6dc630e179dc4b0b887e311c408aeb)
+        ;
+
+        
+    
+    
+            var marker_8dcc52e51ac0e3f4eca820b38d29aee6 = L.marker(
+                [33.16170068076864, -111.54005716401228],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_5f62b3ee0f2bcc9766ea27cc009d1bea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8dcc52e51ac0e3f4eca820b38d29aee6.setIcon(icon_5f62b3ee0f2bcc9766ea27cc009d1bea);
+        
+    
+        var popup_36673b8b273a5e455a50ce4992cb28bc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bdc84e67383560c3bf101d5013a64601 = $(`<div id="html_bdc84e67383560c3bf101d5013a64601" style="width: 100.0%; height: 100.0%;">Central Arizona College - Crime Type: 1</div>`)[0];
+                popup_36673b8b273a5e455a50ce4992cb28bc.setContent(html_bdc84e67383560c3bf101d5013a64601);
+            
+        
+
+        marker_8dcc52e51ac0e3f4eca820b38d29aee6.bindPopup(popup_36673b8b273a5e455a50ce4992cb28bc)
+        ;
+
+        
+    
+    
+            var marker_0a5347f1e6441b5c15559eb955633710 = L.marker(
+                [32.26116725628141, -109.84145914070352],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f6bc50e9ed5bac33ded590ce79906674 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0a5347f1e6441b5c15559eb955633710.setIcon(icon_f6bc50e9ed5bac33ded590ce79906674);
+        
+    
+        var popup_884b1ca5736ea203989804a907a6ef30 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_747d1e5f64942fba875416036f3b35c7 = $(`<div id="html_747d1e5f64942fba875416036f3b35c7" style="width: 100.0%; height: 100.0%;">Cochise County Community College District - Crime Type: 1</div>`)[0];
+                popup_884b1ca5736ea203989804a907a6ef30.setContent(html_747d1e5f64942fba875416036f3b35c7);
+            
+        
+
+        marker_0a5347f1e6441b5c15559eb955633710.bindPopup(popup_884b1ca5736ea203989804a907a6ef30)
+        ;
+
+        
+    
+    
+            var marker_fff479c878112ceff652e964eb9ab12f = L.marker(
+                [31.560883, -110.3545158],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_d57f53492aaddacf1a3c1f9d161ae994 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_fff479c878112ceff652e964eb9ab12f.setIcon(icon_d57f53492aaddacf1a3c1f9d161ae994);
+        
+    
+        var popup_0da58fab0e993b76e448a261edacda11 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ec9e169f02d692cf13c8149a78a29cdf = $(`<div id="html_ec9e169f02d692cf13c8149a78a29cdf" style="width: 100.0%; height: 100.0%;">Cochise County Community College District - Crime Type: 1</div>`)[0];
+                popup_0da58fab0e993b76e448a261edacda11.setContent(html_ec9e169f02d692cf13c8149a78a29cdf);
+            
+        
+
+        marker_fff479c878112ceff652e964eb9ab12f.bindPopup(popup_0da58fab0e993b76e448a261edacda11)
+        ;
+
+        
+    
+    
+            var marker_92b63f2c006ed0d4722fea5127054906 = L.marker(
+                [31.95226898964867, -110.34184731469588],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_448c1fc21dd13dc0b058e02406678bea = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_92b63f2c006ed0d4722fea5127054906.setIcon(icon_448c1fc21dd13dc0b058e02406678bea);
+        
+    
+        var popup_5632c2d5a8733328c2cec65efb9013d3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1a694f85e9fc0da2d252b14c2b90e996 = $(`<div id="html_1a694f85e9fc0da2d252b14c2b90e996" style="width: 100.0%; height: 100.0%;">Cochise County Community College District - Crime Type: 1</div>`)[0];
+                popup_5632c2d5a8733328c2cec65efb9013d3.setContent(html_1a694f85e9fc0da2d252b14c2b90e996);
+            
+        
+
+        marker_92b63f2c006ed0d4722fea5127054906.bindPopup(popup_5632c2d5a8733328c2cec65efb9013d3)
+        ;
+
+        
+    
+    
+            var marker_07161e9285070cc1e353891bb39e961a = L.marker(
+                [32.84556775, -109.76204377802664],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_892d96b1b4b3d3fb159287d16adbd8ff = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_07161e9285070cc1e353891bb39e961a.setIcon(icon_892d96b1b4b3d3fb159287d16adbd8ff);
+        
+    
+        var popup_6777d216b9284a2ec47d6196e7c472cb = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6a95211f3c9ea17f37ec19da3930beb7 = $(`<div id="html_6a95211f3c9ea17f37ec19da3930beb7" style="width: 100.0%; height: 100.0%;">Eastern Arizona College - Crime Type: 1</div>`)[0];
+                popup_6777d216b9284a2ec47d6196e7c472cb.setContent(html_6a95211f3c9ea17f37ec19da3930beb7);
+            
+        
+
+        marker_07161e9285070cc1e353891bb39e961a.bindPopup(popup_6777d216b9284a2ec47d6196e7c472cb)
+        ;
+
+        
+    
+    
+            var marker_cf9160a7dc157316b071867717226bae = L.marker(
+                [33.567477261059736, -111.94263191181888],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_452df7ea62521c453c8b49e213251db7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cf9160a7dc157316b071867717226bae.setIcon(icon_452df7ea62521c453c8b49e213251db7);
+        
+    
+        var popup_4e73c1c7c884dcf2e98e3e2f1e46204a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_05db577c1e12fa6eceb0088bae218d33 = $(`<div id="html_05db577c1e12fa6eceb0088bae218d33" style="width: 100.0%; height: 100.0%;">The School of Architecture - Crime Type: 1</div>`)[0];
+                popup_4e73c1c7c884dcf2e98e3e2f1e46204a.setContent(html_05db577c1e12fa6eceb0088bae218d33);
+            
+        
+
+        marker_cf9160a7dc157316b071867717226bae.bindPopup(popup_4e73c1c7c884dcf2e98e3e2f1e46204a)
+        ;
+
+        
+    
+    
+            var marker_6474c5d248b46e4c3f1047851854d7c2 = L.marker(
+                [33.57097265, -112.19062372210072],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_46d59fae3eb13cee9e753f1e37c7312f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6474c5d248b46e4c3f1047851854d7c2.setIcon(icon_46d59fae3eb13cee9e753f1e37c7312f);
+        
+    
+        var popup_deec39241b9af7acb13255fb3a3d1d4c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5dffd423ca60ea5df4d4009d343a715a = $(`<div id="html_5dffd423ca60ea5df4d4009d343a715a" style="width: 100.0%; height: 100.0%;">Glendale Community College - Crime Type: 1</div>`)[0];
+                popup_deec39241b9af7acb13255fb3a3d1d4c.setContent(html_5dffd423ca60ea5df4d4009d343a715a);
+            
+        
+
+        marker_6474c5d248b46e4c3f1047851854d7c2.bindPopup(popup_deec39241b9af7acb13255fb3a3d1d4c)
+        ;
+
+        
+    
+    
+            var marker_21f64c0aa520cb0434099c716ba3278e = L.marker(
+                [33.71074075, -112.18703724325582],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_aba302b269210746e638208f17c42269 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_21f64c0aa520cb0434099c716ba3278e.setIcon(icon_aba302b269210746e638208f17c42269);
+        
+    
+        var popup_991c86d0e2241f649ec0e38c632b6ba6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_d6f96a0d52838325d2f6bf87d9878f4a = $(`<div id="html_d6f96a0d52838325d2f6bf87d9878f4a" style="width: 100.0%; height: 100.0%;">Glendale Community College - Crime Type: 1</div>`)[0];
+                popup_991c86d0e2241f649ec0e38c632b6ba6.setContent(html_d6f96a0d52838325d2f6bf87d9878f4a);
+            
+        
+
+        marker_21f64c0aa520cb0434099c716ba3278e.bindPopup(popup_991c86d0e2241f649ec0e38c632b6ba6)
+        ;
+
+        
+    
+    
+            var marker_7dcba75f29adf15052cefbc4d83f840a = L.marker(
+                [33.5136131, -112.1307098],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_b13d78640b8578a4b2f2d481a104ad64 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7dcba75f29adf15052cefbc4d83f840a.setIcon(icon_b13d78640b8578a4b2f2d481a104ad64);
+        
+    
+        var popup_2a8be43d8f1b7cda322bd9be8ce6eb06 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9f8767b230edd95b0103d021765b5d34 = $(`<div id="html_9f8767b230edd95b0103d021765b5d34" style="width: 100.0%; height: 100.0%;">Grand Canyon University - Crime Type: 1</div>`)[0];
+                popup_2a8be43d8f1b7cda322bd9be8ce6eb06.setContent(html_9f8767b230edd95b0103d021765b5d34);
+            
+        
+
+        marker_7dcba75f29adf15052cefbc4d83f840a.bindPopup(popup_2a8be43d8f1b7cda322bd9be8ce6eb06)
+        ;
+
+        
+    
+    
+            var marker_cf4dd043eb4b8ff6436d39d57c21f13b = L.marker(
+                [33.45508475, -112.04326239469322],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_c75016535491ffd6fd0ca8e58ec3fac8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cf4dd043eb4b8ff6436d39d57c21f13b.setIcon(icon_c75016535491ffd6fd0ca8e58ec3fac8);
+        
+    
+        var popup_62c1bfaafdf7e190c3fb178152ce3e9e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5aea93fc2c77fbd2cd3af45e6e1c5960 = $(`<div id="html_5aea93fc2c77fbd2cd3af45e6e1c5960" style="width: 100.0%; height: 100.0%;">GateWay Community College - Crime Type: 1</div>`)[0];
+                popup_62c1bfaafdf7e190c3fb178152ce3e9e.setContent(html_5aea93fc2c77fbd2cd3af45e6e1c5960);
+            
+        
+
+        marker_cf4dd043eb4b8ff6436d39d57c21f13b.bindPopup(popup_62c1bfaafdf7e190c3fb178152ce3e9e)
+        ;
+
+        
+    
+    
+            var marker_336e5da118a5f60fb2c7751e92c6fa17 = L.marker(
+                [33.389666, -111.87020543176769],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0de7d84a9426029f267d14c05aefd5d3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_336e5da118a5f60fb2c7751e92c6fa17.setIcon(icon_0de7d84a9426029f267d14c05aefd5d3);
+        
+    
+        var popup_28d5624f0d3ca0e2bfc35d486f56805d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4f303b929213e7902a1187071d042a68 = $(`<div id="html_4f303b929213e7902a1187071d042a68" style="width: 100.0%; height: 100.0%;">Mesa Community College - Crime Type: 1</div>`)[0];
+                popup_28d5624f0d3ca0e2bfc35d486f56805d.setContent(html_4f303b929213e7902a1187071d042a68);
+            
+        
+
+        marker_336e5da118a5f60fb2c7751e92c6fa17.bindPopup(popup_28d5624f0d3ca0e2bfc35d486f56805d)
+        ;
+
+        
+    
+    
+            var marker_e2c6d83fae1969257c39eef5c95cd2cb = L.marker(
+                [33.4551143, -111.67639664733848],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_7453c1fbb4539dd2f5004e10cd0f41bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e2c6d83fae1969257c39eef5c95cd2cb.setIcon(icon_7453c1fbb4539dd2f5004e10cd0f41bd);
+        
+    
+        var popup_5834649e0cb1a399d1b752e82c71b50c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_73ce713f9e57b7b026557186aa5ae65f = $(`<div id="html_73ce713f9e57b7b026557186aa5ae65f" style="width: 100.0%; height: 100.0%;">Mesa Community College - Crime Type: 1</div>`)[0];
+                popup_5834649e0cb1a399d1b752e82c71b50c.setContent(html_73ce713f9e57b7b026557186aa5ae65f);
+            
+        
+
+        marker_e2c6d83fae1969257c39eef5c95cd2cb.bindPopup(popup_5834649e0cb1a399d1b752e82c71b50c)
+        ;
+
+        
+    
+    
+            var marker_ed66cfb505ea16396660cc92f600b485 = L.marker(
+                [33.41876765000001, -111.82796719983348],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_97e87aa99d021d0375e171c95bcabff8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ed66cfb505ea16396660cc92f600b485.setIcon(icon_97e87aa99d021d0375e171c95bcabff8);
+        
+    
+        var popup_2bc027caec664f42df036b0e67cd1cc8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5de71ae4efcf3ccb5d39492256479c4b = $(`<div id="html_5de71ae4efcf3ccb5d39492256479c4b" style="width: 100.0%; height: 100.0%;">Mesa Community College - Crime Type: 1</div>`)[0];
+                popup_2bc027caec664f42df036b0e67cd1cc8.setContent(html_5de71ae4efcf3ccb5d39492256479c4b);
+            
+        
+
+        marker_ed66cfb505ea16396660cc92f600b485.bindPopup(popup_2bc027caec664f42df036b0e67cd1cc8)
+        ;
+
+        
+    
+    
+            var marker_22c373d7250e62e7687aaf692bd36bcb = L.marker(
+                [34.49621531477594, -114.34358644740394],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_b2570e36e2c7e29fe3a1a7858ddb338d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_22c373d7250e62e7687aaf692bd36bcb.setIcon(icon_b2570e36e2c7e29fe3a1a7858ddb338d);
+        
+    
+        var popup_69702837d9873e1ba32e8cee60a3e322 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3cb4337a8a12be70d7177a9d5099de31 = $(`<div id="html_3cb4337a8a12be70d7177a9d5099de31" style="width: 100.0%; height: 100.0%;">Mohave Community College - Crime Type: 1</div>`)[0];
+                popup_69702837d9873e1ba32e8cee60a3e322.setContent(html_3cb4337a8a12be70d7177a9d5099de31);
+            
+        
+
+        marker_22c373d7250e62e7687aaf692bd36bcb.bindPopup(popup_69702837d9873e1ba32e8cee60a3e322)
+        ;
+
+        
+    
+    
+            var marker_c6a6aba68cfd22fd19d90fb258bdd0eb = L.marker(
+                [35.0631578, -114.58668018040052],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_6379a0f1800cf717c05084c8aeb94242 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c6a6aba68cfd22fd19d90fb258bdd0eb.setIcon(icon_6379a0f1800cf717c05084c8aeb94242);
+        
+    
+        var popup_35189584ae28f89ced723ccccaeb2c87 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_086281bfdf55dcc23d508d944e24b64c = $(`<div id="html_086281bfdf55dcc23d508d944e24b64c" style="width: 100.0%; height: 100.0%;">Mohave Community College - Crime Type: 1</div>`)[0];
+                popup_35189584ae28f89ced723ccccaeb2c87.setContent(html_086281bfdf55dcc23d508d944e24b64c);
+            
+        
+
+        marker_c6a6aba68cfd22fd19d90fb258bdd0eb.bindPopup(popup_35189584ae28f89ced723ccccaeb2c87)
+        ;
+
+        
+    
+    
+            var marker_8e76c85811730e789459ef9fa455da65 = L.marker(
+                [35.18008625, -111.65769980032915],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_8129f18a968d3ea8316f99aad5f3335b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8e76c85811730e789459ef9fa455da65.setIcon(icon_8129f18a968d3ea8316f99aad5f3335b);
+        
+    
+        var popup_e8eea2699352075cc1c6906ab689cf2a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_838e3639cf9764e080b7e9d1e4b42066 = $(`<div id="html_838e3639cf9764e080b7e9d1e4b42066" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_e8eea2699352075cc1c6906ab689cf2a.setContent(html_838e3639cf9764e080b7e9d1e4b42066);
+            
+        
+
+        marker_8e76c85811730e789459ef9fa455da65.bindPopup(popup_e8eea2699352075cc1c6906ab689cf2a)
+        ;
+
+        
+    
+    
+            var marker_cfaf0f5d9d79d7b8cf76c4a9a1c1dcc8 = L.marker(
+                [33.29553575, -111.7941113987554],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_fbe838befce0e5aee486b5b3c46dfab5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cfaf0f5d9d79d7b8cf76c4a9a1c1dcc8.setIcon(icon_fbe838befce0e5aee486b5b3c46dfab5);
+        
+    
+        var popup_1b89ff401e2a604eadfab59f75f88412 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_2d5b46c971bedfe6e6f69be1d6c1fe23 = $(`<div id="html_2d5b46c971bedfe6e6f69be1d6c1fe23" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_1b89ff401e2a604eadfab59f75f88412.setContent(html_2d5b46c971bedfe6e6f69be1d6c1fe23);
+            
+        
+
+        marker_cfaf0f5d9d79d7b8cf76c4a9a1c1dcc8.bindPopup(popup_1b89ff401e2a604eadfab59f75f88412)
+        ;
+
+        
+    
+    
+            var marker_af320bd6d78cdfca6295244fada6ec83 = L.marker(
+                [33.389666, -111.87020543176769],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_be32763c40d5f404a50138627f9c1bef = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_af320bd6d78cdfca6295244fada6ec83.setIcon(icon_be32763c40d5f404a50138627f9c1bef);
+        
+    
+        var popup_7ac39ca4e9ccb3acbb45df06bbf55ed8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_00e17e278695146598dea62210db8ff3 = $(`<div id="html_00e17e278695146598dea62210db8ff3" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_7ac39ca4e9ccb3acbb45df06bbf55ed8.setContent(html_00e17e278695146598dea62210db8ff3);
+            
+        
+
+        marker_af320bd6d78cdfca6295244fada6ec83.bindPopup(popup_7ac39ca4e9ccb3acbb45df06bbf55ed8)
+        ;
+
+        
+    
+    
+            var marker_f0bd26bdd1095dda682181586bf31e1f = L.marker(
+                [33.480764449999995, -112.34573736324032],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_9323a629ba7eeaccc860d95e0af006bc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f0bd26bdd1095dda682181586bf31e1f.setIcon(icon_9323a629ba7eeaccc860d95e0af006bc);
+        
+    
+        var popup_8cd8f0ba668caa897fe99a14d004b0ba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6b19fa2aa9943a05d788b28cfd1a0002 = $(`<div id="html_6b19fa2aa9943a05d788b28cfd1a0002" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_8cd8f0ba668caa897fe99a14d004b0ba.setContent(html_6b19fa2aa9943a05d788b28cfd1a0002);
+            
+        
+
+        marker_f0bd26bdd1095dda682181586bf31e1f.bindPopup(popup_8cd8f0ba668caa897fe99a14d004b0ba)
+        ;
+
+        
+    
+    
+            var marker_c616e881d8459acbf08dcf2005d7d1b1 = L.marker(
+                [33.57097265, -112.19062372210072],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_fb7d1744eb937c1f6b0e0152f27a006e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c616e881d8459acbf08dcf2005d7d1b1.setIcon(icon_fb7d1744eb937c1f6b0e0152f27a006e);
+        
+    
+        var popup_e6fc2a4f516ed16248d935e147d3ca75 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8c192087d527d3fa6e9669ded1633446 = $(`<div id="html_8c192087d527d3fa6e9669ded1633446" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_e6fc2a4f516ed16248d935e147d3ca75.setContent(html_8c192087d527d3fa6e9669ded1633446);
+            
+        
+
+        marker_c616e881d8459acbf08dcf2005d7d1b1.bindPopup(popup_e6fc2a4f516ed16248d935e147d3ca75)
+        ;
+
+        
+    
+    
+            var marker_8f2be955d1e8cd78c03c87f3b0dc41b4 = L.marker(
+                [35.2702299, -114.0268497],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_6955a5d416382cd5d94e50269e0c022f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8f2be955d1e8cd78c03c87f3b0dc41b4.setIcon(icon_6955a5d416382cd5d94e50269e0c022f);
+        
+    
+        var popup_4ff5b2953b32eef4772ad3456b6b085a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_65d1bd0b50d41633b83130807ea1a792 = $(`<div id="html_65d1bd0b50d41633b83130807ea1a792" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_4ff5b2953b32eef4772ad3456b6b085a.setContent(html_65d1bd0b50d41633b83130807ea1a792);
+            
+        
+
+        marker_8f2be955d1e8cd78c03c87f3b0dc41b4.bindPopup(popup_4ff5b2953b32eef4772ad3456b6b085a)
+        ;
+
+        
+    
+    
+            var marker_36c997881dd4381113f14003f18657c9 = L.marker(
+                [33.6262927, -112.11818102035792],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_ba734cf3ab3c130179701898db8262bd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_36c997881dd4381113f14003f18657c9.setIcon(icon_ba734cf3ab3c130179701898db8262bd);
+        
+    
+        var popup_197f1dc83d9eab0e6e16e2b12e05e783 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f7ffb9553e88b3c0ad9d0df6670923ad = $(`<div id="html_f7ffb9553e88b3c0ad9d0df6670923ad" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_197f1dc83d9eab0e6e16e2b12e05e783.setContent(html_f7ffb9553e88b3c0ad9d0df6670923ad);
+            
+        
+
+        marker_36c997881dd4381113f14003f18657c9.bindPopup(popup_197f1dc83d9eab0e6e16e2b12e05e783)
+        ;
+
+        
+    
+    
+            var marker_199bb172a68387706a06fade62e13226 = L.marker(
+                [33.652006650000004, -112.01169069673702],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_9191c901cb53d1a508ea3fa0977ab333 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_199bb172a68387706a06fade62e13226.setIcon(icon_9191c901cb53d1a508ea3fa0977ab333);
+        
+    
+        var popup_73686e4af53a31a90fb41d032b89a53e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_580b94cafe399bb4591c24b785e08408 = $(`<div id="html_580b94cafe399bb4591c24b785e08408" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_73686e4af53a31a90fb41d032b89a53e.setContent(html_580b94cafe399bb4591c24b785e08408);
+            
+        
+
+        marker_199bb172a68387706a06fade62e13226.bindPopup(popup_73686e4af53a31a90fb41d032b89a53e)
+        ;
+
+        
+    
+    
+            var marker_f40cbc445ff31879a21498166ce721d2 = L.marker(
+                [33.4805182, -112.087543],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0d9f06eb9fbc4b967883d8fa3cb31024 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f40cbc445ff31879a21498166ce721d2.setIcon(icon_0d9f06eb9fbc4b967883d8fa3cb31024);
+        
+    
+        var popup_247c7639217a220e62afbbf0bf0b561c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f3bcc9ace5671c8a79c289f1554b87a7 = $(`<div id="html_f3bcc9ace5671c8a79c289f1554b87a7" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_247c7639217a220e62afbbf0bf0b561c.setContent(html_f3bcc9ace5671c8a79c289f1554b87a7);
+            
+        
+
+        marker_f40cbc445ff31879a21498166ce721d2.bindPopup(popup_247c7639217a220e62afbbf0bf0b561c)
+        ;
+
+        
+    
+    
+            var marker_ad49949e7e95bbe9d083aedeed9e201a = L.marker(
+                [33.5122411, -111.880364],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_3dc95a60fd1401544dc94b13df32d82b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ad49949e7e95bbe9d083aedeed9e201a.setIcon(icon_3dc95a60fd1401544dc94b13df32d82b);
+        
+    
+        var popup_444abcc903f9c0309afb5fe09b18b4ae = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_06c358ea9276aa6de05471fc29c04038 = $(`<div id="html_06c358ea9276aa6de05471fc29c04038" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_444abcc903f9c0309afb5fe09b18b4ae.setContent(html_06c358ea9276aa6de05471fc29c04038);
+            
+        
+
+        marker_ad49949e7e95bbe9d083aedeed9e201a.bindPopup(popup_444abcc903f9c0309afb5fe09b18b4ae)
+        ;
+
+        
+    
+    
+            var marker_ba1da16d2b407dc6e4cf003e2c250c33 = L.marker(
+                [34.2431437, -110.0544201],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0b8ee8b8e7b60ac723298bd402add75b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ba1da16d2b407dc6e4cf003e2c250c33.setIcon(icon_0b8ee8b8e7b60ac723298bd402add75b);
+        
+    
+        var popup_80d1ed3b83d525f1c562aac4e9d75bde = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_910022e9daf86613961e342e237b49b5 = $(`<div id="html_910022e9daf86613961e342e237b49b5" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_80d1ed3b83d525f1c562aac4e9d75bde.setContent(html_910022e9daf86613961e342e237b49b5);
+            
+        
+
+        marker_ba1da16d2b407dc6e4cf003e2c250c33.bindPopup(popup_80d1ed3b83d525f1c562aac4e9d75bde)
+        ;
+
+        
+    
+    
+            var marker_826ab760a2cf61a5a61db3c12d76d69f = L.marker(
+                [33.38193475, -112.03407350966162],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f7a0a284420a2b4cdfd2a6bcfbaa57d1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_826ab760a2cf61a5a61db3c12d76d69f.setIcon(icon_f7a0a284420a2b4cdfd2a6bcfbaa57d1);
+        
+    
+        var popup_f72ae6355c8042c616095ac793a77a97 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_07725de256a285ac857066ca50bd1cc1 = $(`<div id="html_07725de256a285ac857066ca50bd1cc1" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_f72ae6355c8042c616095ac793a77a97.setContent(html_07725de256a285ac857066ca50bd1cc1);
+            
+        
+
+        marker_826ab760a2cf61a5a61db3c12d76d69f.bindPopup(popup_f72ae6355c8042c616095ac793a77a97)
+        ;
+
+        
+    
+    
+            var marker_f1be89bc71f10dc47cc4f50dd1247e7e = L.marker(
+                [32.22505613772684, -111.01200789775592],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_91de44a97029d5af0172eeff54e7d010 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f1be89bc71f10dc47cc4f50dd1247e7e.setIcon(icon_91de44a97029d5af0172eeff54e7d010);
+        
+    
+        var popup_a1b3c6b09775d9f8bc069c6ecebdc1e4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4b8627bd39d760db6c14b81a7039866a = $(`<div id="html_4b8627bd39d760db6c14b81a7039866a" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_a1b3c6b09775d9f8bc069c6ecebdc1e4.setContent(html_4b8627bd39d760db6c14b81a7039866a);
+            
+        
+
+        marker_f1be89bc71f10dc47cc4f50dd1247e7e.bindPopup(popup_a1b3c6b09775d9f8bc069c6ecebdc1e4)
+        ;
+
+        
+    
+    
+            var marker_5779891336dcdc87ad6950790881e0fa = L.marker(
+                [33.45281655, -112.0658882325565],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_dda1052079d35ef160e5631e65b02ef0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5779891336dcdc87ad6950790881e0fa.setIcon(icon_dda1052079d35ef160e5631e65b02ef0);
+        
+    
+        var popup_222010bdb74c4b3369eec112e2cf4e18 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_821bdba459c08fd579bc6cbb0fb92537 = $(`<div id="html_821bdba459c08fd579bc6cbb0fb92537" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_222010bdb74c4b3369eec112e2cf4e18.setContent(html_821bdba459c08fd579bc6cbb0fb92537);
+            
+        
+
+        marker_5779891336dcdc87ad6950790881e0fa.bindPopup(popup_222010bdb74c4b3369eec112e2cf4e18)
+        ;
+
+        
+    
+    
+            var marker_37e9047675f24e345db4a986e505bfc1 = L.marker(
+                [35.0631578, -114.58668018040052],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_08362bdab620af050d3a91a316cabc00 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_37e9047675f24e345db4a986e505bfc1.setIcon(icon_08362bdab620af050d3a91a316cabc00);
+        
+    
+        var popup_5cd1a1c52cab0436704bbe7a96bd5621 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3cb4f6cf8c66a9ade27f47f34c0c2cb5 = $(`<div id="html_3cb4f6cf8c66a9ade27f47f34c0c2cb5" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_5cd1a1c52cab0436704bbe7a96bd5621.setContent(html_3cb4f6cf8c66a9ade27f47f34c0c2cb5);
+            
+        
+
+        marker_37e9047675f24e345db4a986e505bfc1.bindPopup(popup_5cd1a1c52cab0436704bbe7a96bd5621)
+        ;
+
+        
+    
+    
+            var marker_449db62308adb27dbf2cb26935305237 = L.marker(
+                [34.49621531477594, -114.34358644740394],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_04bfb5dc9736b158ce6c435bebaa1fad = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_449db62308adb27dbf2cb26935305237.setIcon(icon_04bfb5dc9736b158ce6c435bebaa1fad);
+        
+    
+        var popup_c25dae1d968dd7e4a23f35a170139241 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_68676efc19d91bd94db93cc7ebfee2a1 = $(`<div id="html_68676efc19d91bd94db93cc7ebfee2a1" style="width: 100.0%; height: 100.0%;">Northern Arizona University - Crime Type: 1</div>`)[0];
+                popup_c25dae1d968dd7e4a23f35a170139241.setContent(html_68676efc19d91bd94db93cc7ebfee2a1);
+            
+        
+
+        marker_449db62308adb27dbf2cb26935305237.bindPopup(popup_c25dae1d968dd7e4a23f35a170139241)
+        ;
+
+        
+    
+    
+            var marker_f9bbc4a3d37cc9fa4cbfb0ef7bbe1580 = L.marker(
+                [33.4805182, -112.087543],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_32a0bcf13733fe62350cdd618611a5d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_f9bbc4a3d37cc9fa4cbfb0ef7bbe1580.setIcon(icon_32a0bcf13733fe62350cdd618611a5d8);
+        
+    
+        var popup_9c61d88d83f1ffe340b4a89a1aa62bda = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7cffbb79cf69a5e6fc66bdee1a847c53 = $(`<div id="html_7cffbb79cf69a5e6fc66bdee1a847c53" style="width: 100.0%; height: 100.0%;">Phoenix College - Crime Type: 1</div>`)[0];
+                popup_9c61d88d83f1ffe340b4a89a1aa62bda.setContent(html_7cffbb79cf69a5e6fc66bdee1a847c53);
+            
+        
+
+        marker_f9bbc4a3d37cc9fa4cbfb0ef7bbe1580.bindPopup(popup_9c61d88d83f1ffe340b4a89a1aa62bda)
+        ;
+
+        
+    
+    
+            var marker_0ae39b7a87226c49c16658f47d29e6e9 = L.marker(
+                [33.4562005, -112.07550467785236],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_c3e8e1d7ff6db97d2d9acf101f45fe08 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0ae39b7a87226c49c16658f47d29e6e9.setIcon(icon_c3e8e1d7ff6db97d2d9acf101f45fe08);
+        
+    
+        var popup_666df3e9813b785206ee66cb214aefda = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_59b4282f0c5d63150e54c031655648e8 = $(`<div id="html_59b4282f0c5d63150e54c031655648e8" style="width: 100.0%; height: 100.0%;">Phoenix College - Crime Type: 1</div>`)[0];
+                popup_666df3e9813b785206ee66cb214aefda.setContent(html_59b4282f0c5d63150e54c031655648e8);
+            
+        
+
+        marker_0ae39b7a87226c49c16658f47d29e6e9.bindPopup(popup_666df3e9813b785206ee66cb214aefda)
+        ;
+
+        
+    
+    
+            var marker_d49296cd1398299a0c09efa3d2f787d3 = L.marker(
+                [33.4906714, -112.07863375005496],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_ac7cfae8863ada9d1378f347724b26ca = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d49296cd1398299a0c09efa3d2f787d3.setIcon(icon_ac7cfae8863ada9d1378f347724b26ca);
+        
+    
+        var popup_898a0c619ae7fc26711b0261f9f8e0be = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b4ae92c6e5f38f3a5d6b3954701253c7 = $(`<div id="html_b4ae92c6e5f38f3a5d6b3954701253c7" style="width: 100.0%; height: 100.0%;">Phoenix College - Crime Type: 1</div>`)[0];
+                popup_898a0c619ae7fc26711b0261f9f8e0be.setContent(html_b4ae92c6e5f38f3a5d6b3954701253c7);
+            
+        
+
+        marker_d49296cd1398299a0c09efa3d2f787d3.bindPopup(popup_898a0c619ae7fc26711b0261f9f8e0be)
+        ;
+
+        
+    
+    
+            var marker_002f6e23e855314b4fa0395e838ea3b2 = L.marker(
+                [32.2357696112692, -110.99635699559045],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0b4a61503fe0727252f46787ebaaee41 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_002f6e23e855314b4fa0395e838ea3b2.setIcon(icon_0b4a61503fe0727252f46787ebaaee41);
+        
+    
+        var popup_5b4198e8386172399bfc0f0955861ee6 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1b5579664f12c57802632fa508f25d32 = $(`<div id="html_1b5579664f12c57802632fa508f25d32" style="width: 100.0%; height: 100.0%;">Pima Community College - Crime Type: 1</div>`)[0];
+                popup_5b4198e8386172399bfc0f0955861ee6.setContent(html_1b5579664f12c57802632fa508f25d32);
+            
+        
+
+        marker_002f6e23e855314b4fa0395e838ea3b2.bindPopup(popup_5b4198e8386172399bfc0f0955861ee6)
+        ;
+
+        
+    
+    
+            var marker_b7e1715515c711aefabea9a536eed6fc = L.marker(
+                [32.16316794949495, -110.97038317171716],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_b6a76ee24a24c2c6d5fc02b6030fef4e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b7e1715515c711aefabea9a536eed6fc.setIcon(icon_b6a76ee24a24c2c6d5fc02b6030fef4e);
+        
+    
+        var popup_5fb65437365b72479097eb6b962b9a24 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ad580fa085d504828551d5a5b9829d57 = $(`<div id="html_ad580fa085d504828551d5a5b9829d57" style="width: 100.0%; height: 100.0%;">Pima Community College - Crime Type: 1</div>`)[0];
+                popup_5fb65437365b72479097eb6b962b9a24.setContent(html_ad580fa085d504828551d5a5b9829d57);
+            
+        
+
+        marker_b7e1715515c711aefabea9a536eed6fc.bindPopup(popup_5fb65437365b72479097eb6b962b9a24)
+        ;
+
+        
+    
+    
+            var marker_3b60172841d71a8ab8dea03a6858dbe2 = L.marker(
+                [35.104916149999994, -106.59479111326203],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_b4f4e7e3617ffffc623950e8358573a6 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3b60172841d71a8ab8dea03a6858dbe2.setIcon(icon_b4f4e7e3617ffffc623950e8358573a6);
+        
+    
+        var popup_648747c9f3cbc28dc2b5bf365e0d03c2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_535710cd5187f8de6fe74eaf58a4cf22 = $(`<div id="html_535710cd5187f8de6fe74eaf58a4cf22" style="width: 100.0%; height: 100.0%;">Pima Medical Institute-Albuquerque - Crime Type: 1</div>`)[0];
+                popup_648747c9f3cbc28dc2b5bf365e0d03c2.setContent(html_535710cd5187f8de6fe74eaf58a4cf22);
+            
+        
+
+        marker_3b60172841d71a8ab8dea03a6858dbe2.bindPopup(popup_648747c9f3cbc28dc2b5bf365e0d03c2)
+        ;
+
+        
+    
+    
+            var marker_ddab7aaa33d00fdf262a1b770299e7e9 = L.marker(
+                [34.54448776112345, -112.47637028848722],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_4eea3bc701491e5a80dc49a6b011f199 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ddab7aaa33d00fdf262a1b770299e7e9.setIcon(icon_4eea3bc701491e5a80dc49a6b011f199);
+        
+    
+        var popup_b4361811761e98a536c5c669d511942a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_44ce31f392c7cd1194b363d7c7007c43 = $(`<div id="html_44ce31f392c7cd1194b363d7c7007c43" style="width: 100.0%; height: 100.0%;">Prescott College - Crime Type: 1</div>`)[0];
+                popup_b4361811761e98a536c5c669d511942a.setContent(html_44ce31f392c7cd1194b363d7c7007c43);
+            
+        
+
+        marker_ddab7aaa33d00fdf262a1b770299e7e9.bindPopup(popup_b4361811761e98a536c5c669d511942a)
+        ;
+
+        
+    
+    
+            var marker_341a0525757bde174979f5cfa0d575b7 = L.marker(
+                [33.63711255, -112.33020046504188],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_02e4c6aa4e48232bb82835d56a52af5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_341a0525757bde174979f5cfa0d575b7.setIcon(icon_02e4c6aa4e48232bb82835d56a52af5c);
+        
+    
+        var popup_14cd5d47a98156f9711a57a207665409 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1884541adb6e734f2b7d082b870afa92 = $(`<div id="html_1884541adb6e734f2b7d082b870afa92" style="width: 100.0%; height: 100.0%;">Rio Salado College - Crime Type: 1</div>`)[0];
+                popup_14cd5d47a98156f9711a57a207665409.setContent(html_1884541adb6e734f2b7d082b870afa92);
+            
+        
+
+        marker_341a0525757bde174979f5cfa0d575b7.bindPopup(popup_14cd5d47a98156f9711a57a207665409)
+        ;
+
+        
+    
+    
+            var marker_31c75f34767fc80952e544d574fb0452 = L.marker(
+                [33.43942165, -112.34999882004766],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_82e75bec9806c212ebd7bf3fede2dc3f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_31c75f34767fc80952e544d574fb0452.setIcon(icon_82e75bec9806c212ebd7bf3fede2dc3f);
+        
+    
+        var popup_fd23c6bdce7f73297ef4931668a476c4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4074b82ae83aa7d1b97eec6a6b3b9674 = $(`<div id="html_4074b82ae83aa7d1b97eec6a6b3b9674" style="width: 100.0%; height: 100.0%;">Rio Salado College - Crime Type: 1</div>`)[0];
+                popup_fd23c6bdce7f73297ef4931668a476c4.setContent(html_4074b82ae83aa7d1b97eec6a6b3b9674);
+            
+        
+
+        marker_31c75f34767fc80952e544d574fb0452.bindPopup(popup_fd23c6bdce7f73297ef4931668a476c4)
+        ;
+
+        
+    
+    
+            var marker_2c8cd617ae61e6033404d11ca09e8214 = L.marker(
+                [33.45539142157239, -112.08247249258244],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_df79068e1a6e40fa49d0a02add35e9c7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_2c8cd617ae61e6033404d11ca09e8214.setIcon(icon_df79068e1a6e40fa49d0a02add35e9c7);
+        
+    
+        var popup_c4446479546ae823046e3909eb9c264f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0ddff8667ea4206cf192228a34d4eee9 = $(`<div id="html_0ddff8667ea4206cf192228a34d4eee9" style="width: 100.0%; height: 100.0%;">Rio Salado College - Crime Type: 1</div>`)[0];
+                popup_c4446479546ae823046e3909eb9c264f.setContent(html_0ddff8667ea4206cf192228a34d4eee9);
+            
+        
+
+        marker_2c8cd617ae61e6033404d11ca09e8214.bindPopup(popup_c4446479546ae823046e3909eb9c264f)
+        ;
+
+        
+    
+    
+            var marker_6d96e72a5478f5c8a555864fd2f5cc74 = L.marker(
+                [33.3924132, -111.8945567],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_95eaaff204e3b6c89ecb33b464b3829f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6d96e72a5478f5c8a555864fd2f5cc74.setIcon(icon_95eaaff204e3b6c89ecb33b464b3829f);
+        
+    
+        var popup_731a877e525bd51293e6622ab6eb503b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9db56e267b1c68117f719de9f0cab1cd = $(`<div id="html_9db56e267b1c68117f719de9f0cab1cd" style="width: 100.0%; height: 100.0%;">Rio Salado College - Crime Type: 1</div>`)[0];
+                popup_731a877e525bd51293e6622ab6eb503b.setContent(html_9db56e267b1c68117f719de9f0cab1cd);
+            
+        
+
+        marker_6d96e72a5478f5c8a555864fd2f5cc74.bindPopup(popup_731a877e525bd51293e6622ab6eb503b)
+        ;
+
+        
+    
+    
+            var marker_1482b5bbde6513c556c560b832538c73 = L.marker(
+                [33.55296228571429, -112.09636957142858],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_383fc86d986f835360582324ae1e8aa5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_1482b5bbde6513c556c560b832538c73.setIcon(icon_383fc86d986f835360582324ae1e8aa5);
+        
+    
+        var popup_3533637ea56eea30f610332625bde8de = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8879796a00f2be1e4985979e444820ff = $(`<div id="html_8879796a00f2be1e4985979e444820ff" style="width: 100.0%; height: 100.0%;">Rio Salado College - Crime Type: 1</div>`)[0];
+                popup_3533637ea56eea30f610332625bde8de.setContent(html_8879796a00f2be1e4985979e444820ff);
+            
+        
+
+        marker_1482b5bbde6513c556c560b832538c73.bindPopup(popup_3533637ea56eea30f610332625bde8de)
+        ;
+
+        
+    
+    
+            var marker_a9bf25346e4210403ae85dda7376aa79 = L.marker(
+                [33.3924132, -111.8945567],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_1bb64d7f8cd403b3af74ec2ebee60d5a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_a9bf25346e4210403ae85dda7376aa79.setIcon(icon_1bb64d7f8cd403b3af74ec2ebee60d5a);
+        
+    
+        var popup_4e8da5f21518f30059e7a30121efcc8e = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c9a85dbee387f9fe4206d7cda1121193 = $(`<div id="html_c9a85dbee387f9fe4206d7cda1121193" style="width: 100.0%; height: 100.0%;">Rio Salado College - Crime Type: 1</div>`)[0];
+                popup_4e8da5f21518f30059e7a30121efcc8e.setContent(html_c9a85dbee387f9fe4206d7cda1121193);
+            
+        
+
+        marker_a9bf25346e4210403ae85dda7376aa79.bindPopup(popup_4e8da5f21518f30059e7a30121efcc8e)
+        ;
+
+        
+    
+    
+            var marker_cfd334bf67a98486e4fddaf63a0081f0 = L.marker(
+                [33.48037393877551, -112.13718],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_58f144e71d1a0a4809451b62ba416b20 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_cfd334bf67a98486e4fddaf63a0081f0.setIcon(icon_58f144e71d1a0a4809451b62ba416b20);
+        
+    
+        var popup_4e281a4a197fb04a5124a91fb134a8b2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ce2a207aa33fec7ec3d52b14020973a8 = $(`<div id="html_ce2a207aa33fec7ec3d52b14020973a8" style="width: 100.0%; height: 100.0%;">Rio Salado College - Crime Type: 1</div>`)[0];
+                popup_4e281a4a197fb04a5124a91fb134a8b2.setContent(html_ce2a207aa33fec7ec3d52b14020973a8);
+            
+        
+
+        marker_cfd334bf67a98486e4fddaf63a0081f0.bindPopup(popup_4e281a4a197fb04a5124a91fb134a8b2)
+        ;
+
+        
+    
+    
+            var marker_c100f3723f87fad1494e98e6aead0fe4 = L.marker(
+                [33.5122411, -111.880364],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_72e2a021d77c2fa0b6c0d9d491ee4824 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c100f3723f87fad1494e98e6aead0fe4.setIcon(icon_72e2a021d77c2fa0b6c0d9d491ee4824);
+        
+    
+        var popup_dedc8aa593b05eedce737e8044b46615 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_58af49001388ddbee830ad18380c6b4a = $(`<div id="html_58af49001388ddbee830ad18380c6b4a" style="width: 100.0%; height: 100.0%;">Scottsdale Community College - Crime Type: 1</div>`)[0];
+                popup_dedc8aa593b05eedce737e8044b46615.setContent(html_58af49001388ddbee830ad18380c6b4a);
+            
+        
+
+        marker_c100f3723f87fad1494e98e6aead0fe4.bindPopup(popup_dedc8aa593b05eedce737e8044b46615)
+        ;
+
+        
+    
+    
+            var marker_d6cc40b3193819783b9a48870cf6537c = L.marker(
+                [33.38193475, -112.03407350966162],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_e244755ed2eded2c451d76dbf7f29369 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d6cc40b3193819783b9a48870cf6537c.setIcon(icon_e244755ed2eded2c451d76dbf7f29369);
+        
+    
+        var popup_605ff8dbde8e212e1e5b54dc010ff653 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4fc90f8e0560c825566b9b80e5f4792a = $(`<div id="html_4fc90f8e0560c825566b9b80e5f4792a" style="width: 100.0%; height: 100.0%;">South Mountain Community College - Crime Type: 1</div>`)[0];
+                popup_605ff8dbde8e212e1e5b54dc010ff653.setContent(html_4fc90f8e0560c825566b9b80e5f4792a);
+            
+        
+
+        marker_d6cc40b3193819783b9a48870cf6537c.bindPopup(popup_605ff8dbde8e212e1e5b54dc010ff653)
+        ;
+
+        
+    
+    
+            var marker_7e74aac5c672982be58bca568bbef4cc = L.marker(
+                [33.3621627, -111.9621021583842],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f6c66404b47f73e587d6958aeb311f73 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7e74aac5c672982be58bca568bbef4cc.setIcon(icon_f6c66404b47f73e587d6958aeb311f73);
+        
+    
+        var popup_ee883b9783c0f0f9619d8d0e514e25f0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_447d9348fa657434663515ab0ec6b9cc = $(`<div id="html_447d9348fa657434663515ab0ec6b9cc" style="width: 100.0%; height: 100.0%;">South Mountain Community College - Crime Type: 1</div>`)[0];
+                popup_ee883b9783c0f0f9619d8d0e514e25f0.setContent(html_447d9348fa657434663515ab0ec6b9cc);
+            
+        
+
+        marker_7e74aac5c672982be58bca568bbef4cc.bindPopup(popup_ee883b9783c0f0f9619d8d0e514e25f0)
+        ;
+
+        
+    
+    
+            var marker_6172ba77ac937cb63dd3545ebee0ca0d = L.marker(
+                [33.374948, -112.15310054954848],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_9319c0f79bbbf06df45da32f6720f36a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6172ba77ac937cb63dd3545ebee0ca0d.setIcon(icon_9319c0f79bbbf06df45da32f6720f36a);
+        
+    
+        var popup_06fd27496517f352e6695dc66a6ebfb0 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4e30a74f9f42f34a71c2ae329fe58284 = $(`<div id="html_4e30a74f9f42f34a71c2ae329fe58284" style="width: 100.0%; height: 100.0%;">South Mountain Community College - Crime Type: 1</div>`)[0];
+                popup_06fd27496517f352e6695dc66a6ebfb0.setContent(html_4e30a74f9f42f34a71c2ae329fe58284);
+            
+        
+
+        marker_6172ba77ac937cb63dd3545ebee0ca0d.bindPopup(popup_06fd27496517f352e6695dc66a6ebfb0)
+        ;
+
+        
+    
+    
+            var marker_7452af84b0067edd684d8d2afce3eaa8 = L.marker(
+                [33.6218778, -112.1813589],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_711b5aba6d0bc1eb24e8bf8b2cd51fdb = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7452af84b0067edd684d8d2afce3eaa8.setIcon(icon_711b5aba6d0bc1eb24e8bf8b2cd51fdb);
+        
+    
+        var popup_2909ca9fea053e65ecae5cfb05f9cfc8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fe58f82eae8894699717fdbc0e3682b8 = $(`<div id="html_fe58f82eae8894699717fdbc0e3682b8" style="width: 100.0%; height: 100.0%;">Arizona Christian University - Crime Type: 1</div>`)[0];
+                popup_2909ca9fea053e65ecae5cfb05f9cfc8.setContent(html_fe58f82eae8894699717fdbc0e3682b8);
+            
+        
+
+        marker_7452af84b0067edd684d8d2afce3eaa8.bindPopup(popup_2909ca9fea053e65ecae5cfb05f9cfc8)
+        ;
+
+        
+    
+    
+            var marker_e83985bbbd35e0a6abe07ce54af3b930 = L.marker(
+                [34.54519939828411, -112.45592463465582],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_7aeff75b94d350f2d80b7d1f1f8df0ae = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e83985bbbd35e0a6abe07ce54af3b930.setIcon(icon_7aeff75b94d350f2d80b7d1f1f8df0ae);
+        
+    
+        var popup_b63f3c54991940d8e4f6feba09e213d4 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_58296182400513e318cb42f378abb1ee = $(`<div id="html_58296182400513e318cb42f378abb1ee" style="width: 100.0%; height: 100.0%;">Yavapai College - Crime Type: 1</div>`)[0];
+                popup_b63f3c54991940d8e4f6feba09e213d4.setContent(html_58296182400513e318cb42f378abb1ee);
+            
+        
+
+        marker_e83985bbbd35e0a6abe07ce54af3b930.bindPopup(popup_b63f3c54991940d8e4f6feba09e213d4)
+        ;
+
+        
+    
+    
+            var marker_01a7d4967f130577bfb68538f9cd0ebf = L.marker(
+                [34.739758, -112.05423438095238],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_159c4ab00a3bbeaccca95554556f2fa4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_01a7d4967f130577bfb68538f9cd0ebf.setIcon(icon_159c4ab00a3bbeaccca95554556f2fa4);
+        
+    
+        var popup_03761f5369cdd2eab89444e4e154da14 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_555b89c71b6db8f55ebffe4dbe1df1e1 = $(`<div id="html_555b89c71b6db8f55ebffe4dbe1df1e1" style="width: 100.0%; height: 100.0%;">Yavapai College - Crime Type: 1</div>`)[0];
+                popup_03761f5369cdd2eab89444e4e154da14.setContent(html_555b89c71b6db8f55ebffe4dbe1df1e1);
+            
+        
+
+        marker_01a7d4967f130577bfb68538f9cd0ebf.bindPopup(popup_03761f5369cdd2eab89444e4e154da14)
+        ;
+
+        
+    
+    
+            var marker_c1f7cf6964bce5cf69cd32d307fc2f4e = L.marker(
+                [34.85006960655369, -111.8318271384277],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0fe603123e7043bfd954cd2451325f6e = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_c1f7cf6964bce5cf69cd32d307fc2f4e.setIcon(icon_0fe603123e7043bfd954cd2451325f6e);
+        
+    
+        var popup_58102d0c7813267b80d6cbc5dbcbbf62 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b33ecb370d0bb34416fbb17db0d9021 = $(`<div id="html_7b33ecb370d0bb34416fbb17db0d9021" style="width: 100.0%; height: 100.0%;">Yavapai College - Crime Type: 1</div>`)[0];
+                popup_58102d0c7813267b80d6cbc5dbcbbf62.setContent(html_7b33ecb370d0bb34416fbb17db0d9021);
+            
+        
+
+        marker_c1f7cf6964bce5cf69cd32d307fc2f4e.bindPopup(popup_58102d0c7813267b80d6cbc5dbcbbf62)
+        ;
+
+        
+    
+    
+            var marker_84da363b063feccce4ffedde4a548def = L.marker(
+                [34.7210884, -92.33951162121744],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_2b91857e0c04b3892225ad608664b292 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_84da363b063feccce4ffedde4a548def.setIcon(icon_2b91857e0c04b3892225ad608664b292);
+        
+    
+        var popup_eb99977b23d29fdc0897e16f7ed7551d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_e0a5a97be562155c8367dbf38b94bf21 = $(`<div id="html_e0a5a97be562155c8367dbf38b94bf21" style="width: 100.0%; height: 100.0%;">University of Arkansas at Little Rock - Crime Type: 1</div>`)[0];
+                popup_eb99977b23d29fdc0897e16f7ed7551d.setContent(html_e0a5a97be562155c8367dbf38b94bf21);
+            
+        
+
+        marker_84da363b063feccce4ffedde4a548def.bindPopup(popup_eb99977b23d29fdc0897e16f7ed7551d)
+        ;
+
+        
+    
+    
+            var marker_d12fd52dc1e9d1cff90a5a80d5428d83 = L.marker(
+                [34.7357361, -92.26288074984036],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_234bdab0090926cfd6c38df84419427c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_d12fd52dc1e9d1cff90a5a80d5428d83.setIcon(icon_234bdab0090926cfd6c38df84419427c);
+        
+    
+        var popup_85d8f49ddbff719d047d14e7cab3bd46 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f854ef13ab1ac915fdb2538b3c4c6820 = $(`<div id="html_f854ef13ab1ac915fdb2538b3c4c6820" style="width: 100.0%; height: 100.0%;">University of Arkansas at Little Rock - Crime Type: 1</div>`)[0];
+                popup_85d8f49ddbff719d047d14e7cab3bd46.setContent(html_f854ef13ab1ac915fdb2538b3c4c6820);
+            
+        
+
+        marker_d12fd52dc1e9d1cff90a5a80d5428d83.bindPopup(popup_85d8f49ddbff719d047d14e7cab3bd46)
+        ;
+
+        
+    
+    
+            var marker_71a824d78c3d138fd01ee5ce8f2906fb = L.marker(
+                [34.74626695, -92.25839996761856],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_109879c76885153afbf6b16ebfcdace0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_71a824d78c3d138fd01ee5ce8f2906fb.setIcon(icon_109879c76885153afbf6b16ebfcdace0);
+        
+    
+        var popup_114df8e82ab6e8b86f38837e7e92b54a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8e8bbdfe689bf679e934e9efad0e2f4d = $(`<div id="html_8e8bbdfe689bf679e934e9efad0e2f4d" style="width: 100.0%; height: 100.0%;">University of Arkansas at Little Rock - Crime Type: 1</div>`)[0];
+                popup_114df8e82ab6e8b86f38837e7e92b54a.setContent(html_8e8bbdfe689bf679e934e9efad0e2f4d);
+            
+        
+
+        marker_71a824d78c3d138fd01ee5ce8f2906fb.bindPopup(popup_114df8e82ab6e8b86f38837e7e92b54a)
+        ;
+
+        
+    
+    
+            var marker_bb340ccdc56a6127ef2558feadcd5afb = L.marker(
+                [36.0777979, -94.15898457036693],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_639af31499a62f5de9cb4e85f9137a5c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_bb340ccdc56a6127ef2558feadcd5afb.setIcon(icon_639af31499a62f5de9cb4e85f9137a5c);
+        
+    
+        var popup_9d100998e21de8d9e7b00f0f95c51579 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c71463cb1794e401a47b452ef0785f74 = $(`<div id="html_c71463cb1794e401a47b452ef0785f74" style="width: 100.0%; height: 100.0%;">University of Arkansas for Medical Sciences - Crime Type: 1</div>`)[0];
+                popup_9d100998e21de8d9e7b00f0f95c51579.setContent(html_c71463cb1794e401a47b452ef0785f74);
+            
+        
+
+        marker_bb340ccdc56a6127ef2558feadcd5afb.bindPopup(popup_9d100998e21de8d9e7b00f0f95c51579)
+        ;
+
+        
+    
+    
+            var marker_7377f8e97ac0492596dc12457280495e = L.marker(
+                [35.7764261, -91.62423939520048],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_1132ee32a3248c4a381f6a54e4af6b87 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_7377f8e97ac0492596dc12457280495e.setIcon(icon_1132ee32a3248c4a381f6a54e4af6b87);
+        
+    
+        var popup_bcb67930f87d136b6f620e7effa92eba = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_235ddb2c2dfd4c4a174e6c883ccad1e5 = $(`<div id="html_235ddb2c2dfd4c4a174e6c883ccad1e5" style="width: 100.0%; height: 100.0%;">Lyon College - Crime Type: 1</div>`)[0];
+                popup_bcb67930f87d136b6f620e7effa92eba.setContent(html_235ddb2c2dfd4c4a174e6c883ccad1e5);
+            
+        
+
+        marker_7377f8e97ac0492596dc12457280495e.bindPopup(popup_bcb67930f87d136b6f620e7effa92eba)
+        ;
+
+        
+    
+    
+            var marker_0e0e86733fe0ffb955dda471131c195c = L.marker(
+                [35.49708424442222, -93.8428330079242],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_eca45454c66eae9294bdc801363120da = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0e0e86733fe0ffb955dda471131c195c.setIcon(icon_eca45454c66eae9294bdc801363120da);
+        
+    
+        var popup_b07db0360718770c01a529a7cab54f7d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_27200f0adc99a8f9fce5c5033369a783 = $(`<div id="html_27200f0adc99a8f9fce5c5033369a783" style="width: 100.0%; height: 100.0%;">Arkansas Tech University - Crime Type: 1</div>`)[0];
+                popup_b07db0360718770c01a529a7cab54f7d.setContent(html_27200f0adc99a8f9fce5c5033369a783);
+            
+        
+
+        marker_0e0e86733fe0ffb955dda471131c195c.bindPopup(popup_b07db0360718770c01a529a7cab54f7d)
+        ;
+
+        
+    
+    
+            var marker_91b65f132f859a15d0347b11eae35c69 = L.marker(
+                [35.258234, -93.120896],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_116bd8b73694ff9c2f8682fcd9429c6a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_91b65f132f859a15d0347b11eae35c69.setIcon(icon_116bd8b73694ff9c2f8682fcd9429c6a);
+        
+    
+        var popup_a5ec6921eb276b152b7d17d02d87874d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f88c1022bbfdc711e204bb589fc90a85 = $(`<div id="html_f88c1022bbfdc711e204bb589fc90a85" style="width: 100.0%; height: 100.0%;">Arkansas Tech University - Crime Type: 1</div>`)[0];
+                popup_a5ec6921eb276b152b7d17d02d87874d.setContent(html_f88c1022bbfdc711e204bb589fc90a85);
+            
+        
+
+        marker_91b65f132f859a15d0347b11eae35c69.bindPopup(popup_a5ec6921eb276b152b7d17d02d87874d)
+        ;
+
+        
+    
+    
+            var marker_e132c43d1ca996ec6d71e256847ae7c7 = L.marker(
+                [33.5906957286248, -91.81076525165427],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f95f81080663a7366c433318c1cfbe89 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e132c43d1ca996ec6d71e256847ae7c7.setIcon(icon_f95f81080663a7366c433318c1cfbe89);
+        
+    
+        var popup_8e5c5a4527d2bbf0567d2c615a6fd817 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5553b1abe1c6305d87f11d1448c97c4d = $(`<div id="html_5553b1abe1c6305d87f11d1448c97c4d" style="width: 100.0%; height: 100.0%;">University of Arkansas at Monticello - Crime Type: 1</div>`)[0];
+                popup_8e5c5a4527d2bbf0567d2c615a6fd817.setContent(html_5553b1abe1c6305d87f11d1448c97c4d);
+            
+        
+
+        marker_e132c43d1ca996ec6d71e256847ae7c7.bindPopup(popup_8e5c5a4527d2bbf0567d2c615a6fd817)
+        ;
+
+        
+    
+    
+            var marker_164b4efc0c93b54ff637a2012ac39254 = L.marker(
+                [34.890632, -92.103677],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_cb3d1a22b4fb66329d2f2797f09db6cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_164b4efc0c93b54ff637a2012ac39254.setIcon(icon_cb3d1a22b4fb66329d2f2797f09db6cd);
+        
+    
+        var popup_9c39a594d97fceedcd3d7a7cf03b015c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_0e7ed55da7a727c0bf177700fc9642af = $(`<div id="html_0e7ed55da7a727c0bf177700fc9642af" style="width: 100.0%; height: 100.0%;">Arthur's Beauty College - Crime Type: 1</div>`)[0];
+                popup_9c39a594d97fceedcd3d7a7cf03b015c.setContent(html_0e7ed55da7a727c0bf177700fc9642af);
+            
+        
+
+        marker_164b4efc0c93b54ff637a2012ac39254.bindPopup(popup_9c39a594d97fceedcd3d7a7cf03b015c)
+        ;
+
+        
+    
+    
+            var marker_3d92dd1927e59406bc4cf78f4489c070 = L.marker(
+                [36.24086095, -90.95183510522332],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_e0cf81e410e074bb04c7041c9a6ab6b7 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3d92dd1927e59406bc4cf78f4489c070.setIcon(icon_e0cf81e410e074bb04c7041c9a6ab6b7);
+        
+    
+        var popup_4936e6b85eb7f6fecd0f41d3fca25673 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8c029fa6938c39d3b9d67be8bbf42306 = $(`<div id="html_8c029fa6938c39d3b9d67be8bbf42306" style="width: 100.0%; height: 100.0%;">Black River Technical College - Crime Type: 1</div>`)[0];
+                popup_4936e6b85eb7f6fecd0f41d3fca25673.setContent(html_8c029fa6938c39d3b9d67be8bbf42306);
+            
+        
+
+        marker_3d92dd1927e59406bc4cf78f4489c070.bindPopup(popup_4936e6b85eb7f6fecd0f41d3fca25673)
+        ;
+
+        
+    
+    
+            var marker_e18c169fedb2c3090ae04656a4e41cc7 = L.marker(
+                [36.08755011608143, -90.4701899355432],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_464b121dc03b89f91dc02fe406a19804 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_e18c169fedb2c3090ae04656a4e41cc7.setIcon(icon_464b121dc03b89f91dc02fe406a19804);
+        
+    
+        var popup_61871284ccbf14a3c6543da6b8fd1c65 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_18095bba65cfe5ad97afd833de675a24 = $(`<div id="html_18095bba65cfe5ad97afd833de675a24" style="width: 100.0%; height: 100.0%;">Black River Technical College - Crime Type: 1</div>`)[0];
+                popup_61871284ccbf14a3c6543da6b8fd1c65.setContent(html_18095bba65cfe5ad97afd833de675a24);
+            
+        
+
+        marker_e18c169fedb2c3090ae04656a4e41cc7.bindPopup(popup_61871284ccbf14a3c6543da6b8fd1c65)
+        ;
+
+        
+    
+    
+            var marker_4fdcf4d36fd755561daa8f55a70aaeb2 = L.marker(
+                [35.084539, -92.445715],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_176c87d7ac7f82491ac633bab545ce74 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4fdcf4d36fd755561daa8f55a70aaeb2.setIcon(icon_176c87d7ac7f82491ac633bab545ce74);
+        
+    
+        var popup_5a5836334a2dada30316007187fd3ff2 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_807d05021ffe5851aa2383df1b63fe44 = $(`<div id="html_807d05021ffe5851aa2383df1b63fe44" style="width: 100.0%; height: 100.0%;">Central Baptist College - Crime Type: 1</div>`)[0];
+                popup_5a5836334a2dada30316007187fd3ff2.setContent(html_807d05021ffe5851aa2383df1b63fe44);
+            
+        
+
+        marker_4fdcf4d36fd755561daa8f55a70aaeb2.bindPopup(popup_5a5836334a2dada30316007187fd3ff2)
+        ;
+
+        
+    
+    
+            var marker_3255f7c7d5adeca319f6fa97da7a43dc = L.marker(
+                [33.68462012052296, -94.13592743482542],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_5bbb9f7158cacf90e6846c97a8104b04 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_3255f7c7d5adeca319f6fa97da7a43dc.setIcon(icon_5bbb9f7158cacf90e6846c97a8104b04);
+        
+    
+        var popup_d505e1d76eb2fa83fe4c46bc4e193cf3 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b821fa6f693e825e712bdfa604d2be3b = $(`<div id="html_b821fa6f693e825e712bdfa604d2be3b" style="width: 100.0%; height: 100.0%;">Cossatot Community College of the University of Arkansas - Crime Type: 1</div>`)[0];
+                popup_d505e1d76eb2fa83fe4c46bc4e193cf3.setContent(html_b821fa6f693e825e712bdfa604d2be3b);
+            
+        
+
+        marker_3255f7c7d5adeca319f6fa97da7a43dc.bindPopup(popup_d505e1d76eb2fa83fe4c46bc4e193cf3)
+        ;
+
+        
+    
+    
+            var marker_23b7e32225874175d7792f1a75b6f29b = L.marker(
+                [36.066337, -90.584685],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_8beda46254aa4f352a8ee6c20c68cf55 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_23b7e32225874175d7792f1a75b6f29b.setIcon(icon_8beda46254aa4f352a8ee6c20c68cf55);
+        
+    
+        var popup_c8d1caa0a6b54e7d2b97703d76da39c7 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3ebf5f55d7a60179272108af467da0f0 = $(`<div id="html_3ebf5f55d7a60179272108af467da0f0" style="width: 100.0%; height: 100.0%;">Crowley's Ridge College - Crime Type: 1</div>`)[0];
+                popup_c8d1caa0a6b54e7d2b97703d76da39c7.setContent(html_3ebf5f55d7a60179272108af467da0f0);
+            
+        
+
+        marker_23b7e32225874175d7792f1a75b6f29b.bindPopup(popup_c8d1caa0a6b54e7d2b97703d76da39c7)
+        ;
+
+        
+    
+    
+            var marker_5b0ff410b6514f707feb659fc3e33c97 = L.marker(
+                [35.0417579, -90.7673336],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_f56f5c4004fbba28407e254effbe3080 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_5b0ff410b6514f707feb659fc3e33c97.setIcon(icon_f56f5c4004fbba28407e254effbe3080);
+        
+    
+        var popup_dd53d2645214370ea4459face0e8999f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_f6de99c891a230aaaeb7f69b08c71b9e = $(`<div id="html_f6de99c891a230aaaeb7f69b08c71b9e" style="width: 100.0%; height: 100.0%;">East Arkansas Community College - Crime Type: 1</div>`)[0];
+                popup_dd53d2645214370ea4459face0e8999f.setContent(html_f6de99c891a230aaaeb7f69b08c71b9e);
+            
+        
+
+        marker_5b0ff410b6514f707feb659fc3e33c97.bindPopup(popup_dd53d2645214370ea4459face0e8999f)
+        ;
+
+        
+    
+    
+            var marker_8ef9cb20fdc2f3e771a6d4357e94ef64 = L.marker(
+                [34.789526, -92.222844],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_cde2ea0a25194c3496ed149640d58f80 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_8ef9cb20fdc2f3e771a6d4357e94ef64.setIcon(icon_cde2ea0a25194c3496ed149640d58f80);
+        
+    
+        var popup_b1c0da157910cad5f5f5a69d4336485f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4342afbd9c5207d701a410170744f64c = $(`<div id="html_4342afbd9c5207d701a410170744f64c" style="width: 100.0%; height: 100.0%;">Paul Mitchell the School-Little Rock - Crime Type: 1</div>`)[0];
+                popup_b1c0da157910cad5f5f5a69d4336485f.setContent(html_4342afbd9c5207d701a410170744f64c);
+            
+        
+
+        marker_8ef9cb20fdc2f3e771a6d4357e94ef64.bindPopup(popup_b1c0da157910cad5f5f5a69d4336485f)
+        ;
+
+        
+    
+    
+            var marker_410ca6a9611b1c437093c1af1c32102f = L.marker(
+                [35.21427995918367, -97.485925122449],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_73063593176c6443261fc40eab5b6625 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_410ca6a9611b1c437093c1af1c32102f.setIcon(icon_73063593176c6443261fc40eab5b6625);
+        
+    
+        var popup_a3f699385098dec2e1f7e7a43b820796 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b31e2874a94d6b00aa7d8596e449ffaa = $(`<div id="html_b31e2874a94d6b00aa7d8596e449ffaa" style="width: 100.0%; height: 100.0%;">Paul Mitchell the School-Little Rock - Crime Type: 1</div>`)[0];
+                popup_a3f699385098dec2e1f7e7a43b820796.setContent(html_b31e2874a94d6b00aa7d8596e449ffaa);
+            
+        
+
+        marker_410ca6a9611b1c437093c1af1c32102f.bindPopup(popup_a3f699385098dec2e1f7e7a43b820796)
+        ;
+
+        
+    
+    
+            var marker_840403e6cf7d3192fb057c9a7bfb44e0 = L.marker(
+                [36.324032, -94.186328],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_0b79dbc4536a99e5ed5d68189e90dc4f = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_840403e6cf7d3192fb057c9a7bfb44e0.setIcon(icon_0b79dbc4536a99e5ed5d68189e90dc4f);
+        
+    
+        var popup_ec5fe4cf956c2a2c9429bb45ef04435c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_3b869c7a0ab13cb52a01e1f40120ae32 = $(`<div id="html_3b869c7a0ab13cb52a01e1f40120ae32" style="width: 100.0%; height: 100.0%;">Harding University - Crime Type: 1</div>`)[0];
+                popup_ec5fe4cf956c2a2c9429bb45ef04435c.setContent(html_3b869c7a0ab13cb52a01e1f40120ae32);
+            
+        
+
+        marker_840403e6cf7d3192fb057c9a7bfb44e0.bindPopup(popup_ec5fe4cf956c2a2c9429bb45ef04435c)
+        ;
+
+        
+    
+    
+            var marker_525973d350b64051ffc6623dd12f6f9d = L.marker(
+                [46.3144754, 11.0480288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_20c50ea18a60d30e509f733c993979a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_525973d350b64051ffc6623dd12f6f9d.setIcon(icon_20c50ea18a60d30e509f733c993979a5);
+        
+    
+        var popup_0e6c0340132580538a6aaa915f424373 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a83880de0206f2e2b658fee7ba834e00 = $(`<div id="html_a83880de0206f2e2b658fee7ba834e00" style="width: 100.0%; height: 100.0%;">Harding University - Crime Type: 1</div>`)[0];
+                popup_0e6c0340132580538a6aaa915f424373.setContent(html_a83880de0206f2e2b658fee7ba834e00);
+            
+        
+
+        marker_525973d350b64051ffc6623dd12f6f9d.bindPopup(popup_0e6c0340132580538a6aaa915f424373)
+        ;
+
+        
+    
+    
+            var marker_6db51506ae7ab20d4c5a6b12549df03f = L.marker(
+                [46.3144754, 11.0480288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_6f34b962e16e3cc0e3c65348e18ceb28 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_6db51506ae7ab20d4c5a6b12549df03f.setIcon(icon_6f34b962e16e3cc0e3c65348e18ceb28);
+        
+    
+        var popup_b9b0853e740626ea21887d1b6a62c9b1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_adb18de057a769fe31929362f4ba6180 = $(`<div id="html_adb18de057a769fe31929362f4ba6180" style="width: 100.0%; height: 100.0%;">Harding University - Crime Type: 1</div>`)[0];
+                popup_b9b0853e740626ea21887d1b6a62c9b1.setContent(html_adb18de057a769fe31929362f4ba6180);
+            
+        
+
+        marker_6db51506ae7ab20d4c5a6b12549df03f.bindPopup(popup_b9b0853e740626ea21887d1b6a62c9b1)
+        ;
+
+        
+    
+    
+            var marker_0911579395bf4009d73d7980df5bc16a = L.marker(
+                [35.10428, -89.915661],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_35eb3fa9799ffc66277d0f3e92e1375d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_0911579395bf4009d73d7980df5bc16a.setIcon(icon_35eb3fa9799ffc66277d0f3e92e1375d);
+        
+    
+        var popup_97a422c4abe5d6924a8e822f8237acbc = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b78f76baf707ac02aa0783ce8b85d862 = $(`<div id="html_b78f76baf707ac02aa0783ce8b85d862" style="width: 100.0%; height: 100.0%;">Harding University - Crime Type: 1</div>`)[0];
+                popup_97a422c4abe5d6924a8e822f8237acbc.setContent(html_b78f76baf707ac02aa0783ce8b85d862);
+            
+        
+
+        marker_0911579395bf4009d73d7980df5bc16a.bindPopup(popup_97a422c4abe5d6924a8e822f8237acbc)
+        ;
+
+        
+    
+    
+            var marker_86a660049ff6e39c2fa0a0e4082e4630 = L.marker(
+                [46.3144754, 11.0480288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_5e8c6c854fdc57f28322edb5c95f7e4b = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_86a660049ff6e39c2fa0a0e4082e4630.setIcon(icon_5e8c6c854fdc57f28322edb5c95f7e4b);
+        
+    
+        var popup_178b851bcd87740f3b1a23b994999420 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_7b9ca41e61cbe092d82d8333e0d2b04c = $(`<div id="html_7b9ca41e61cbe092d82d8333e0d2b04c" style="width: 100.0%; height: 100.0%;">Harding University - Crime Type: 1</div>`)[0];
+                popup_178b851bcd87740f3b1a23b994999420.setContent(html_7b9ca41e61cbe092d82d8333e0d2b04c);
+            
+        
+
+        marker_86a660049ff6e39c2fa0a0e4082e4630.bindPopup(popup_178b851bcd87740f3b1a23b994999420)
+        ;
+
+        
+    
+    
+            var marker_4c69109714248d4964c9a86d3a34a2fa = L.marker(
+                [46.3144754, 11.0480288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_9eb81d3704e7ba94b17ee1bd69ac3744 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_4c69109714248d4964c9a86d3a34a2fa.setIcon(icon_9eb81d3704e7ba94b17ee1bd69ac3744);
+        
+    
+        var popup_d848dd8327b28e895ded6d8873614a8a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_fb8cc919f1fb8848e9d2a0fc703cd061 = $(`<div id="html_fb8cc919f1fb8848e9d2a0fc703cd061" style="width: 100.0%; height: 100.0%;">Harding University - Crime Type: 1</div>`)[0];
+                popup_d848dd8327b28e895ded6d8873614a8a.setContent(html_fb8cc919f1fb8848e9d2a0fc703cd061);
+            
+        
+
+        marker_4c69109714248d4964c9a86d3a34a2fa.bindPopup(popup_d848dd8327b28e895ded6d8873614a8a)
+        ;
+
+        
+    
+    
+            var marker_40663a35fdb905056b93ff984f6a108c = L.marker(
+                [46.3144754, 11.0480288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_6884191b433fe53b0c0ddf4df61dc9d8 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_40663a35fdb905056b93ff984f6a108c.setIcon(icon_6884191b433fe53b0c0ddf4df61dc9d8);
+        
+    
+        var popup_09bc3175597daf7edb5e58cfd0146691 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_23fa4c4a3faf7134a199c6b45349185b = $(`<div id="html_23fa4c4a3faf7134a199c6b45349185b" style="width: 100.0%; height: 100.0%;">Harding University - Crime Type: 1</div>`)[0];
+                popup_09bc3175597daf7edb5e58cfd0146691.setContent(html_23fa4c4a3faf7134a199c6b45349185b);
+            
+        
+
+        marker_40663a35fdb905056b93ff984f6a108c.bindPopup(popup_09bc3175597daf7edb5e58cfd0146691)
+        ;
+
+        
+    
+    
+            var marker_b5f9863b34ed2fca9bf2f0845b13ac1c = L.marker(
+                [46.3144754, 11.0480288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_a14027d9b23ec744b3f3901fa5038637 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_b5f9863b34ed2fca9bf2f0845b13ac1c.setIcon(icon_a14027d9b23ec744b3f3901fa5038637);
+        
+    
+        var popup_978d854960a5120276bbb0418a29d9e1 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_4666e996e666eacec3c6c6293597164f = $(`<div id="html_4666e996e666eacec3c6c6293597164f" style="width: 100.0%; height: 100.0%;">Harding University - Crime Type: 1</div>`)[0];
+                popup_978d854960a5120276bbb0418a29d9e1.setContent(html_4666e996e666eacec3c6c6293597164f);
+            
+        
+
+        marker_b5f9863b34ed2fca9bf2f0845b13ac1c.bindPopup(popup_978d854960a5120276bbb0418a29d9e1)
+        ;
+
+        
+    
+    
+            var marker_59cf51db07db9e39482816db4181b9a5 = L.marker(
+                [34.496223, -93.038204],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_646578032664f60aa23afb5c62a48a68 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_59cf51db07db9e39482816db4181b9a5.setIcon(icon_646578032664f60aa23afb5c62a48a68);
+        
+    
+        var popup_3ee4db5f0c30303750cd736a78eeded8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cf4d20ecb504e6b77216f1c5f8b9949c = $(`<div id="html_cf4d20ecb504e6b77216f1c5f8b9949c" style="width: 100.0%; height: 100.0%;">Hot Springs Beauty College - Crime Type: 1</div>`)[0];
+                popup_3ee4db5f0c30303750cd736a78eeded8.setContent(html_cf4d20ecb504e6b77216f1c5f8b9949c);
+            
+        
+
+        marker_59cf51db07db9e39482816db4181b9a5.bindPopup(popup_3ee4db5f0c30303750cd736a78eeded8)
+        ;
+
+        
+    
+    
+            var marker_eed6b67e3548c9d9cc989b895eb4a1ab = L.marker(
+                [34.18804475, -92.01778763263852],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_4ba75d5d69e8e3ce2dbaa364682f759a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_eed6b67e3548c9d9cc989b895eb4a1ab.setIcon(icon_4ba75d5d69e8e3ce2dbaa364682f759a);
+        
+    
+        var popup_bbdcf8daeaf3218bfd6a46ab00b7b5ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b3306efc7cb6fc98eb124c876b372038 = $(`<div id="html_b3306efc7cb6fc98eb124c876b372038" style="width: 100.0%; height: 100.0%;">Jefferson Regional School of Nursing - Crime Type: 1</div>`)[0];
+                popup_bbdcf8daeaf3218bfd6a46ab00b7b5ed.setContent(html_b3306efc7cb6fc98eb124c876b372038);
+            
+        
+
+        marker_eed6b67e3548c9d9cc989b895eb4a1ab.bindPopup(popup_bbdcf8daeaf3218bfd6a46ab00b7b5ed)
+        ;
+
+        
+    
+    
+            var marker_dc025058484517f7e4fb4383a4ce8398 = L.marker(
+                [46.3144754, 11.0480288],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_e7b950ece3a1da6a0c295bb0b654b2cd = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_dc025058484517f7e4fb4383a4ce8398.setIcon(icon_e7b950ece3a1da6a0c295bb0b654b2cd);
+        
+    
+        var popup_aa02d773e2bccd4d53405b38f61a4470 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_5139f9b17982c97bd8c8244fc2b662cb = $(`<div id="html_5139f9b17982c97bd8c8244fc2b662cb" style="width: 100.0%; height: 100.0%;">John Brown University - Crime Type: 1</div>`)[0];
+                popup_aa02d773e2bccd4d53405b38f61a4470.setContent(html_5139f9b17982c97bd8c8244fc2b662cb);
+            
+        
+
+        marker_dc025058484517f7e4fb4383a4ce8398.bindPopup(popup_aa02d773e2bccd4d53405b38f61a4470)
+        ;
+
+        
+    
+    
+            var marker_096d495bf95b37f0c1e52e04c0dcf88b = L.marker(
+                [35.38092724489796, -94.4162410612245],
+                {}
+            ).addTo(map_b6347e817ad4fb33cb10997d2c466591);
+        
+    
+            var icon_18c19106607568d7442fb7987dc6c4a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_096d495bf95b37f0c1e52e04c0dcf88b.setIcon(icon_18c19106607568d7442fb7987dc6c4a3);
+        
+    
+        var popup_d8b6d1b0ac33599b432a57e4d27e79a8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_8cb13bb887260a4a50bdf00145b174df = $(`<div id="html_8cb13bb887260a4a50bdf00145b174df" style="width: 100.0%; height: 100.0%;">Academy of Salon and Spa - Crime Type: 1</div>`)[0];
+                popup_d8b6d1b0ac33599b432a57e4d27e79a8.setContent(html_8cb13bb887260a4a50bdf00145b174df);
+            
+        
+
+        marker_096d495bf95b37f0c1e52e04c0dcf88b.bindPopup(popup_d8b6d1b0ac33599b432a57e4d27e79a8)
+        ;
+
+        
+    
+</script>
+</html>
