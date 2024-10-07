@@ -6,13 +6,17 @@ After the data is collected, cleaned, and merged, we will make a Python applicat
 
 The user will input their choice for what visualization or statistical analysis they would like to see, and our application will keep running until the user chooses to quit.
 
-
+## Run
+To run the project, run the app.py in the **flask_app** folder.
+```{sh}
+python flask_app/app.py
+```
 
 ## Installaton
 
 We suggest you to create a virtual environment.
 
-## 1. Create a Virtual Environment
+### 1. Create a Virtual Environment
 Use Python's built-in `venv` module to create a virtual environment. Run the following command in the terminal:
 
 ```{sh}
@@ -21,7 +25,7 @@ python -m venv myenv
 
 Here, myenv is the name of the virtual environment, and you can replace it with any name you prefer.
 
-## 2. Activate the Virtual Environment
+### 2. Activate the Virtual Environment
 The method to activate the virtual environment depends on your operating system:
 
 **Windows:**
@@ -35,12 +39,13 @@ myenv\Scripts\activate
 source myenv/bin/activate
 ```
 
-## 3. Install Dependencies
+### 3. Install Dependencies
 Once activated, you can use pip to install all the dependencies needed
 
 ```{sh}
 pip install -r requirements.txt
 ```
+
 
 # Data Scriping
 

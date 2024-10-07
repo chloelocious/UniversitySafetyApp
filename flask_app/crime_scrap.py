@@ -6,11 +6,24 @@ from bs4 import BeautifulSoup
 import requests
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import university_latlong
+from global_vars import stop_scraping_event, current_lat_lon
 
-def scrape_spotcrime():
-    # Paths to files
-    filtered_data_path = './Crime_uptodate/filtered_data_top.csv'
-    output_data_path = './Crime_uptodate/crime_info_top.csv'
+
+
+def scrape_spotcrime(top = True):
+    global stop_scraping_event, current_lat_lon
+    
+    if top:
+        # Paths to files
+        filtered_data_path = './Crime_uptodate/filtered_data_top.csv'
+        output_data_path = './Crime_uptodate/crime_info_top.csv'
+        university_latlong.get_top_universities_latlong(filtered_data_path)
+    else:
+        # Paths to files
+        filtered_data_path = './Crime_uptodate/filtered_data.csv'
+        output_data_path = './Crime_uptodate/crime_info.csv'
+        university_latlong.get_universities_latlong(filtered_data_path)
 
     # Load the filtered university data
     df = pd.read_csv(filtered_data_path)
@@ -37,10 +50,16 @@ def scrape_spotcrime():
     driver = webdriver.Chrome()  
 
     for lat, lon in latlong_list:
+        if stop_scraping_event.is_set():
+            print("Stopping scraping as requested...")
+            break
+        
         # Check if this lat/lon has already been scraped
         if [lat, lon] in existing_latlongs:
             print(f"Skipping already scraped lat={lat}, lon={lon}")
             continue
+            
+        current_lat_lon = (lat, lon)
 
         # Scraping data for new coordinates
         url = f'https://spotcrime.com/map?lat={lat}&lon={lon}'
@@ -87,3 +106,4 @@ def scrape_spotcrime():
 
     # Close the web driver when done
     driver.quit()
+    current_lat_lon = None

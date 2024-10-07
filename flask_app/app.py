@@ -4,11 +4,11 @@ import threading
 import pandas as pd
 from visualizations import plot_layered_crime_map, plot_crime_heatmap, plot_trend_analysis, plot_crime_distribution, trend_analysis_over_time, plot_top_universities_crime_info, plot_crime_distribution_top, plot_crime_by_top_university, clean_coordinates
 from crime_scrap import scrape_spotcrime
-from threading import Event
+from global_vars import stop_scraping_event, current_lat_lon
+
 
 app = Flask(__name__)
 scrape_thread = None
-stop_scraping_event = Event()
 
 # Define paths to your datasets
 file_paths = [
@@ -17,7 +17,7 @@ file_paths = [
     '/Crime2023EXCEL/filtered_geocoded_Publicpropertycrime202122.csv',
 ]
 
-crime_info_path = '/Crime_uptodate/crime_info.csv'
+crime_info_path = './Crime_uptodate/crime_info.csv'
 
 
 static_dir = 'static'
@@ -140,11 +140,27 @@ def scrape_spotcrime_route():
     stop_scraping_event.clear()
 
     # Start the scraping in a background thread
-    scrape_thread = threading.Thread(target=scrape_spotcrime)
+    scrape_thread = threading.Thread(target=scrape_spotcrime, kwargs={'top': False})
     scrape_thread.start()
+    
 
     # Inform the user that scraping has started
     return render_template('scrape_status.html', message="SpotCrime data scraping has started.")
+
+
+@app.route('/scrape_spotcrime_top')
+def scrape_spotcrime_top_route():
+    global scrape_thread, stop_scraping_event
+
+    # Reset the stop event in case it was set before
+    stop_scraping_event.clear()
+
+    # Start the scraping in a background thread
+    scrape_thread = threading.Thread(target=scrape_spotcrime, kwargs={'top': True})
+    scrape_thread.start()
+
+    # Inform the user that scraping has started
+    return render_template('scrape_status.html', message="Top University SpotCrime data scraping has started.")
 
 @app.route('/stop_scraping')
 def stop_scraping():
