@@ -10,7 +10,7 @@ if not os.path.exists(static_dir):
     os.makedirs(static_dir)
 
 # Path to the combined dataset
-combined_data_path = '/Crime_uptodate/crime_info.csv'  # Update with your actual path
+combined_data_path = './Crime_uptodate/crime_info.csv'  # Update with your actual path
 
 # Function to generate a layered crime map (using Folium)
 def plot_layered_crime_map(file_paths):
