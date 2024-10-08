@@ -4,6 +4,7 @@ import folium
 import plotly.express as px
 from folium.plugins import HeatMap
 import plotly.graph_objs as go
+import re
 
 # Ensure the static directory exists
 static_dir = 'flask_app/static'
@@ -14,49 +15,73 @@ if not os.path.exists(static_dir):
 combined_data_path = './Crime_uptodate/crime_info.csv'  # Update with your actual path
 
 # Function to generate a layered crime map (using Folium)
-def plot_layered_crime_map(file_paths):
-    """
-    Generates an interactive map with crime data points from multiple datasets using Folium.
-    """
-    marker_colors = ['red', 'blue', 'green', 'purple', 'orange']  # Define marker colors for each dataset
-    
-    # Initialize the map at a default location
-    layered_map = folium.Map(location=[40.7128, -74.0060], zoom_start=5)  # Example center (New York)
+import folium
+import os
+import pandas as pd
+from folium.plugins import FeatureGroupSubGroup
 
+import folium
+import os
+import pandas as pd
+
+def plot_layered_crime_map(file_paths):
+    # Define marker colors and labels for each dataset
+    marker_colors = ['red', 'green', 'blue']
+    legend_labels = [
+        'On-Campus Arrests',
+        'Non-Campus Crimes',
+        'Public Property Arrests'
+    ]  # Labels based on file_paths order
+
+    layered_map = folium.Map(location=[40.7128, -74.0060], zoom_start=5)  # Center map at New York
+
+    # Create a base feature group
+    base_feature_group = folium.FeatureGroup(name='Crime Locations', control=False).add_to(layered_map)
+
+    # Iterate through the datasets and add them as different layers
     for idx, file_path in enumerate(file_paths):
-        print(f"Processing file: {file_path}")
         if os.path.exists(file_path):
             df = pd.read_csv(file_path)
             print(f"File {file_path} loaded successfully")
-            
-            # Check if latitude and longitude columns exist
-            if 'Latitude' not in df.columns or 'Longitude' not in df.columns:
-                print(f"Skipping file {file_path} due to missing Latitude or Longitude columns.")
+
+            # If needed, clean column names by stripping whitespace
+            df.columns = df.columns.str.strip()
+
+            if 'Latitude' not in df.columns or 'Longitude' not in df.columns or 'Full_Address' not in df.columns:
+                print(f"Skipping file {file_path} due to missing Latitude, Longitude, or Full_Address columns.")
                 continue
-            
+
+            # Create a feature group for the current dataset
+            feature_group = folium.FeatureGroup(name=legend_labels[idx])
+
             # Add points for each crime location in the dataset
             for _, row in df.iterrows():
-                crime_type = row.get('Type', 'Unknown')  # Use 'Unknown' if 'Type' is missing
-                description = row.get('Description', 'No Description')  # Use 'No Description' if missing
-                
-                folium.Marker(
+                address = row.get('Full_Address', 'No Address Provided')
+
+                # Create a popup that includes the crime type (label) and address
+                popup_content = f"<b>Type:</b> {legend_labels[idx]}<br><b>Address:</b> {address}"
+
+                # Add CircleMarker for each point
+                folium.CircleMarker(
                     location=[row['Latitude'], row['Longitude']],
-                    popup=f"Crime Type: {crime_type} - Description: {description}",
-                    icon=folium.Icon(color=marker_colors[idx % len(marker_colors)])
-                ).add_to(layered_map)
+                    radius=5,  # Smaller size
+                    color=marker_colors[idx],
+                    fill=True,
+                    fill_opacity=0.7,
+                    popup=popup_content
+                ).add_to(feature_group)
+            
+            # Add the feature group to the map
+            feature_group.add_to(base_feature_group)
         else:
             print(f"File {file_path} not found.")
-    
-    print("Finished processing files. Now saving the map.")
-    
+
+    # Add layer control for the user to toggle between datasets
+    folium.LayerControl().add_to(layered_map)
+
     # Save the layered map
-    try:
-        map_path = os.path.join(static_dir, 'layered_crime_map.html')
-        layered_map.save(map_path)
-        print(f"Map saved successfully to {map_path}")
-    except Exception as e:
-        print(f"Error saving map: {e}")
-    
+    map_path = os.path.join(static_dir, 'layered_crime_map_with_legend.html')
+    layered_map.save(map_path)
     return map_path
 
 # Function to generate a heatmap for crime intensity (using Folium)
@@ -105,8 +130,6 @@ def plot_trend_analysis(df):
         width=800
     )
     return fig.to_html(full_html=False)
-
-import re  # Import regex for pattern matching
 
 # Function to group similar crime descriptions (e.g., all "Larceny" types)
 def simplify_crime_type(description):

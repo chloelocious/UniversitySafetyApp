@@ -9,8 +9,6 @@ from selenium.webdriver.common.by import By
 import university_latlong
 from global_vars import stop_scraping_event, current_lat_lon
 
-
-
 def scrape_spotcrime(top = True):
     global stop_scraping_event, current_lat_lon
     
@@ -64,15 +62,15 @@ def scrape_spotcrime(top = True):
         # Scraping data for new coordinates
         url = f'https://spotcrime.com/map?lat={lat}&lon={lon}'
         driver.get(url)
-        time.sleep(5)  # Wait for page to load
+        time.sleep(3)  # Wait for page to load
 
         try:
             button = driver.find_element(By.ID, 'map-page__crime-list__view-btn')
-            time.sleep(5)
+            time.sleep(2)
             driver.execute_script("arguments[0].scrollIntoView(true);", button)
-            time.sleep(5)
+            time.sleep(2)
             button.click()
-            time.sleep(5)
+            time.sleep(2)
 
             # Extract crime information
             ele = driver.find_elements(By.TAG_NAME, 'a')

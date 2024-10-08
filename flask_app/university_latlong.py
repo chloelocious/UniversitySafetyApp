@@ -2,6 +2,7 @@ import requests
 import pandas as pd
 import os
 import glob
+import openpyxl
 
 def get_top_universities_latlong(csv_path = './Crime_uptodate/filtered_data_top.csv'):
     url = 'https://andyreiter.com/wp-content/uploads/2024/09/US-News-National-University-Rankings-Top-150-Through-2025.xlsx'
