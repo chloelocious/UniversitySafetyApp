@@ -41,30 +41,66 @@ def get_dataframe():
     merged_df = merge_csv_files(file_paths)
     return merged_df
 
-def create_bar_chart(school_data, year):
+def create_bar_chart(names, year):
     matplotlib.use('Agg')
-    
+
+    df = get_dataframe() 
+
     data = {}
-    for school in school_data:
-        for key in school:
-            if year in key:
-                field_name = key[:-2]  
-                if field_name not in data:
-                    data[field_name] = []
-                data[field_name].append(school[key]) 
 
-    school_names = [school['INSTNM'] for school in school_data]  
-    df = pd.DataFrame(data, index=school_names)
+    for name in names:
+        value_df = df[df['INSTNM'].str.lower() == name['INSTNM'].lower()]
 
-    ax = df.T.plot(kind='bar', figsize=(10, 6))
+        if not value_df.empty:
+            value_totals = value_df.filter(regex=year).sum()
+            
+            value_totals.index = value_totals.index.str[:-2]
+
+            data[name['INSTNM'].capitalize()] = value_totals
+
+    df_totals = pd.DataFrame(data).fillna(0)
+
+    ax = df_totals.plot(kind='bar', figsize=(10, 6))
     plt.title(f'Comparison for Year 20{year} between Selected Schools')
     plt.ylabel('Number of Incidents')
     plt.xlabel('Incident Type')
 
     image_path = os.path.join('./flask_app/static', f'bar_chart.png')
-    plt.xticks(rotation=45, ha="right")
-    plt.tight_layout()
-    plt.savefig(image_path)
-    plt.close()
+    plt.xticks(rotation=45, ha="right")  
+    plt.tight_layout()  
+    plt.savefig(image_path)  
+    plt.close() 
+
+    return f'bar_chart.png'
+
+def create_bar_chart_state(names, year):
+    matplotlib.use('Agg')
+
+    df = get_dataframe() 
+
+    data = {}
+
+    for name in names.keys():
+        value_df = df[df['State'].str.lower() == name.lower()]
+
+        if not value_df.empty:
+            value_totals = value_df.filter(regex=year).sum()
+            
+            value_totals.index = value_totals.index.str[:-2]
+
+            data[name.upper()] = value_totals
+
+    df_totals = pd.DataFrame(data).fillna(0)
+
+    ax = df_totals.plot(kind='bar', figsize=(10, 6))
+    plt.title(f'Comparison for Year 20{year} between Selected States')
+    plt.ylabel('Number of Incidents')
+    plt.xlabel('Incident Type')
+
+    image_path = os.path.join('./flask_app/static', f'bar_chart.png')
+    plt.xticks(rotation=45, ha="right")  
+    plt.tight_layout()  
+    plt.savefig(image_path)  
+    plt.close() 
 
     return f'bar_chart.png'

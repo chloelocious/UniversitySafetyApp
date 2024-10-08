@@ -5,8 +5,7 @@ import pandas as pd
 from visualizations import plot_layered_crime_map, plot_crime_heatmap, plot_trend_analysis, plot_crime_distribution, trend_analysis_over_time, plot_top_universities_crime_info, plot_crime_distribution_top, plot_crime_by_top_university, clean_coordinates
 from crime_scrap import scrape_spotcrime
 from global_vars import stop_scraping_event, current_lat_lon
-from university_latlong import get_top_universities_latlong
-from get_dataframe import get_dataframe, create_bar_chart
+from get_dataframe import get_dataframe, create_bar_chart, create_bar_chart_state
 
 app = Flask(__name__)
 scrape_thread = None
@@ -159,6 +158,10 @@ def scrape_spotcrime_route():
 def compare_school():
     return render_template('compare_school.html')
 
+@app.route('/compare_state')
+def compare_state():
+    return render_template('compare_state.html')
+
 @app.route('/compare_school_after', methods=['GET', 'POST'])
 def compare_school_after():
     if request.method == 'POST':
@@ -190,6 +193,34 @@ def compare_school_after():
         else:
             return redirect(url_for('home'))
         
+@app.route('/compare_state_after', methods=['GET', 'POST'])
+def compare_state_after():
+    if request.method == 'POST':
+        states = request.form.getlist('states')
+
+        df = get_dataframe() 
+        state_data = {}
+
+        for state_name in states:
+            state_schools_df = df[df['State'].str.lower() == state_name.lower()]
+            unique_schools = state_schools_df['INSTNM'].unique()
+            if len(unique_schools) > 0:
+                state_data[state_name.upper()] = unique_schools.tolist()
+
+        if state_data:
+            session['state_data'] = state_data  
+            return redirect(url_for('compare_state_after'))
+        else:
+            error_msg = "No states were found. Please try again."
+            return render_template('compare_state_after.html', error=error_msg)
+    else:
+        state_data = session.get('state_data', {})
+        year = request.args.get('year', '20')
+        if state_data:
+            image_path = create_bar_chart_state(state_data, year)
+            return render_template('compare_state_after.html', state_data=state_data, year=year, image_file=image_path)
+        else:
+            return redirect(url_for('home'))
 
 @app.route('/scrape_spotcrime_top')
 def scrape_spotcrime_top_route():

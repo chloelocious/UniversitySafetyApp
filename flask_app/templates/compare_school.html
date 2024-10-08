@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compare between Schools</title>
     <script type="text/javascript">
-        // 动态添加学校输入框
         function addSchoolInput() {
             var container = document.getElementById("school-container");
             var inputCount = container.getElementsByTagName("input").length + 1;
@@ -20,10 +19,9 @@
             newInput.setAttribute("name", "school" + inputCount);
             newInput.setAttribute("required", "required");
 
-            // 将新创建的 label 和 input 插入到 DOM 中
             container.appendChild(newLabel);
             container.appendChild(newInput);
-            container.appendChild(document.createElement("br")); // 添加换行
+            container.appendChild(document.createElement("br"));
         }
     </script>
 </head>
