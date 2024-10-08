@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Comparison</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .year-links {
+            margin: 10px 0;
+        }
+        .year-links a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Compare between Schools</h1>
+
+    {% if not school1.empty and not school2.empty %}
+        <h2>Comparison between {{ school1['INSTNM'] }} and {{ school2['INSTNM'] }}</h2>
+
+        <!-- 添加年份选择 -->
+        <div class="year-links">
+            <a href="?year=20">2020</a>
+            <a href="?year=21">2021</a>
+            <a href="?year=22">2022</a>
+        </div>
+
+        <!-- 检查是否选择了年份 -->
+        {% if year %}
+        <h3>Showing data for year 20{{ year }}</h3>
+
+        <img src="{{ url_for('static', filename=image_file) }}" alt="Bar Chart" style="width:80%;">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Field</th>
+                    <th>{{ school1['INSTNM'] }}</th>
+                    <th>{{ school2['INSTNM'] }}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value1 in school1.items() %}
+                    {% if '20' not in key and '21' not in key and '22' not in key%}  <!-- 只显示选定年份的数据 -->
+                    <tr>
+                        <td>{{ key }}</td>
+                        <td>{{ value1 }}</td>
+                        <td>{{ school2[key] }}</td>
+                    </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% else %}
+        <p>Please select a year to view data.</p>
+        {% endif %}
+
+    {% elif error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <a href="/">Go Back to Home</a>
+
+</body>
+</html>
