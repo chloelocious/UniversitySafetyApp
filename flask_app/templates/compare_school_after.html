@@ -32,17 +32,15 @@
 
     <h1>Compare between Schools</h1>
 
-    {% if not school1.empty and not school2.empty %}
-        <h2>Comparison between {{ school1['INSTNM'] }} and {{ school2['INSTNM'] }}</h2>
+    {% if school_data %}
+        <h2>Comparison between Schools</h2>
 
-        <!-- 添加年份选择 -->
         <div class="year-links">
             <a href="?year=20">2020</a>
             <a href="?year=21">2021</a>
             <a href="?year=22">2022</a>
         </div>
 
-        <!-- 检查是否选择了年份 -->
         {% if year %}
         <h3>Showing data for year 20{{ year }}</h3>
 
@@ -52,17 +50,19 @@
             <thead>
                 <tr>
                     <th>Field</th>
-                    <th>{{ school1['INSTNM'] }}</th>
-                    <th>{{ school2['INSTNM'] }}</th>
+                    {% for school in school_data %}
+                    <th>{{ school['INSTNM'] }}</th>
+                    {% endfor %}
                 </tr>
             </thead>
             <tbody>
-                {% for key, value1 in school1.items() %}
-                    {% if '20' not in key and '21' not in key and '22' not in key%}  <!-- 只显示选定年份的数据 -->
+                {% for key in school_data[0].keys() %}
+                    {% if '20' not in key and '21' not in key and '22' not in key%}
                     <tr>
                         <td>{{ key }}</td>
-                        <td>{{ value1 }}</td>
-                        <td>{{ school2[key] }}</td>
+                        {% for school in school_data %}
+                        <td>{{ school[key] }}</td>
+                        {% endfor %}
                     </tr>
                     {% endif %}
                 {% endfor %}

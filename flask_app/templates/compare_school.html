@@ -4,15 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compare between Schools</title>
+    <script type="text/javascript">
+        // 动态添加学校输入框
+        function addSchoolInput() {
+            var container = document.getElementById("school-container");
+            var inputCount = container.getElementsByTagName("input").length + 1;
+
+            var newLabel = document.createElement("label");
+            newLabel.setAttribute("for", "school" + inputCount);
+            newLabel.innerHTML = "School " + inputCount + ":";
+
+            var newInput = document.createElement("input");
+            newInput.setAttribute("type", "text");
+            newInput.setAttribute("id", "school" + inputCount);
+            newInput.setAttribute("name", "school" + inputCount);
+            newInput.setAttribute("required", "required");
+
+            // 将新创建的 label 和 input 插入到 DOM 中
+            container.appendChild(newLabel);
+            container.appendChild(newInput);
+            container.appendChild(document.createElement("br")); // 添加换行
+        }
+    </script>
 </head>
 <body>
     <h1>Compare between Schools</h1>
     <form action="/compare_school_after" method="post">
-        <label for="school1">School 1:</label>
-        <input type="text" id="school1" name="school1" required>
-        <label for="school2">School 2:</label>
-        <input type="text" id="school2" name="school2" required>
+        <div id="school-container">
+            <label for="school1">School 1:</label>
+            <input type="text" id="school1" name="school1" required>
+            <br>
+            <label for="school2">School 2:</label>
+            <input type="text" id="school2" name="school2" required>
+            <br>
+        </div>
+
+        <button type="button" onclick="addSchoolInput()">Add another school</button>
+        <br><br>
+
         <input type="submit" value="Submit">
+    </form>
     <a href="/">Go Back to Home</a>
 </body>
 </html>

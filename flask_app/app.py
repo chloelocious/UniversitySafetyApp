@@ -162,32 +162,34 @@ def compare_school():
 @app.route('/compare_school_after', methods=['GET', 'POST'])
 def compare_school_after():
     if request.method == 'POST':
-        school1_name = request.form.get('school1').lower()
-        school2_name = request.form.get('school2').lower()
-        df = get_dataframe()
+        schools = []
+        for key in request.form:
+            if "school" in key:
+                schools.append(request.form[key].lower())
 
-        # Search for the two schools in the merged dataframe
-        school1 = next((school for index, school in df.iterrows() if school1_name in school['INSTNM'].lower()), None)
-        school2 = next((school for index, school in df.iterrows() if school2_name in school['INSTNM'].lower()), None)
+        df = get_dataframe() 
 
-        # Render template with both school results
-        if school1.any() and school2.any():
-            session['school1'] = school1.to_dict()
-            session['school2'] = school2.to_dict()
-            return render_template('compare_school_after.html', school1=school1, school2=school2)
+        school_data = []
+        for school_name in schools:
+            school = next((school for index, school in df.iterrows() if school_name in school['INSTNM'].lower()), None)
+            if school is not None:
+                school_data.append(school.to_dict())
+
+        if school_data:
+            session['school_data'] = school_data 
+            return redirect(url_for('compare_school_after'))  
         else:
-            error_msg = "One or both schools were not found. Please try again."
-            return render_template('`compare_school_after.html', error=error_msg)
+            error_msg = "No schools were found. Please try again."
+            return render_template('compare_school_after.html', error=error_msg)
     else:
-        year = request.args.get('year')      
-        school1 = session.get('school1')
-        school2 = session.get('school2')
-
-        if school1 and school2:
-            image_path = create_bar_chart(school1, school2, year)
-            return render_template('compare_school_after.html', school1=school1, school2=school2, year=year, image_file=image_path)
+        school_data = session.get('school_data', [])
+        year = request.args.get('year','20')
+        if school_data:
+            image_path = create_bar_chart(school_data, year)
+            return render_template('compare_school_after.html', school_data=school_data, year=year, image_file=image_path)
         else:
-            return redirect(url_for('/home'))
+            return redirect(url_for('home'))
+        
 
 @app.route('/scrape_spotcrime_top')
 def scrape_spotcrime_top_route():
