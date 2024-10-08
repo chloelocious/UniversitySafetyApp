@@ -5,16 +5,16 @@ import pandas as pd
 from visualizations import plot_layered_crime_map, plot_crime_heatmap, plot_trend_analysis, plot_crime_distribution, trend_analysis_over_time, plot_top_universities_crime_info, plot_crime_distribution_top, plot_crime_by_top_university, clean_coordinates
 from crime_scrap import scrape_spotcrime
 from global_vars import stop_scraping_event, current_lat_lon
-
+from university_latlong import get_top_universities_latlong
 
 app = Flask(__name__)
 scrape_thread = None
 
 # Define paths to your datasets
 file_paths = [
-    '/Crime2023EXCEL/filtered_geocoded_Oncampusarrest202122.csv',
-    '/Crime2023EXCEL/filtered_geocoded_Noncampuscrime202122.csv',
-    '/Crime2023EXCEL/filtered_geocoded_Publicpropertycrime202122.csv',
+    './Crime2023EXCEL/filtered_geocoded_Oncampusarrest202122.csv',
+    './Crime2023EXCEL/filtered_geocoded_Noncampuscrime202122.csv',
+    './Crime2023EXCEL/filtered_geocoded_Publicpropertyarrest202122.csv',
 ]
 
 crime_info_path = './Crime_uptodate/crime_info.csv'
@@ -30,14 +30,16 @@ def index():
 # Route to show the layered crime map
 @app.route('/crime_map')
 def crime_map():
+    title = "University Crime Map"
     crime_map_path = plot_layered_crime_map(file_paths)  # Pass file_paths as argument
-    return render_template('map.html', map_file=os.path.basename(crime_map_path))
+    return render_template('map.html', map_file=os.path.basename(crime_map_path), page_title = title)
 
 # Route to show the crime heatmap
 @app.route('/crime_heatmap')
 def crime_heatmap():
+    title = "University Crime Heatmap"
     heatmap_path = plot_crime_heatmap(file_paths)  # Pass file_paths as argument
-    return render_template('map.html', map_file=os.path.basename(heatmap_path))
+    return render_template('map.html', map_file=os.path.basename(heatmap_path), page_title = title)
 
 # Route to show trend analysis
 @app.route('/trend_analysis')
@@ -61,8 +63,9 @@ def crime_distribution():
 
 @app.route('/crime_map_top')
 def crime_map_top():
+    title = "Top University Crime Map"
     crime_map_path = plot_top_universities_crime_info()  # Correct function for top universities map
-    return render_template('map.html', map_file=os.path.basename(crime_map_path))
+    return render_template('map.html', map_file=os.path.basename(crime_map_path), page_title = title)
 
 # Route for Crime by University with Dropdown
 @app.route('/trend_analysis_top')
@@ -136,21 +139,27 @@ def display_raw_data_top():
 def scrape_spotcrime_route():
     global scrape_thread, stop_scraping_event
 
+    # Check if the scraping thread is already running
+    if scrape_thread is not None and scrape_thread.is_alive():
+        return render_template('scrape_status.html', message="Scraping is already in progress.")
+
     # Reset the stop event in case it was set before
     stop_scraping_event.clear()
 
     # Start the scraping in a background thread
     scrape_thread = threading.Thread(target=scrape_spotcrime, kwargs={'top': False})
     scrape_thread.start()
-    
 
     # Inform the user that scraping has started
     return render_template('scrape_status.html', message="SpotCrime data scraping has started.")
 
-
 @app.route('/scrape_spotcrime_top')
 def scrape_spotcrime_top_route():
     global scrape_thread, stop_scraping_event
+
+    # Check if the scraping thread is already running
+    if scrape_thread is not None and scrape_thread.is_alive():
+        return render_template('scrape_status.html', message="Scraping is already in progress.")
 
     # Reset the stop event in case it was set before
     stop_scraping_event.clear()
@@ -161,6 +170,23 @@ def scrape_spotcrime_top_route():
 
     # Inform the user that scraping has started
     return render_template('scrape_status.html', message="Top University SpotCrime data scraping has started.")
+
+# Route to scrape latitude and longitude for top universities
+@app.route('/scrape_latitude_and_longitude')
+def scrape_latitude_and_longitude():
+    global scrape_thread
+
+    # Check if the thread is already running
+    if scrape_thread is not None and scrape_thread.is_alive():
+        return render_template('scrape_status.html', message="Latitude and Longitude scraping is already in progress.")
+    
+    # Start the scraping in a background thread
+    scrape_thread = threading.Thread(target=get_top_universities_latlong)
+    scrape_thread.start()
+
+    # Inform the user that scraping has started
+    return render_template('scrape_status.html', message="Latitude and Longitude scraping has started.")
+
 
 @app.route('/stop_scraping')
 def stop_scraping():

@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>University Crime Data App</title>
 </head>
 <body>
+    <h1 style="text-align: center; font-size: 50px; margin-top: 20px;">University Safety App</h1>
     <h1>Nationwide University Crime Data Visualizations</h1>
     <ul>
         <li><a href="/crime_map">View Layered Crime Map</a></li>
@@ -14,7 +16,7 @@
         <li><a href="/trend_analysis_over_time">View Crime Trend Analysis Over Time</a></li>
         <li><a href="/crime_distribution">View Crime Category Distribution</a></li>
     </ul>
-    <h1>Highest Ranking Universities Crime Data (Source: US News)</h1>
+    <h1>Highest Ranking Universities Crime Data (Source: <a href= "https://www.usnews.com/best-colleges/rankings/national-universities">U.S. News</a>)</h1>
     <ul>
         <li><a href="/crime_map_top">View Crime Map of Top Universities</a></li>
         <li><a href="/trend_analysis_top">View Crime Trends by Each Top University</a></li>
@@ -24,10 +26,9 @@
     <ul>
         <li><a href="/raw_data">Display Raw Data: All Universities</a></li>
         <li><a href="/raw_data_top">Display Raw Data: Top Universities</a></li>
-        <li><a href="/scrape_raw_data">Scrape Raw Data</a></li>
         <li><a href="/scrape_latitude_and_longitude">Scrape Latitude and Longitude Coordinates</a></li>
-        <li><a href="/scrape_spotcrime">Scrape Spotcrime Data</a></li>
-        <li><a href="/scrape_spotcrime_top">Scrape Spotcrime Data for Top Universities</a></li>
+        <li><a href="/scrape_spotcrime">Scrape Spotcrime Data: All Universities</a></li>
+        <li><a href="/scrape_spotcrime_top">Scrape Spotcrime Data: Top Universities</a></li>
     </ul>
 </body>
 </html>
