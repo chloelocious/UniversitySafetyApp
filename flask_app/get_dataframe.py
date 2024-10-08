@@ -41,14 +41,23 @@ def get_dataframe():
     merged_df = merge_csv_files(file_paths)
     return merged_df
 
-def create_bar_chart(school1, school2, year):
+def create_bar_chart(school_data, year):
     matplotlib.use('Agg')
-    data = {key[:-2]: [school1[key], school2[key]] for key in school1 if year in key}
+    
+    data = {}
+    for school in school_data:
+        for key in school:
+            if year in key:
+                field_name = key[:-2]  
+                if field_name not in data:
+                    data[field_name] = []
+                data[field_name].append(school[key]) 
 
-    df = pd.DataFrame(data, index=[school1['INSTNM'], school2['INSTNM']])
+    school_names = [school['INSTNM'] for school in school_data]  
+    df = pd.DataFrame(data, index=school_names)
 
     ax = df.T.plot(kind='bar', figsize=(10, 6))
-    plt.title(f'Comparison for Year 20{year} between {school1["INSTNM"]} and {school2["INSTNM"]}')
+    plt.title(f'Comparison for Year 20{year} between Selected Schools')
     plt.ylabel('Number of Incidents')
     plt.xlabel('Incident Type')
 
