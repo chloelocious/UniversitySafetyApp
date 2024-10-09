@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, send_from_directory, session,
 import os
 import threading
 import pandas as pd
-from visualizations import plot_layered_crime_map, plot_crime_heatmap, plot_trend_analysis, plot_crime_distribution, trend_analysis_over_time, plot_top_universities_crime_info, plot_crime_distribution_top, plot_crime_by_top_university, clean_coordinates, plot_crime_vs_income, plot_income_crime_map
+from visualizations import plot_layered_crime_map, plot_crime_heatmap, plot_trend_analysis, plot_crime_distribution, trend_analysis_over_time, plot_top_universities_crime_info, plot_crime_distribution_top, plot_crime_by_top_university, clean_coordinates, plot_crime_vs_income, plot_income_crime_map, plot_crime_amount_vs_income
 from crime_scrap import scrape_spotcrime
 from global_vars import stop_scraping_event, current_lat_lon
 from get_dataframe import get_dataframe, create_bar_chart, create_bar_chart_state
@@ -304,6 +304,13 @@ def crime_vs_income():
     df = pd.read_csv('./Crime_uptodate/merged_crime_income_data.csv')
     crime_vs_income_html = plot_crime_vs_income(df)
     return render_template('visualization.html', chart_html=crime_vs_income_html, title="Crime vs Median Household Income")
+
+@app.route('/crime_amount_vs_income')
+def crime_amount_vs_income():
+    df = pd.read_csv('./Crime_uptodate/merged_crime_income_data.csv')
+    crime__amount_vs_income_html = plot_crime_amount_vs_income(df)
+    return render_template('visualization.html', chart_html=crime__amount_vs_income_html, title="Crime Amount vs Median Household Income")
+
 
 # Route for crime locations with median household income on a map
 @app.route('/income_crime_map')

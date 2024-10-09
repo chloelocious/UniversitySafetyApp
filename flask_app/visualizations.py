@@ -5,6 +5,7 @@ import plotly.express as px
 from folium.plugins import HeatMap, MarkerCluster
 import plotly.graph_objs as go
 import re
+import numpy as np
 
 # Ensure the static directory exists
 static_dir = 'flask_app/static'
@@ -458,3 +459,67 @@ if __name__ == "__main__":
         f.write(crime_vs_income_html)
 
     print("Visualizations generated successfully.")
+
+# Function to create a scatter plot for City Crime Count vs. Median Household Income in HTML format
+def plot_crime_amount_vs_income(df):
+    """
+    Generates an interactive scatter plot showing the relationship between crime count per city
+    and median household income, along with a trend line. The result can be embedded in HTML.
+    
+    Parameters:
+    df (DataFrame): The input DataFrame must contain 'City' and 'Median Household Income' columns.
+    
+    Returns:
+    str: HTML string of the plot.
+    """
+    # Ensure the "Median Household Income" column is numeric
+    df['Median Household Income'] = df['Median Household Income'].replace({'\$': '', ',': ''}, regex=True).astype(float) /1000 # Convert to K USD
+    
+    # Calculate crime count per city
+    crime_count = df['City'].value_counts().reset_index()
+    crime_count.columns = ['City', 'Crime Count']
+    
+    # Merge crime count and median household income
+    merged_data = pd.merge(crime_count, df[['City', 'Median Household Income']].drop_duplicates(), on='City')
+    
+    # Create scatter plot
+    fig = px.scatter(merged_data, x='Median Household Income', y='Crime Count', 
+                     title='Crime Count vs Median Household Income by City',
+                     labels={'Median Household Income': 'Median Household Income (K USD)', 
+                             'Crime Count': 'Crime Count'},
+                     template='plotly_white')
+    
+    # Calculate the trend line manually using numpy's polyfit
+    z = np.polyfit(merged_data['Median Household Income'], merged_data['Crime Count'], 1)
+    p = np.poly1d(z)
+    trendline_eq = f"y = {z[0]:.3f}x + {z[1]:.3f}"
+    
+    fig.add_trace(go.Scatter(
+        x=merged_data['Median Household Income'],
+        y=p(merged_data['Median Household Income']),
+        mode='lines',
+        name='Trend Line',
+        line=dict(color='red', dash='dash')  # Set the trend line to be red and dashed
+    ))
+    
+    # Add the trend line formula as annotation on the plot
+    fig.add_annotation(
+        x=max(merged_data['Median Household Income']),  # Position the annotation on the right side of the plot
+        y=p(max(merged_data['Median Household Income'])),
+        text=trendline_eq,  # Display the equation
+        showarrow=False,  # No arrow
+        font=dict(size=12, color="red"),
+        xanchor="right",  # Align text to the right
+        yanchor="bottom"
+    )
+    
+    # Customize the layout
+    fig.update_layout(
+        xaxis_title='Median Household Income (K USD)', 
+        yaxis_title='Crime Count',
+        height=600,
+        width=900,
+    )
+    
+    # Return the plot as an HTML string
+    return fig.to_html(full_html=False)
