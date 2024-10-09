@@ -2,10 +2,11 @@ from flask import Flask, render_template, request, send_from_directory, session,
 import os
 import threading
 import pandas as pd
-from visualizations import plot_layered_crime_map, plot_crime_heatmap, plot_trend_analysis, plot_crime_distribution, trend_analysis_over_time, plot_top_universities_crime_info, plot_crime_distribution_top, plot_crime_by_top_university, clean_coordinates
+from visualizations import plot_layered_crime_map, plot_crime_heatmap, plot_trend_analysis, plot_crime_distribution, trend_analysis_over_time, plot_top_universities_crime_info, plot_crime_distribution_top, plot_crime_by_top_university, clean_coordinates, plot_crime_vs_income, plot_income_crime_map
 from crime_scrap import scrape_spotcrime
 from global_vars import stop_scraping_event, current_lat_lon
 from get_dataframe import get_dataframe, create_bar_chart, create_bar_chart_state
+from university_latlong import get_top_universities_latlong
 
 app = Flask(__name__)
 scrape_thread = None
@@ -136,6 +137,36 @@ def display_raw_data_top():
     # Render the raw data in a template
     return render_template('raw_data.html', table=table_html, title="Raw Data: Top Universities")
 
+@app.route('/raw_data_income')
+def display_raw_data_income():
+    """
+    Displays raw data for crime data merged with median household income data in a table format.
+    """
+    # Load the dataset for all universities
+    merged_income_file = './Crime_uptodate/merged_crime_income_data.csv'
+    df = pd.read_csv(merged_income_file)
+
+    # Convert the DataFrame to HTML table
+    table_html = df.to_html(index=False, classes='table table-striped')
+
+    # Render the raw data in a template
+    return render_template('raw_data.html', table=table_html, title="Raw Data: Crime Data Merged with Median Household Income Data")
+
+@app.route('/raw_data_crime_definitions')
+def display_raw_data_crime_definitions():
+    """
+    Displays raw data for all crime definitions.
+    """
+    # Load the dataset for all universities
+    definition_file = './Crime_uptodate/crime_definitions.csv'
+    df = pd.read_csv(definition_file)
+
+    # Convert the DataFrame to HTML table
+    table_html = df.to_html(index=False, classes='table table-striped')
+
+    # Render the raw data in a template
+    return render_template('raw_data.html', table=table_html, title="Raw Data: Crime Definitions Scraped from Wikipedia")
+
 @app.route('/scrape_spotcrime')
 def scrape_spotcrime_route():
     global scrape_thread, stop_scraping_event
@@ -256,7 +287,6 @@ def scrape_latitude_and_longitude():
     # Inform the user that scraping has started
     return render_template('scrape_status.html', message="Latitude and Longitude scraping has started.")
 
-
 @app.route('/stop_scraping')
 def stop_scraping():
     global stop_scraping_event
@@ -267,6 +297,21 @@ def stop_scraping():
     # Inform the user that scraping will stop
     return render_template('scrape_status.html', message="SpotCrime data scraping is stopping...")
     
+
+# Route for crime vs income bar chart
+@app.route('/crime_vs_income')
+def crime_vs_income():
+    df = pd.read_csv('./Crime_uptodate/merged_crime_income_data.csv')
+    crime_vs_income_html = plot_crime_vs_income(df)
+    return render_template('visualization.html', chart_html=crime_vs_income_html, title="Crime vs Median Household Income")
+
+# Route for crime locations with median household income on a map
+@app.route('/income_crime_map')
+def income_crime_map():
+    df = pd.read_csv('./Crime_uptodate/merged_crime_income_data.csv')
+    map_path = plot_income_crime_map(df)
+    return render_template('map.html', map_file=os.path.basename(map_path), title="Crime and Median Household Income Map")
+
 # Route to serve static files (like crime_map.html, heatmap.html)
 @app.route('/static/<path:filename>')
 def serve_static(filename):

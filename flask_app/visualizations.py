@@ -2,7 +2,7 @@ import os
 import pandas as pd
 import folium
 import plotly.express as px
-from folium.plugins import HeatMap
+from folium.plugins import HeatMap, MarkerCluster
 import plotly.graph_objs as go
 import re
 
@@ -213,8 +213,8 @@ def plot_top_universities_crime_info():
     """
     Generates an interactive map with crime data for top universities using crime_info_top.csv.
     """
-    crime_file_path = './Crime_uptodate/crime_info_top.csv'  # Path to crime data
-    university_file_path = './Crime_uptodate/filtered_data_top.csv'  # Path to university info
+    crime_file_path = '../Crime_uptodate/crime_info_top.csv'  # Path to crime data
+    university_file_path = '../Crime_uptodate/filtered_data_top.csv'  # Path to university info
     
     # Load the CSV files
     crime_df = pd.read_csv(crime_file_path)
@@ -278,7 +278,7 @@ def plot_crime_distribution_top():
     Generates a pie chart showing the distribution of crime categories for top universities.
     """
     # Load the dataset
-    file_path = './Crime_uptodate/crime_info_top.csv'
+    file_path = '../Crime_uptodate/crime_info_top.csv'
     df = pd.read_csv(file_path)
 
     # Group by crime type and count occurrences
@@ -337,11 +337,105 @@ def plot_crime_by_top_university():
     
     return fig.to_html(full_html=False)
 
-# Example usage in a Flask app:
+# Function to create a bar chart for Crime Type vs. Median Household Income
+def plot_crime_vs_income(df):
+    """
+    Generates a box plot showing the distribution of median household income for different crime types.
+    This version will highlight the median, quartiles, and outliers.
+    """
+    # Ensure the "Median Household Income" column is numeric
+    df['Median Household Income'] = df['Median Household Income'].replace({'\$': '', ',': ''}, regex=True).astype(float)
+
+    # Create a box plot with detailed information
+    fig = px.box(df, x='Type', y='Median Household Income', color='Type',
+                 title='Distribution of Median Household Income by Crime Type',
+                 points='all',  # Display all data points including outliers
+                 labels={'Type': 'Crime Type', 'Median Household Income': 'Income (USD)'},
+                 template='plotly_white')  # Use a clean white template for better readability
+    
+    # Update layout for better appearance
+    fig.update_layout(
+        xaxis_title='Crime Type',
+        yaxis_title='Median Household Income (USD)',
+        height=600,  # Increase height for better view of the box plot
+        width=900,
+        showlegend=False,  # Disable legend since color-coding is redundant for box plot
+    )
+
+    return fig.to_html(full_html=False)
+
+# Function to create a map with crime locations and median household income
+def plot_income_crime_map(df):
+    """
+    Generates a Folium heatmap showing crime concentration and income information.
+    Also removes duplicate points and normalizes the income values for better visualization.
+    """
+    # Clean up the income column
+    df['Median Household Income'] = df['Median Household Income'].replace({'\$': '', ',': ''}, regex=True).astype(float)
+
+    # Remove duplicate coordinates with the same income values
+    df = df.drop_duplicates(subset=['Latitude', 'Longitude', 'Median Household Income'])
+
+    # Normalize median household income to a range between 0 and 1 for heatmap weight
+    df['Income_Normalized'] = (df['Median Household Income'] - df['Median Household Income'].min()) / (df['Median Household Income'].max() - df['Median Household Income'].min())
+
+    # Initialize the map at a default location (USA center)
+    crime_income_map = folium.Map(location=[39.8283, -98.5795], zoom_start=5)  # Center map on USA
+
+    # Prepare heatmap data: [latitude, longitude, normalized income]
+    heat_data = [[row['Latitude'], row['Longitude'], row['Income_Normalized']] for _, row in df.iterrows()]
+
+    # Check if there are enough points for the heatmap, otherwise use markers
+    if len(heat_data) > 0:
+        # Add heatmap layer based on crime locations and weighted by normalized median household income
+        HeatMap(heat_data, radius=10, blur=15, max_zoom=1).add_to(crime_income_map)
+    else:
+        print("No valid data for heatmap generation. Using markers instead.")
+
+    # Initialize marker cluster for locations
+    marker_cluster = MarkerCluster().add_to(crime_income_map)
+
+    # Add markers for each crime type with popup showing crime and income data
+    for _, row in df.iterrows():
+        crime_type = row['Type']
+        income = row['Median Household Income']
+        address = row['Address']
+
+        # Popup content with crime type and income information
+        popup_content = (
+            f"<b>Crime Type:</b> {crime_type}<br>"
+            f"<b>Address:</b> {address}<br>"
+            f"<b>Median Household Income:</b> ${income:,.2f}"
+        )
+        
+        # Add marker to the marker cluster
+        folium.Marker(
+            location=[row['Latitude'], row['Longitude']],
+            popup=popup_content,
+            icon=folium.Icon(color='blue' if income > 60000 else 'red')  # Color based on income threshold
+        ).add_to(marker_cluster)
+
+    # Save the map
+    map_path = os.path.join(static_dir, 'crime_income_heatmap.html')
+    crime_income_map.save(map_path)
+    print(f"Map saved at {map_path}")
+    return map_path
+
 if __name__ == "__main__":
     print("Generating visualizations...")
 
-    # Load data from the combined dataset
+    # Load your data from a CSV
+    df = pd.read_csv('./Crime_uptodate/merged_crime_income_data.csv')
+
+    # Generate the crime map with income data
+    income_crime_map_path = plot_income_crime_map(df)
+
+    print("Visualizations generated successfully.")
+
+if __name__ == "__main__":
+    print("Generating visualizations...")
+
+    # Load data from the combined dataset (merge crime data and income data)
     df = pd.read_csv(combined_data_path)
 
     # Generate trend analysis and crime distribution HTML files (to be rendered in Flask later)
@@ -354,5 +448,13 @@ if __name__ == "__main__":
 
     with open(os.path.join(static_dir, "crime_distribution.html"), 'w') as f:
         f.write(crime_distribution_html)
+
+    # New visualizations
+    crime_vs_income_html = plot_crime_vs_income(df)
+    income_crime_map_path = plot_income_crime_map(df)
+
+    # Save the new HTML files for testing
+    with open(os.path.join(static_dir, "crime_vs_income.html"), 'w') as f:
+        f.write(crime_vs_income_html)
 
     print("Visualizations generated successfully.")

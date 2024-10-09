@@ -1,88 +1,90 @@
-import os
 import pandas as pd
 import requests
-import numpy as np
+from bs4 import BeautifulSoup
 
-# Directory where your files are located
-directory = '/Users/chloelocious/Documents/GitHub/DataPython9588/UniversitySafetyApp/Crime2023EXCEL'
-file_prefix = 'filtered'
+# Function to create the DataUSA URL for a given city and state
+def construct_datausa_url(city, state):
+    city = city.lower().replace(' ', '-')
+    state = state.lower()
+    return f"https://datausa.io/profile/geo/{city}-{state}"
 
-# Census API setup (replace with your actual API key)
-API_KEY = "7e8fd5904e6cce12a5d523b8a222aa4eaafaed45"
-
-# Function to get census demographic data using ZCTA (ZIP Code Tabulation Area)
-def get_income_data(zcta):
-    if pd.isna(zcta):
-        print(f"Skipping empty ZCTA value.")
-        return None  # Skip if ZCTA is missing
+# Function to extract median household income from DataUSA
+def get_median_household_income(city, state):
+    url = construct_datausa_url(city, state)
     
     try:
-        # Ensure ZIP code is valid by stripping spaces and ensuring it has 5 digits
-        zcta = str(zcta).strip()[:5]
-        print(f"Fetching data for ZCTA: {zcta}")
-
-        # Construct the API URL for ZCTA data
-        url = f"https://api.census.gov/data/2019/acs/acs5?get=B19013_001E&for=zip%20code%20tabulation%20area:{zcta}&key={API_KEY}"
-        
-        # Send the request
         response = requests.get(url)
-        data = response.json()
+        if response.status_code != 200:
+            print(f"Error fetching data for {city}, {state}. Status code: {response.status_code}")
+            return None
 
-        # Print full response for debugging
-        print(f"Census API response for ZCTA {zcta}: {data}")
+        # Parse the HTML content
+        soup = BeautifulSoup(response.content, 'html.parser')
         
-        # Check if data is present in the response
-        if data and len(data) > 1:
-            income_data = data[1][0]  # The actual data starts at index 1
-            if income_data is not None:
-                print(f"Income data for ZCTA {zcta}: {income_data}")
-                return income_data
+        # Find the 2022 median household income
+        stat_title = soup.find('div', class_='stat-title', string="2022 Median Household Income")
+        if stat_title:
+            stat_value = stat_title.find_next('div', class_='stat-value')
+            if stat_value:
+                income = stat_value.text.strip()
+                print(f"Median household income for {city}, {state}: {income}")
+                return income
             else:
-                print(f"Income data not found for ZCTA {zcta}")
+                print(f"No median household income value found for {city}, {state}.")
                 return None
         else:
-            print(f"No income data returned from Census API for ZCTA {zcta}")
+            print(f"Median household income not found for {city}, {state}.")
             return None
-    except Exception as e:
-        print(f"Error retrieving income data for ZCTA {zcta} -> {e}")
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching data for {city}, {state}: {e}")
         return None
 
-# Process all CSV files starting with 'filtered'
-def process_files(directory, file_prefix):
-    # Function to check if a file starts with the given prefix and is a CSV file
-    def is_filtered_file(file_name, prefix):
-        return file_name.startswith(prefix) and file_name.endswith('.csv')
-    
-    # List all files in the directory that start with the prefix
-    filtered_files = [file for file in os.listdir(directory) if is_filtered_file(file, file_prefix)]
-    
-    # Process each file
-    for file in filtered_files:
-        file_path = os.path.join(directory, file)
-        print(f"Processing file: {file}")
-        
-        # Load the dataset with crime data
-        data = pd.read_csv(file_path)
-        
-        # Check if 'ZIP' column exists
-        if 'ZIP' in data.columns:
-            print(f"Found ZIP column in file: {file}")
-            
-            # Apply the function to each row, skipping rows with NaN ZIP
-            data['Income_Data'] = data.apply(lambda row: get_income_data(row['ZIP']) if not pd.isna(row['ZIP']) else np.nan, axis=1)
-            
-            # Check if the 'Income_Data' column was added successfully
-            if 'Income_Data' in data.columns:
-                print(f"'Income_Data' column added successfully for {file}.")
-            else:
-                print(f"Failed to add 'Income_Data' column for {file}.")
-            
-            # Save the final dataset with 'processed_' prefix
-            new_file_path = os.path.join(directory, f'processed_{file}')
-            data.to_csv(new_file_path, index=False)
-            print(f"Processed and saved: {new_file_path}")
+# Function to extract city and state from the address
+def extract_city_and_state(address):
+    try:
+        address_parts = address.split(",")
+        if len(address_parts) >= 3:
+            city = address_parts[-2].strip()
+            state = address_parts[-1].strip().split()[0]
+            return city, state
         else:
-            print(f"Skipped: {file} (No ZIP columns)")
+            return None, None
+    except Exception as e:
+        print(f"Error extracting city and state from address '{address}': {e}")
+        return None, None
 
-# Run the process
-process_files(directory, file_prefix)
+# Load the CSV data
+file_path = './Crime_uptodate/crime_info.csv'  # Update with your CSV file path
+df = pd.read_csv(file_path)
+
+# Prepare to collect results
+results = []
+
+# Process each row to get city, state, and median household income
+for index, row in df.iterrows():
+    address = row['Address']
+    city, state = extract_city_and_state(address)
+    
+    if city and state:
+        # Get the median household income
+        income = get_median_household_income(city, state)
+        results.append({
+            'Address': address,
+            'City': city,
+            'State': state,
+            'Median Household Income': income
+        })
+    else:
+        print(f"Could not extract city or state from address: {address}")
+        results.append({
+            'Address': address,
+            'City': None,
+            'State': None,
+            'Median Household Income': None
+        })
+
+# Convert the results to a DataFrame and save to CSV
+results_df = pd.DataFrame(results)
+results_df.to_csv('median_hhld_income_data.csv', index=False)
+print("Results saved to income_results_datausa.csv")
