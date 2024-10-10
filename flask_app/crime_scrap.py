@@ -9,42 +9,39 @@ from selenium.webdriver.common.by import By
 import university_latlong
 from global_vars import stop_scraping_event, current_lat_lon
 
+# function to scrape crime info from SpotCrime
 def scrape_spotcrime(top = True):
     global stop_scraping_event, current_lat_lon
-    
+
     if top:
-        # Paths to files
         filtered_data_path = './Crime_uptodate/filtered_data_top.csv'
         output_data_path = './Crime_uptodate/crime_info_top.csv'
         university_latlong.get_top_universities_latlong(filtered_data_path)
     else:
-        # Paths to files
         filtered_data_path = './Crime_uptodate/filtered_data.csv'
         output_data_path = './Crime_uptodate/crime_info.csv'
         university_latlong.get_universities_latlong(filtered_data_path)
 
-    # Load the filtered university data
+    # load the filtered university data
     df = pd.read_csv(filtered_data_path)
 
-    # Check if the crime_info_top.csv already exists and has data
+    # check if the crime_info_top.csv already exists and has data
     if os.path.exists(output_data_path):
         existing_data = pd.read_csv(output_data_path)
         if not existing_data.empty:
-            # Keep track of already scraped Latitude and Longitude pairs to avoid duplicates
+            # keep track of already scraped Latitude and Longitude pairs to avoid duplicates
             existing_latlongs = existing_data[['Latitude', 'Longitude']].drop_duplicates().values
         else:
             existing_latlongs = []
     else:
-        # If the file doesn't exist, create it and add the header
         with open(output_data_path, 'w') as f:
             writer = csv.writer(f)
             writer.writerow(['Type', 'Date', 'Description', 'Address', 'Latitude', 'Longitude'])
         existing_latlongs = []
 
-    # Get the unique Latitude and Longitude values from the filtered university data
     latlong_list = df[['Latitude', 'Longitude']].drop_duplicates().values
 
-    # Open the web driver ONCE for scraping
+    # web driver for scraping
     driver = webdriver.Chrome()  
 
     for lat, lon in latlong_list:
@@ -52,17 +49,17 @@ def scrape_spotcrime(top = True):
             print("Stopping scraping as requested...")
             break
         
-        # Check if this lat/lon has already been scraped
+        # check if this lat/lon has already been scraped
         if [lat, lon] in existing_latlongs:
             print(f"Skipping already scraped lat={lat}, lon={lon}")
             continue
             
         current_lat_lon = (lat, lon)
 
-        # Scraping data for new coordinates
+        # scraping data for new coordinates
         url = f'https://spotcrime.com/map?lat={lat}&lon={lon}'
         driver.get(url)
-        time.sleep(3)  # Wait for page to load
+        time.sleep(3) 
 
         try:
             button = driver.find_element(By.ID, 'map-page__crime-list__view-btn')
@@ -72,7 +69,7 @@ def scrape_spotcrime(top = True):
             button.click()
             time.sleep(2)
 
-            # Extract crime information
+            # extract crime information
             ele = driver.find_elements(By.TAG_NAME, 'a')
             all_crime_url = [e.get_attribute('href') for e in ele if e.get_attribute('href') and "https://spotcrime.com/crime/" in e.get_attribute('href')]
 
@@ -94,7 +91,6 @@ def scrape_spotcrime(top = True):
                 except IndexError:
                     pass
 
-            # Append the newly scraped data to the file
             with open(output_data_path, 'a') as f:
                 writer = csv.writer(f)
                 writer.writerows(crime_info)
@@ -102,6 +98,5 @@ def scrape_spotcrime(top = True):
         except Exception as e:
             print(f"Error occurred for lat={lat}, lon={lon}: {e}")
 
-    # Close the web driver when done
     driver.quit()
     current_lat_lon = None

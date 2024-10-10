@@ -6,28 +6,23 @@ import matplotlib
 import glob
 
 def merge_csv_files(file_paths):
-    # Initialize an empty DataFrame
     merged_df = pd.DataFrame()
     
-    # Iterate over each file in file_paths
     for file in file_paths:
-        # Read each CSV file into a DataFrame, read first line as column names
         df = pd.read_csv(file, header=0)
-        # if df only has one row, skip it
         if len(df) == 1:
             
             continue
         
-        # Merge the DataFrame based on the columns UNITID_P, INSTNM, OPEID
+        # merge the dataframe based on the columns UNITID_P, INSTNM, OPEID
         if merged_df.empty:
             merged_df = df
         else:
-            # Find common columns except the key columns
+            # find common columns except the key columns
             common_columns = set(merged_df.columns).intersection(df.columns) - {'UNITID_P', 'INSTNM', 'OPEID'}
-            
             merged_df = pd.merge(merged_df, df, on=['UNITID_P', 'INSTNM', 'OPEID'], how='outer', suffixes=('', '_dup'))
 
-            # For the common columns, fill NaN values in the original column with values from the duplicated column
+            # for the common columns, fill na values in the original column with values from the duplicated column
             for col in common_columns:
                 merged_df.fillna({col: merged_df.pop(f'{col}_dup')}, inplace=True)
 

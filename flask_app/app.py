@@ -12,7 +12,7 @@ app = Flask(__name__)
 scrape_thread = None
 app.secret_key = 'PythonProject'
 
-# Define paths to your datasets
+# paths to datasets for crime mapping
 file_paths = [
     './Crime2023EXCEL/filtered_geocoded_Oncampusarrest202122.csv',
     './Crime2023EXCEL/filtered_geocoded_Noncampuscrime202122.csv',
@@ -20,30 +20,26 @@ file_paths = [
 ]
 
 crime_info_path = './Crime_uptodate/crime_info.csv'
-
-
 static_dir = 'static'
 
-# Home route that shows options for different visualizations
+# home route -- shows menu options
 @app.route('/')
 def index():
     return render_template('home.html')
 
-# Route to show the layered crime map
+# route to show the layered crime map
 @app.route('/crime_map')
 def crime_map():
-    title = "University Crime Map"
-    crime_map_path = plot_layered_crime_map(file_paths)  # Pass file_paths as argument
-    return render_template('map.html', map_file=os.path.basename(crime_map_path), page_title = title)
+    crime_map_path = plot_layered_crime_map(file_paths) 
+    return render_template('map.html', map_file=os.path.basename(crime_map_path), title = "University Crime Map (On Campus Arrests, Non Campus Crimes, Public Property Arrests)")
 
-# Route to show the crime heatmap
+# route to show the crime heatmap
 @app.route('/crime_heatmap')
 def crime_heatmap():
-    title = "University Crime Heatmap"
-    heatmap_path = plot_crime_heatmap(file_paths)  # Pass file_paths as argument
-    return render_template('map.html', map_file=os.path.basename(heatmap_path), page_title = title)
+    heatmap_path = plot_crime_heatmap(file_paths)
+    return render_template('map.html', map_file=os.path.basename(heatmap_path), title = "University Crime Heatmap")
 
-# Route to show trend analysis
+# route to show trend analysis
 @app.route('/trend_analysis')
 def trend_analysis():
     df = pd.read_csv(crime_info_path)
@@ -56,61 +52,52 @@ def trend_analysis_over_time_view():
     trend_over_time_html = trend_analysis_over_time(df)
     return render_template('visualization.html', chart_html=trend_over_time_html, title="Crime Trend Analysis Over Time")
 
-# Route to show crime distribution
+# route to show crime distribution
 @app.route('/crime_distribution')
 def crime_distribution():
     df = pd.read_csv(crime_info_path)
     distribution_html = plot_crime_distribution(df)
     return render_template('visualization.html', chart_html=distribution_html, title="Crime Category Distribution")
 
+# route to show the crime map of top universities
 @app.route('/crime_map_top')
 def crime_map_top():
     title = "Top University Crime Map"
     crime_map_path = plot_top_universities_crime_info()  # Correct function for top universities map
     return render_template('map.html', map_file=os.path.basename(crime_map_path), page_title = title)
 
-# Route for Crime by University with Dropdown
+# route for crime types by top university
 @app.route('/trend_analysis_top')
 def trend_analysis_top():
     trend_analysis_html = plot_crime_by_top_university()
     return render_template('visualization.html', chart_html=trend_analysis_html, title="Crimes by Top Universities")
 
+# route for crime category distribution of top universities
 @app.route('/crime_distribution_top')
 def crime_distribution_top():
     crime_distribution_html = plot_crime_distribution_top()
     return render_template('visualization.html', chart_html=crime_distribution_html, title="Crime Category Distribution of Top Universities")
 
-
+# route to display raw data of all the universities and associated crimes
 @app.route('/raw_data')
 def display_raw_data_all():
-    """
-    Displays raw data for all universities in a table format.
-    """
-    # Load the dataset for all universities
     all_universities_file = './Crime_uptodate/crime_info.csv'
     df = pd.read_csv(all_universities_file)
-
-    # Convert the DataFrame to HTML table
     table_html = df.to_html(index=False, classes='table table-striped')
-
-    # Render the raw data in a template
     return render_template('raw_data.html', table=table_html, title="Raw Data: All Universities")
 
+# route to display raw data of the top universities and associated crimes
 @app.route('/raw_data_top')
 def display_raw_data_top():
-    """
-    Displays raw data for top universities in a table format, including university names.
-    """
-    # Load the datasets
     crime_file = './Crime_uptodate/crime_info_top.csv'
     university_file = './Crime_uptodate/filtered_data_top.csv'
-    print(os.path.exists(crime_file))  # Should return True if the file exists
+    print(os.path.exists(crime_file))
 
     crime_df = pd.read_csv(crime_file)
     university_df = pd.read_csv(university_file)
-    print(crime_df.head())  # Ensure the data is loaded correctly
+    print(crime_df.head()) 
 
-    # Clean the Latitude and Longitude columns in both datasets
+    # clean lat and long columns
     crime_df = clean_coordinates(crime_df, 'Latitude')
     crime_df = clean_coordinates(crime_df, 'Longitude')
     university_df = clean_coordinates(university_df, 'Latitude')
@@ -121,78 +108,60 @@ def display_raw_data_top():
     print("Crime Data Shape:", crime_df.shape)
     print("University Data Shape:", university_df.shape)
 
-    # Merge on Latitude and Longitude to include university names
+    # merge on lat and long to include university names
     merged_df = pd.merge(crime_df, university_df, on=['Latitude', 'Longitude'], how='left')
-
-    # Debugging: print the first few rows to see if the merge worked
     print(merged_df.head())
 
-    # Check if merged_df is empty
-    if merged_df.empty:
-        print("The merged DataFrame is empty!")
-
-    # Convert the merged DataFrame to an HTML table
     table_html = merged_df.to_html(index=False, classes='table table-striped')
-
-    # Render the raw data in a template
     return render_template('raw_data.html', table=table_html, title="Raw Data: Top Universities")
 
+# route to display raw data of the top median household income and crimes by address
 @app.route('/raw_data_income')
 def display_raw_data_income():
-    """
-    Displays raw data for crime data merged with median household income data in a table format.
-    """
-    # Load the dataset for all universities
     merged_income_file = './Crime_uptodate/merged_crime_income_data.csv'
     df = pd.read_csv(merged_income_file)
 
-    # Convert the DataFrame to HTML table
     table_html = df.to_html(index=False, classes='table table-striped')
-
-    # Render the raw data in a template
     return render_template('raw_data.html', table=table_html, title="Raw Data: Crime Data Merged with Median Household Income Data")
 
+# route to display raw data of the crime category definitions
 @app.route('/raw_data_crime_definitions')
 def display_raw_data_crime_definitions():
-    """
-    Displays raw data for all crime definitions.
-    """
-    # Load the dataset for all universities
     definition_file = './Crime_uptodate/crime_definitions.csv'
     df = pd.read_csv(definition_file)
 
-    # Convert the DataFrame to HTML table
     table_html = df.to_html(index=False, classes='table table-striped')
-
-    # Render the raw data in a template
     return render_template('raw_data.html', table=table_html, title="Raw Data: Crime Definitions Scraped from Wikipedia")
 
+# route to start SpotCrime scraping
 @app.route('/scrape_spotcrime')
 def scrape_spotcrime_route():
     global scrape_thread, stop_scraping_event
 
-    # Check if the scraping thread is already running
+    # check if the scraping thread is already running
     if scrape_thread is not None and scrape_thread.is_alive():
         return render_template('scrape_status.html', message="Scraping is already in progress.")
 
-    # Reset the stop event in case it was set before
+    # reset the stop event
     stop_scraping_event.clear()
 
-    # Start the scraping in a background thread
+    # start the scraping in a background thread
     scrape_thread = threading.Thread(target=scrape_spotcrime, kwargs={'top': False})
     scrape_thread.start()
 
-    # Inform the user that scraping has started
     return render_template('scrape_status.html', message="SpotCrime data scraping has started.")
 
+# route to display compare schools functionality
 @app.route('/compare_school')
 def compare_school():
     return render_template('compare_school.html')
 
+# route to display compare by state functionality
 @app.route('/compare_state')
 def compare_state():
     return render_template('compare_state.html')
 
+# route to display the results of comparing schools (with visualizations)
 @app.route('/compare_school_after', methods=['GET', 'POST'])
 def compare_school_after():
     if request.method == 'POST':
@@ -224,6 +193,7 @@ def compare_school_after():
         else:
             return redirect(url_for('home'))
         
+# route to display the results of comparing by state (with visualizations)
 @app.route('/compare_state_after', methods=['GET', 'POST'])
 def compare_state_after():
     if request.method == 'POST':
@@ -253,73 +223,69 @@ def compare_state_after():
         else:
             return redirect(url_for('home'))
 
+# route to start SpotCrime scraping for top universities
 @app.route('/scrape_spotcrime_top')
 def scrape_spotcrime_top_route():
     global scrape_thread, stop_scraping_event
 
-    # Check if the scraping thread is already running
+    # check if the scraping thread is already running
     if scrape_thread is not None and scrape_thread.is_alive():
         return render_template('scrape_status.html', message="Scraping is already in progress.")
 
-    # Reset the stop event in case it was set before
+    # reset the stop event in case it was set before
     stop_scraping_event.clear()
 
-    # Start the scraping in a background thread
     scrape_thread = threading.Thread(target=scrape_spotcrime, kwargs={'top': True})
     scrape_thread.start()
 
-    # Inform the user that scraping has started
     return render_template('scrape_status.html', message="Top University SpotCrime data scraping has started.")
 
-# Route to scrape latitude and longitude for top universities
+# route to scrape latitude and longitude for top universities
 @app.route('/scrape_latitude_and_longitude')
 def scrape_latitude_and_longitude():
     global scrape_thread
 
-    # Check if the thread is already running
+    # check if the thread is already running
     if scrape_thread is not None and scrape_thread.is_alive():
         return render_template('scrape_status.html', message="Latitude and Longitude scraping is already in progress.")
     
-    # Start the scraping in a background thread
     scrape_thread = threading.Thread(target=get_top_universities_latlong)
     scrape_thread.start()
 
-    # Inform the user that scraping has started
     return render_template('scrape_status.html', message="Latitude and Longitude scraping has started.")
 
+# route to display the scraping has stopped page
 @app.route('/stop_scraping')
 def stop_scraping():
     global stop_scraping_event
 
-    # Set the stop flag to signal the thread to stop
+    # set the stop flag to signal the thread to stop
     stop_scraping_event.set()
 
-    # Inform the user that scraping will stop
     return render_template('scrape_status.html', message="SpotCrime data scraping is stopping...")
     
-
-# Route for crime vs income bar chart
+# route for crime vs income bar chart
 @app.route('/crime_vs_income')
 def crime_vs_income():
     df = pd.read_csv('./Crime_uptodate/merged_crime_income_data.csv')
     crime_vs_income_html = plot_crime_vs_income(df)
     return render_template('visualization.html', chart_html=crime_vs_income_html, title="Crime vs Median Household Income")
 
+# route for crime count vs income bar chart
 @app.route('/crime_amount_vs_income')
 def crime_amount_vs_income():
     df = pd.read_csv('./Crime_uptodate/merged_crime_income_data.csv')
     crime__amount_vs_income_html = plot_crime_amount_vs_income(df)
     return render_template('visualization.html', chart_html=crime__amount_vs_income_html, title="Crime Amount vs Median Household Income")
 
-
-# Route for crime locations with median household income on a map
+# route for crime locations with median household income on a map
 @app.route('/income_crime_map')
 def income_crime_map():
     df = pd.read_csv('./Crime_uptodate/merged_crime_income_data.csv')
     map_path = plot_income_crime_map(df)
     return render_template('map.html', map_file=os.path.basename(map_path), title="Crime and Median Household Income Map")
 
-# Route to serve static files (like crime_map.html, heatmap.html)
+# route for static files (like crime_map.html, heatmap.html)
 @app.route('/static/<path:filename>')
 def serve_static(filename):
     return send_from_directory(static_dir, filename)
